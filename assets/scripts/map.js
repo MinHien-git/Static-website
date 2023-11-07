@@ -109,7 +109,7 @@ window.onload = function () {
       button_container.classList.add("button_container");
       info_button.classList.add("info");
       info_button.setAttribute("id", "info-" + feature._id);
-      report_button.classList.add("info");
+      report_button.classList.add("report");
       report_button.setAttribute("id", "report-" + feature._id);
 
       attributionDiv.innerHTML = `<h3>${feature.properties.type}</h3>
@@ -123,21 +123,16 @@ window.onload = function () {
       report_button.innerHTML =
         false || false
           ? `<img src="../assets/images/information.png" alt="report">Chỉnh sửa`
-          : `<img src="../assets/images/information.png" alt="report">Báo cáo`;
+          : `<img src="../assets/images/report-fill.png" alt="report">Báo cáo`;
 
       button_container.appendChild(info_button);
       button_container.appendChild(report_button);
 
       report_button.addEventListener("click", (e) => {
         current_feature = feature;
-        const address = feature.properties.place.split(", ");
-        console.log(
-          "redirect report link: " +
-            `/report?position=${feature.geometry.coordinates}&ward=${address[1]}&district=${address[2]}`
-        );
-        window.location.href = `/report?position=${feature.geometry.coordinates}&ward=${address[1]}&district=${address[2]}`;
-        console.log("report-info :" + feature._id, feature);
+        get_report(feature.properties.place);
       });
+
       info_button.addEventListener("click", (e) => {
         console.log("check-info :" + feature._id, feature);
         current_feature = feature;

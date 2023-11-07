@@ -37,6 +37,8 @@
       rel="stylesheet"
       href="https://unpkg.com/@geoapify/leaflet-address-search-plugin@^1/dist/L.Control.GeoapifyAddressSearch.min.css"
     />
+    <link rel="stylesheet" href="./styles/authentication.css" />
+    <link rel="stylesheet" href="./styles/report.css" />
     <script src="https://unpkg.com/@geoapify/leaflet-address-search-plugin@^1/dist/L.Control.GeoapifyAddressSearch.min.js"></script>
   </head>
   <body>
@@ -45,10 +47,10 @@
       <div id="burger"></div>
       <nav id="primary-navigation-bar">
         <ul id="primary-items-list">
-          <li>
-            <img id="profile" src="../assets/images/user.png" alt="profile" />
+          <li id="profile">
+            <img src="../assets/images/user.png" alt="profile" />
           </li>
-          <li>
+          <!-- <li>
             <form id="logout" method="post" action="/logout">
               <button type="submit">
                 <img
@@ -58,7 +60,7 @@
                 />
               </button>
             </form>
-          </li>
+          </li> -->
         </ul>
       </nav>
     </header>
@@ -67,11 +69,69 @@
         <ul></ul>
       </nav>
     </header>
+    <section class="active" id="report-popup">
+      <div id="authentication-close-button" class="authentication-close-button">
+        <img
+          id="inscreen-authen-close"
+          src="../assets/images/close.png"
+          alt="close button"
+        />
+      </div>
+      <form
+        id="inscreen-form-login"
+        class="form-container active"
+        method="post"
+        action="/login"
+      >
+        <h2>Report</h2>
+        <div class="form-section">
+          <label for="Lemail">Email:</label>
+          <input
+            type="email"
+            name="email"
+            id="Lemail"
+            value=""
+            placeholder="email"
+          />
+        </div>
+        <div class="form-section">
+          <label for="Lpassword">Password:</label>
+          <input
+            type="password"
+            name="password"
+            id="Lpassword"
+            value=""
+            placeholder="password"
+          />
+        </div>
+        <div class="form-section">
+          <p><span class="under-line">Forgot password?</span></p>
+        </div>
+        <div class="form-section">
+          <button class="submit-button submit">login</button>
+        </div>
+        <hr />
+        <div class="form-section">
+          <button class="submit-button facebook-submit">
+            login with facebook
+          </button>
+        </div>
+        <div class="form-section">
+          <button class="submit-button google-submit">login with google</button>
+        </div>
+        <hr />
+        <div class="form-section">
+          <button class="submit-button second-choice">Register</button>
+        </div>
+      </form>
+    </section>
     <main id="map-container">
       <div id="map"></div>
       <div id="info"></div>
     </main>
-    <script src="../assets/scripts/map.js" />
-    <script src="./scripts/trangchu.js" />
+    <script src="./scripts/authentication.js"></script>
+    <script src="./scripts/trangchu.js"></script>
+    <script src="./scripts/report.js"></script>
+    <script src="../assets/scripts/map.js"></script>
   </body>
 </html>
