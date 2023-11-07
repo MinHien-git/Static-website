@@ -9,11 +9,19 @@
   z-index: 101;
   background-color: hsl(0 0% 95%/ 80%);
 }
-
 .active#report-popup {
   display: flex;
 }
-
+#report-popup textarea{
+  font-size: 0.75rem;
+  resize: none;
+  padding-inline:0.5rem ;
+  height: auto;
+  padding-block:0.5rem 1rem;
+}
+#report-popup input[type="file"]{
+display: none;
+}
 #report-section-form-container {
   width: 80%;
   height: auto;
@@ -66,7 +74,7 @@
   display: grid;
   gap: 0.5rem;
   margin-bottom: 1rem;
-  width: 65%;
+  width: 75%;
 }
 
 .form-section label {
@@ -102,6 +110,36 @@
   font-weight: bold;
   text-align: center;
 }
+.file-section .file-button{
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: auto;
+}
+
+#attached_files{
+  padding-block: 0rem;
+}
+.file-section p{
+  text-align: left;
+  color:black;
+  font-weight: bold;
+  font-size: 0.625rem;
+}
+
+.file-section label{
+  text-align: left;
+  color:black;
+  font-weight: bold;
+  font-size: 0.625rem;
+  width: 25%;
+  padding-block: .25rem;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid gainsboro;
+}
 
 hr {
   width: 60%;
@@ -132,7 +170,7 @@ hr {
 }
 
 @media only screen and (min-width: 600px) {
-  #authentication-section-form-container {
+  #report-section-form-container {
     width: 30%;
     max-width: 25rem;
     min-width: 15rem;

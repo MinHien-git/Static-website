@@ -56,9 +56,20 @@ function onMapClick(e) {
         .setLatLng(e.latlng)
         .setContent(
           `<h3>${data.features[0].properties.address_line1}</h3>
-          <p>${data.features[0].properties.address_line2}</p>`
+          <p>${data.features[0].properties.address_line2}</p>
+          <div class="infomation">
+          <h4>Thông tin</h4>
+          <p>Chưa có thông tin</p>
+          </div>
+          <button class="report"><img src="../assets/images/report-fill.png" alt="report">Báo cáo</button>`
         )
         .openOn(map);
+
+        let btn = $(".report");
+        btn.on("click",()=>{
+          current_feature = data.features[0];
+          get_report(data.features[0].properties.address_line2);
+        })
     })
     .catch((error) => console.log("error", error));
 }
