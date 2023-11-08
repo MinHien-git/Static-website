@@ -73,8 +73,7 @@ let authent_popup = `
 
 let profile = $("#profile");
 console.log("called");
-const body = document.querySelector("body");
-let _popup;
+
 profile.on("click", (e) => {
   console.log("click");
   if (!_popup) {
