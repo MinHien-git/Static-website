@@ -37,7 +37,6 @@
       rel="stylesheet"
       href="https://unpkg.com/@geoapify/leaflet-address-search-plugin@^1/dist/L.Control.GeoapifyAddressSearch.min.css"
     />
-    <link rel="stylesheet" href="./styles/authentication.css" />
     <link rel="stylesheet" href="./styles/report.css" />
     <link rel="stylesheet" href="../assets/styles/editor.css" />
     <script src="https://unpkg.com/@geoapify/leaflet-address-search-plugin@^1/dist/L.Control.GeoapifyAddressSearch.min.js"></script>
@@ -46,14 +45,31 @@
   </head>
   <body>
     <script src="../assets/scripts/navbar.js" defer></script>
-    <header id="primary-header" class="flex">
+    <header id="primary-header" class="flex official">
       <div id="burger"></div>
       <nav id="primary-navigation-bar">
         <ul id="primary-items-list">
           <li id="profile">
-            <img src="../assets/images/user.png" alt="profile" />
+            <img src="../assets/images/profile.png" alt="profile" />
+            <span>user name</span>
           </li>
-          <!-- <li>
+          <li id="profile">
+            <img src="../assets/images/list.png" alt="list" />
+            <span>Danh sách báo cáo</span>
+          </li>
+          <li id="profile">
+            <img src="../assets/images/check.png" alt="check" />
+            <span>Yêu cầu cấp phép</span>
+          </li>
+          <li id="profile">
+            <img src="../assets/images/edit.png" alt="edit" />
+            <span>Yêu cầu chỉnh sửa</span>
+          </li>
+          <li id="profile">
+            <img src="../assets/images/billboard.png" alt="billboard" />
+            <span>Danh sách quảng cáo</span>
+          </li>
+           <li>
             <form id="logout" method="post" action="/logout">
               <button type="submit">
                 <img
@@ -61,95 +77,22 @@
                   src="../assets/images/logout.png"
                   alt="logout"
                 />
+                <span>Đăng xuất</span>
               </button>
             </form>
-          </li> -->
+          </li>
         </ul>
       </nav>
     </header>
-    <header>
-      <nav>
-        <ul></ul>
-      </nav>
-    </header>
-   <!-- <section class="active" id="report-popup">
-      <div id="report-section-form-container">
-      <div id="authentication-close-button" class="authentication-close-button">
-        <img
-          id="inscreen-authen-close"
-          src="../assets/images/close.png"
-          alt="close button"
-        />
-      </div>
-      <form
-        id="inscreen-form-login"
-        class="form-container active"
-        method="post"
-        action="/login"
-      >
-        <h2>Báo Cáo</h2>
-        <div class="form-section">
-          <label for="street">Địa chỉ báo cáo:</label>
-          <textarea id="street">123 street,P ward, district n,7000, Ho Chi Minh city</textarea>
-        </div>
-        <div class="form-section">
-          <label for="name">Họ Tên:</label>
-          <input
-            type="text"
-            name="name"
-            id="name"
-            value=""
-            placeholder="Họ và tên người báo cáo"
-          />
-        </div>
-        <div class="form-section">
-          <label for="Lemail">Email:</label>
-          <input
-            type="email"
-            name="email"
-            id="Lemail"
-            value=""
-            placeholder="Email"
-          />
-        </div>
-        <div class="form-section">
-          <label for="tel">Điện thoại:</label>
-          <input
-            type="tel"
-            name="tel"
-            id="tel"
-            value=""
-            placeholder="Điện thoại liên lạc"
-          />
-        </div>
-        <div class="form-section file-section">
-          <p>Thông tin đính kèm:</p>
-          <div class="file-button">
-            <label for="attached_files">Chọn</label>
-            <input
-              type="file"
-              name="attached_files"
-              id="attached_files"
-            />
-          </div>
-        </div>
-        <div class="form-section">
-          <label for="tel">Thông tin báo cáo:</label>
-          <div id="editor"></div>
-        </div>
-        <div class="form-section">
-          <button class="submit-button submit">Gửi</button>
-        </div>
-      </form>
-    </div>
-    </section>  -->
+    
+
     <main id="map-container">
       <div id="map"></div>
       <div id="info"></div>
     </main>
-    <script src="./scripts/authentication.js"></script>
+    <script src="../assets/scripts/popup.js"></script>
     <script src="./scripts/trangchu.js"></script>
-    <script src="./scripts/report.js"></script>
+    <script src="./scripts/edit.js"></script>
     <script src="../assets/scripts/map.js"></script>
   </body>
 </html>
