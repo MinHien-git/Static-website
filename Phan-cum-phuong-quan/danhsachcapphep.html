@@ -92,6 +92,59 @@
         <button type="button">Sắp xếp</button>
         <button type="button">Lọc...</button>
 
+        <div id="table">
+          <ul>
+          <li><ul>
+            <li>Bảng quảng cáo</li>
+            <li>Địa điểm</li>
+            <li>Trạng thái</li>
+            <li>Chi tiết</li>
+          </ul></li>
+          <li class="card"> 
+            <ul>
+              <li><%= billboards[i].properties.type%></li>
+              <li><%= billboards[i].properties.place%></li>
+              <li>Chưa duyệt</li>
+              <li><label for = "<%= billboards[i]._id %>">Chi tiết</label></li>
+            </ul>
+            <input type="checkbox" class="card-checkbox" id="<%= billboards[i]._id %>">
+            <div class="billboard-information-container">
+              <div class="billboard-image">
+                  <div></div>
+                  <div></div>
+              </div>
+              <div class="billboard-information">
+                  <ul class="billboard">
+                      <li>
+                          <p>Thông tin bảng quảng cáo:</p>
+                          <ul>
+                              <li>Kích thước: <span class="bold">2.5m x 10m</span></li>
+                              <li>Số lượng: <span class="bold">1 trụ/1 bảng</span></li>
+                              <li>Hình thức: <span class="bold">Cổ động chính trị</span></li>
+                              <li>Phân loại: <span class="bold">Trường học</span></li>
+                          </ul>
+                      </li>
+                      <li>
+                          <p>Thông tin công ty:</p>
+                          <ul>
+                              <li>Thông tin công ty: <span class="bold">ABC Company</span></li>
+                              <li>Thông tin liên lạc: <span class="bold">ABCCompany@email.com</span></li>
+                              <li>Ngày bắt đầu: <span class="bold">dd/mm/yyyy</li>
+                              <li>Ngày kết thúc: <span class="bold">dd/mm/yyyy</span></li>
+                          </ul>
+                      </li>
+                  </ul>
+                  <ul class="button-container">
+                      <li> <button class="button">Register</button></li>
+                      <li> <button class="button">Register</button></li>
+                      <li> <button class="button">Register</button></li>
+                  </ul>
+              </div>
+            </div>
+          </li>
+          </ul>
+        </div>
+
         <div class="table">
             <div class="table-hint">
                 <p class="table-col">Bảng quảng cáo</p>
