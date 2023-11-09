@@ -12,15 +12,15 @@
 .active#report-popup {
   display: flex;
 }
-#report-popup textarea{
+#report-popup textarea {
   font-size: 0.75rem;
   resize: none;
-  padding-inline:0.5rem ;
+  padding-inline: 0.5rem;
   height: auto;
-  padding-block:0.5rem 1rem;
+  padding-block: 0.5rem 1rem;
 }
-#report-popup input[type="file"]{
-display: none;
+#report-popup input[type="file"] {
+  display: none;
 }
 #report-section-form-container {
   width: 80%;
@@ -110,30 +110,30 @@ display: none;
   font-weight: bold;
   text-align: center;
 }
-.file-section .file-button{
+.file-section .file-button {
   display: flex;
   align-items: center;
   position: relative;
   height: auto;
 }
 
-#attached_files{
+#attached_files {
   padding-block: 0rem;
 }
-.file-section p{
+.file-section p {
   text-align: left;
-  color:black;
+  color: black;
   font-weight: bold;
   font-size: 0.625rem;
 }
 
-.file-section label{
+.file-section label {
   text-align: left;
-  color:black;
+  color: black;
   font-weight: bold;
   font-size: 0.625rem;
   width: 25%;
-  padding-block: .25rem;
+  padding-block: 0.25rem;
   border-radius: 5px;
   display: flex;
   justify-content: center;
@@ -152,13 +152,13 @@ hr {
   color: rgb(0, 132, 255);
 }
 
-#authentication-close-button {
+#inscreen-report-close {
   width: 1.25rem;
   height: 1.25rem;
   display: flex;
   position: absolute;
-  right: 1.5rem;
-  top: 1.5rem;
+  right: 0.5rem;
+  top: 2rem;
 }
 
 #inscreen-form-login > .form-section:last-child {
