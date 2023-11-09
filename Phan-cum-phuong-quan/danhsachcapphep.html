@@ -84,10 +84,54 @@
         </ul>
       </nav>
     </header>
-    <main id="map-container">
-      <div id="map"></div>
-      <div id="info"></div>
-    </main>
+
+    <div class="content">
+        <h1>Danh sách cấp phép</h1>
+        <textarea name="search" id="" cols="30" rows="1">Nhập thông tin</textarea>
+        <button type="button">Xem trên bản đồ</button>
+        <button type="button">Sắp xếp</button>
+        <button type="button">Lọc...</button>
+
+        <div class="table">
+            <div class="table-hint">
+                <p class="table-col">Bảng quảng cáo</p>
+                <p class="table-col">Địa điểm</p>
+                <p class="table-col">Trạng thái</p>
+            </div>
+            <div class="content-card">
+                <p class="table-col">Cụm Panô</p>
+                <p class="table-col">123 street...</p>
+                <p class="table-col">Chưa duyệt</p>
+                <input type="button" value="more-less">
+            </div>
+        </div>
+
+        <div class="content-card">
+            <p class="table-col">Cụm Panô</p>
+            <p class="table-col">123 street...</p>
+            <p class="table-col">Chưa duyệt</p>
+            <input type="button" value="more-less">
+        </div>
+
+        <div class="detail-container">
+            <div class="cols">
+                <p class="detail-col">Thông tin bảng quảng cáo:</p>
+                <p class="detail-col">Kích thước: 2.5m x 10m</p>
+                <p class="detail-col">Số lượng: 1 trụ/1 bảng</p>
+                <p class="detail-col">Hình thức: Cổ động chính trị</p>
+                <p class="detail-col">Phân loại: Trường học</p>
+                <p class="detail-col">Thông tin bảng quảng cáo:</p>
+            </div>
+            <div class="cols">
+                <p class="detail-col">Thông tin công ty:</p>
+                <p class="detail-col">Thông tin công ty: ABC Company</p>
+                <p class="detail-col">Thông tin liên lạc: ABCCompany@email.com</p>
+                <p class="detail-col">Ngày bắt đầu: dd/mm/yyyy</p>
+                <p class="detail-col">Ngày bắt đầu: dd/mm/yyyy</p>
+            </div>
+        </div>
+
+    </div>
     <script src="../assets/scripts/popup.js"></script>
     <script src="./scripts/trangchu.js"></script>
     <script src="./scripts/edit.js"></script>
