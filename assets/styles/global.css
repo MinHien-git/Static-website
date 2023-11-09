@@ -10,7 +10,9 @@
   -webkit-text-select: none;
   -webkit-user-select: none;
 }
-
+input{
+  font-size: 0.625rem;
+}
 body,
 html {
   min-height: 100vh;

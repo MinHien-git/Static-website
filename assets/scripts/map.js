@@ -56,9 +56,22 @@ function onMapClick(e) {
         .setLatLng(e.latlng)
         .setContent(
           `<h3>${data.features[0].properties.address_line1}</h3>
-          <p>${data.features[0].properties.address_line2}</p>`
+          <p>${data.features[0].properties.address_line2}</p>
+          <div class="infomation">
+          <h4>Thông tin</h4>
+          <p>Chưa có thông tin</p>
+          </div>
+          ${is_offical ?'<button class="edit"><img src="../assets/images/edit-yellow.png" alt="report">Chỉnh sửa</button>' :'<button class="report"><img src="../assets/images/report-fill.png" alt="report">Báo cáo</button>'}`
         )
         .openOn(map);
+
+        let btn = $(".report");
+        btn.on("click",()=>{
+          current_feature = data.features[0];
+          if(!is_offical){
+            get_report(data.features[0].properties.address_line2);
+          }
+        })
     })
     .catch((error) => console.log("error", error));
 }
@@ -109,7 +122,7 @@ window.onload = function () {
       button_container.classList.add("button_container");
       info_button.classList.add("info");
       info_button.setAttribute("id", "info-" + feature._id);
-      report_button.classList.add("info");
+      report_button.classList.add(is_offical ?"edit" :"report" );
       report_button.setAttribute("id", "report-" + feature._id);
 
       attributionDiv.innerHTML = `<h3>${feature.properties.type}</h3>
@@ -121,23 +134,18 @@ window.onload = function () {
           `;
       info_button.innerHTML = `<img src="../assets/images/information.png" alt="information">Thông tin`;
       report_button.innerHTML =
-        false || false
-          ? `<img src="../assets/images/information.png" alt="report">Chỉnh sửa`
-          : `<img src="../assets/images/information.png" alt="report">Báo cáo`;
+        is_offical
+          ? `<img src="../assets/images/edit-yellow.png" alt="edit">Chỉnh sửa`
+          : `<img src="../assets/images/report-fill.png" alt="report">Báo cáo`;
 
       button_container.appendChild(info_button);
       button_container.appendChild(report_button);
 
       report_button.addEventListener("click", (e) => {
         current_feature = feature;
-        const address = feature.properties.place.split(", ");
-        console.log(
-          "redirect report link: " +
-            `/report?position=${feature.geometry.coordinates}&ward=${address[1]}&district=${address[2]}`
-        );
-        window.location.href = `/report?position=${feature.geometry.coordinates}&ward=${address[1]}&district=${address[2]}`;
-        console.log("report-info :" + feature._id, feature);
+        get_report(feature.properties.place);
       });
+
       info_button.addEventListener("click", (e) => {
         console.log("check-info :" + feature._id, feature);
         current_feature = feature;
