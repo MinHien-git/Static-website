@@ -14,14 +14,18 @@
   transition: 200ms all ease-in-out;
   #primary-navigation-bar {
     display: none;
+    padding-top: 2rem;
   }
   #burger {
+    position: absolute;
     width: 2rem;
     height: 2rem;
     background-image: url("../images/burger.png");
     background-position: center;
     background-size: cover;
     z-index: 100;
+    top: 2rem;
+    left: 1.5rem;
   }
   &.active {
     background-color: white;
@@ -110,6 +114,9 @@
     height: 100%;
     align-content: start;
   }
+  .official.active #primary-items-list {
+    margin-left: 1.8rem;
+  }
   .official #primary-items-list > * {
     display: flex;
     align-items: center;
@@ -145,11 +152,6 @@
 
   .official #primary-items-list li:last-child span {
     color: #ff7b7b;
-  }
-
-  .official.active #burger {
-    align-self: self-start;
-    margin-left: 1rem;
   }
 
   #logout button {

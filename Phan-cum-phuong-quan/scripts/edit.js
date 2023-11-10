@@ -23,7 +23,7 @@ function get_report(position) {
       <h2>Yêu cầu Chỉnh sửa</h2>
       <div class="form-section">
         <label for="street">Địa chỉ yêu cầu:</label>
-        <textarea id="street">123 street,P ward, district n,7000, Ho Chi Minh city</textarea>
+        <textarea id="street">${position}</textarea>
       </div>
       <h5>Thông tin mới:</h5>
       <div class="form-section">
