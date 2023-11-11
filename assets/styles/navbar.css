@@ -12,35 +12,36 @@
   flex-direction: row;
   background-color: transparent;
   transition: 200ms all ease-in-out;
-  #primary-navigation-bar {
-    display: none;
-    padding-top: 2rem;
-  }
-  #burger {
-    position: absolute;
-    width: 2rem;
-    height: 2rem;
-    background-image: url("../images/burger.png");
-    background-position: center;
-    background-size: cover;
-    z-index: 100;
-    top: 2rem;
-    left: 1.5rem;
-  }
-  &.active {
-    background-color: white;
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
-      rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-
-    & > #primary-navigation-bar {
-      display: flex;
-      margin-left: auto;
-      margin-right: 2.5rem;
-    }
-    & > #burger {
-      background-image: url("../images/close.png");
-    }
-  }
+}
+#primary-header.active {
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+#primary-header.active > #primary-navigation-bar {
+  display: flex;
+  margin-left: auto;
+}
+#primary-header.active.official > #primary-navigation-bar {
+  margin-right: 2.5rem;
+}
+#primary-header.active > #burger {
+  background-image: url("../images/close.png");
+}
+#primary-navigation-bar {
+  display: none;
+  padding-top: 2rem;
+}
+#burger {
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  background-image: url("../images/burger.png");
+  background-position: center;
+  background-size: cover;
+  z-index: 100;
+  top: 2rem;
+  left: 1.5rem;
 }
 
 #primary-items-list > * img {
