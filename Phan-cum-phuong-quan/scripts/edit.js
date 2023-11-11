@@ -1,13 +1,13 @@
-let report_node 
+let report_node;
 
 function get_report(position) {
-    if(report_node){
-        body.removeChild(report_node)
-    }
-    let report = `
+  if (report_node) {
+    body.removeChild(report_node);
+  }
+  let report = `
     <section class="active" id="report-popup">
     <div id="report-section-form-container">
-    <div id="authentication-close-button" class="authentication-close-button">
+    <div id="inscreen-report-close" class="inscreen-report-close">
       <img
         id="inscreen-authen-close"
         src="../assets/images/close.png"
@@ -23,7 +23,7 @@ function get_report(position) {
       <h2>Yêu cầu Chỉnh sửa</h2>
       <div class="form-section">
         <label for="street">Địa chỉ yêu cầu:</label>
-        <textarea id="street">123 street,P ward, district n,7000, Ho Chi Minh city</textarea>
+        <textarea id="street">${position}</textarea>
       </div>
       <h5>Thông tin mới:</h5>
       <div class="form-section">
@@ -67,20 +67,20 @@ function get_report(position) {
     </form>
   </div>
   </section> `;
-    report_node =document.createElement("section");
-    report_node.setAttribute("id","report-popup")
-    report_node.classList.add("active")
+  report_node = document.createElement("section");
+  report_node.setAttribute("id", "report-popup");
+  report_node.classList.add("active");
 
-    report_node.innerHTML += report
-    body.append(report_node);
+  report_node.innerHTML += report;
+  body.append(report_node);
 
-    var close = $("#inscreen-report-close")
-    close.on("click",()=>{
-        body.removeChild(report_node)
-        report_node = null
-    })
+  var close = $("#inscreen-report-close");
+  close.on("click", () => {
+    body.removeChild(report_node);
+    report_node = null;
+  });
 
-    var quill = new Quill('#editor', {
-        theme: 'snow'
-     });
+  var quill = new Quill("#editor", {
+    theme: "snow",
+  });
 }
