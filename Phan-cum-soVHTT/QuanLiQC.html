@@ -115,25 +115,27 @@
 							</tr>
 						</thead>
 
-						<tbody>
-							<tr class="accordion-toggle">
+						<tbody class="accordion" id="accordion__table">
+							<tr class="accordion-header" id="heading1">
 								<td>Cụm pano</td>
 								<td>123 Đường ABC, Phường Y, Quận X</td>
 								<td>Đã cấp phép</td>
 								<td>
 									<button
-										class="btn btn-default"
+										class="btn accordion-button collapsed"
 										data-bs-toggle="collapse"
-										data-bs-target="#tr1"
-										role="button"
-										aria-expanded="false"
-										aria-controls="tr1">
-										<i class="bi bi-chevron-down"></i>
-									</button>
+										data-bs-target="#collapse1"
+										type="button"
+										aria-expanded="true"
+										aria-controls="collapse1"></button>
 								</td>
 							</tr>
-							<tr id="tr1" class="collapse show">
-								<td colspan="12" class="hidden__row">
+							<tr id="collapse1" class="accordion-collapse collapse">
+								<td
+									colspan="12"
+									class="accordion-body"
+									aria-labelledby="heading1"
+									data-bs-parent="#accordion__table">
 									<div class="wrapper d-flex">
 										<div class="tr__info__wrapper">
 											<p class="fw-bold">Thông tin bảng quảng cáo</p>
@@ -157,12 +159,73 @@
 												src="/assets/images/bien-quang-cao-1024x683.jpg"
 												alt="Ảnh bảng quảng cáo"
 												title="Ảnh bảng quảng cáo"
-												width="300" />
+												width="220" />
+										</div>
+									</div>
+									<div class="container d-flex mt-4 w-50 me-0">
+										<button class="btn btn-outline-warning w-75 me-3">
+											Chỉnh sửa
+										</button>
+										<button class="btn btn-outline-danger w-75">
+											Xoá điểm QC
+										</button>
+									</div>
+								</td>
+							</tr>
+
+							<tr class="accordion-header" id="heading2">
+								<td>Cụm pano</td>
+								<td>123 Đường ABC, Phường Y, Quận X</td>
+								<td>Đã cấp phép</td>
+								<td>
+									<button
+										class="btn accordion-button collapsed"
+										data-bs-toggle="collapse"
+										data-bs-target="#collapse2"
+										type="button"
+										aria-expanded="true"
+										aria-controls="collapse2"></button>
+								</td>
+							</tr>
+							<tr id="collapse2" class="accordion-collapse collapse">
+								<td
+									colspan="12"
+									class="accordion-body"
+									aria-labelledby="heading2"
+									data-bs-parent="#accordion__table">
+									<div class="wrapper d-flex">
+										<div class="tr__info__wrapper">
+											<p class="fw-bold">Thông tin bảng quảng cáo</p>
+											<p><strong>Kích thước:</strong>2.5mx10m</p>
+											<p><strong>Số lượng:</strong>1 trụ / 1 bảng</p>
+											<p><strong>Hình thức:</strong>Cổ động chính trị</p>
+											<p><strong>Phân loại:</strong>Trường học</p>
 										</div>
 
 										<div class="tr__info__wrapper">
-											<p>asd</p>
+											<p class="fw-bold">Thông tin cho thuê</p>
+											<p><strong>Tên công ty:</strong>Công ty ABC</p>
+											<p><strong>Email liên lạc:</strong>cty_abc@email.com</p>
+											<p><strong>Ngày bắt đầu:</strong>dd/MM/yyyy</p>
+											<p><strong>Ngày kết thúc:</strong>dd/MM/yyyy</p>
 										</div>
+
+										<div class="tr__info__wrapper">
+											<p><strong>Ảnh</strong></p>
+											<img
+												src="/assets/images/bien-quang-cao-1024x683.jpg"
+												alt="Ảnh bảng quảng cáo"
+												title="Ảnh bảng quảng cáo"
+												width="220" />
+										</div>
+									</div>
+									<div class="container d-flex mt-4 w-50 me-0">
+										<button class="btn btn-outline-warning w-75 me-3">
+											Chỉnh sửa
+										</button>
+										<button class="btn btn-outline-danger w-75">
+											Xoá điểm QC
+										</button>
 									</div>
 								</td>
 							</tr>
