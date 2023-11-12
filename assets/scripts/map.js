@@ -61,17 +61,19 @@ function onMapClick(e) {
           <h4>Thông tin</h4>
           <p>Chưa có thông tin</p>
           </div>
-          ${is_offical ?'<button class="edit"><img src="../assets/images/edit-yellow.png" alt="report">Chỉnh sửa</button>' :'<button class="report"><img src="../assets/images/report-fill.png" alt="report">Báo cáo</button>'}`
+          ${
+            is_offical
+              ? '<button class="edit"><img src="../assets/images/edit-yellow.png" alt="report">Chỉnh sửa</button>'
+              : '<button class="report"><img src="../assets/images/report-fill.png" alt="report">Báo cáo</button>'
+          }`
         )
         .openOn(map);
 
-        let btn = $(".report");
-        btn.on("click",()=>{
-          current_feature = data.features[0];
-          if(!is_offical){
-            get_report(data.features[0].properties.address_line2);
-          }
-        })
+      let btn = !is_offical ? $(".report") : $(".edit");
+      btn.on("click", () => {
+        current_feature = data.features[0];
+        get_report(data.features[0].properties.address_line2);
+      });
     })
     .catch((error) => console.log("error", error));
 }
@@ -122,7 +124,7 @@ window.onload = function () {
       button_container.classList.add("button_container");
       info_button.classList.add("info");
       info_button.setAttribute("id", "info-" + feature._id);
-      report_button.classList.add(is_offical ?"edit" :"report" );
+      report_button.classList.add(is_offical ? "edit" : "report");
       report_button.setAttribute("id", "report-" + feature._id);
 
       attributionDiv.innerHTML = `<h3>${feature.properties.type}</h3>
@@ -133,10 +135,9 @@ window.onload = function () {
           <p>Phân Loại: <span class="bold">${feature.properties.place_type}</span></p>
           `;
       info_button.innerHTML = `<img src="../assets/images/information.png" alt="information">Thông tin`;
-      report_button.innerHTML =
-        is_offical
-          ? `<img src="../assets/images/edit-yellow.png" alt="edit">Chỉnh sửa`
-          : `<img src="../assets/images/report-fill.png" alt="report">Báo cáo`;
+      report_button.innerHTML = is_offical
+        ? `<img src="../assets/images/edit-yellow.png" alt="edit">Chỉnh sửa`
+        : `<img src="../assets/images/report-fill.png" alt="report">Báo cáo`;
 
       button_container.appendChild(info_button);
       button_container.appendChild(report_button);
