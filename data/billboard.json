@@ -11,7 +11,10 @@
       "amount": "1 trụ/bảng",
       "type_advertise": "Cổ động chính trị",
       "place_type": "Đất Công/Công viên/Hành lang",
-      "place": "23 Nguyễn Bỉnh Khiêm, Đa Kao, Quận 1, Thành phố Hồ Chí Minh, Vietnam"
+      "place": "23 Nguyễn Bỉnh Khiêm, Đa Kao, Quận 1, Thành phố Hồ Chí Minh, Vietnam",
+      "zoning": true,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": true
     },
     "geometry": {
       "coordinates": [106.6878303, 10.8161819],
@@ -30,7 +33,10 @@
       "size": "2.5mx10m",
       "place_type": "Đất Công/Công viên/Hành lang",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": true,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": false
     },
     "geometry": {
       "coordinates": [106.7143836, 10.7893791],
@@ -49,7 +55,10 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": false,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": false
     },
     "geometry": {
       "coordinates": [106.7048256, 10.7811155],
@@ -68,7 +77,10 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": true,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": true
     },
     "geometry": {
       "coordinates": [106.7038702, 10.7711941],
@@ -87,7 +99,10 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": true,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": true
     },
     "geometry": {
       "coordinates": [106.6883101, 10.7600606],
@@ -106,7 +121,10 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": false,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": true
     },
     "geometry": {
       "coordinates": [106.6461238, 10.7657244],
@@ -125,7 +143,10 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": false,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": true
     },
     "geometry": {
       "coordinates": [106.6587753, 10.7713087],
@@ -144,7 +165,10 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": true,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": false
     },
     "geometry": {
       "coordinates": [106.6728346, 10.7657442],
@@ -163,7 +187,10 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": true,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": true
     },
     "geometry": {
       "coordinates": [106.6981492, 10.7773688],
@@ -182,7 +209,10 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": true,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": true
     },
     "geometry": {
       "coordinates": [106.6905687, 10.7755216],
@@ -201,7 +231,10 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": true,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": false
     },
     "geometry": {
       "coordinates": [106.6911934, 10.7768161],
@@ -220,7 +253,10 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": true,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": true
     },
     "geometry": {
       "coordinates": [106.6846259, 10.7886222],
@@ -239,7 +275,10 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": true,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": true
     },
     "geometry": {
       "coordinates": [106.6824473, 10.7783482],
@@ -258,7 +297,10 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": true,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": false
     },
     "geometry": {
       "coordinates": [106.696634, 10.787641],
@@ -277,7 +319,10 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": true,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": true
     },
     "geometry": {
       "coordinates": [106.699157, 10.7917329],
@@ -296,7 +341,10 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": false,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": true
     },
     "geometry": {
       "coordinates": [106.7039225, 10.7865314],
@@ -315,7 +363,10 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": true,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": true
     },
     "geometry": {
       "coordinates": [106.6985753, 10.7826311],
@@ -334,7 +385,10 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": true,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": false
     },
     "geometry": {
       "coordinates": [106.6961471, 10.7850807],
@@ -353,7 +407,10 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": false,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": true
     },
     "geometry": {
       "coordinates": [106.6904564, 10.7688591],
@@ -372,7 +429,10 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": false,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": true
     },
     "geometry": {
       "coordinates": [106.6776477, 10.7669467],
@@ -391,7 +451,10 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": true,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": false
     },
     "geometry": {
       "coordinates": [106.6904377, 10.7645761],
@@ -410,7 +473,10 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": true,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": true
     },
     "geometry": {
       "coordinates": [106.694821, 10.7727132],
@@ -429,7 +495,10 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": true,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": false
     },
     "geometry": {
       "coordinates": [106.6697096, 10.7714174],
@@ -448,7 +517,10 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": false,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": true
     },
     "geometry": {
       "coordinates": [106.6905309, 10.789278],
@@ -467,7 +539,10 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": true,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": true
     },
     "geometry": {
       "coordinates": [106.6782734, 10.7795211],
@@ -486,7 +561,10 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": true,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": true
     },
     "geometry": {
       "coordinates": [106.6924922, 10.7709815],
@@ -505,7 +583,10 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": true,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": false
     },
     "geometry": {
       "coordinates": [106.6696679, 10.7543253],
@@ -524,7 +605,10 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": true,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": true
     },
     "geometry": {
       "coordinates": [106.6731971, 10.7598181],
@@ -543,7 +627,10 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": true,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": true
     },
     "geometry": {
       "coordinates": [106.6732298, 10.7750868],
@@ -562,7 +649,10 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": false,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": true
     },
     "geometry": {
       "coordinates": [106.6782195, 10.7743874],
@@ -581,7 +671,10 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": true,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": true
     },
     "geometry": {
       "coordinates": [106.6615875, 10.7589285],
@@ -600,7 +693,10 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": false,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": true
     },
     "geometry": {
       "coordinates": [106.6651004, 10.757205],
@@ -619,7 +715,10 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": true,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": true
     },
     "geometry": {
       "coordinates": [106.6774635, 10.7626547],
@@ -638,7 +737,10 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": true,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": true
     },
     "geometry": {
       "coordinates": [106.7066801, 10.7854177],
@@ -657,7 +759,10 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": false,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": true
     },
     "geometry": {
       "coordinates": [106.6954496, 10.7803125],
@@ -676,7 +781,10 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": true,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": false
     },
     "geometry": {
       "coordinates": [106.685047, 10.757319],
@@ -695,7 +803,10 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": true,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": true
     },
     "geometry": {
       "coordinates": [106.6933469, 10.7660734],
@@ -714,7 +825,10 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": true,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": true
     },
     "geometry": {
       "coordinates": [106.6772312, 10.7411779],
@@ -733,7 +847,10 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": false,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": true
     },
     "geometry": {
       "coordinates": [106.680987, 10.748065],
@@ -752,7 +869,10 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": false,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": true
     },
     "geometry": {
       "coordinates": [106.6831913, 10.7459166],
@@ -771,7 +891,10 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": true,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": true
     },
     "geometry": {
       "coordinates": [106.664057, 10.74251],
@@ -790,7 +913,10 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": false,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": true
     },
     "geometry": {
       "coordinates": [106.6921575, 10.744346],
@@ -809,7 +935,10 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": false,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": false
     },
     "geometry": {
       "coordinates": [106.6709268, 10.7373351],
@@ -828,7 +957,10 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": true,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": true
     },
     "geometry": {
       "coordinates": [106.6879354, 10.7494281],
@@ -847,7 +979,10 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": true,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": true
     },
     "geometry": {
       "coordinates": [106.7161322, 10.7383738],
@@ -866,7 +1001,11 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": true,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": true,
+      "status": true
     },
     "geometry": {
       "coordinates": [106.6957075, 10.742807],
@@ -885,7 +1024,10 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": false,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": true
     },
     "geometry": {
       "coordinates": [106.7014092, 10.7442783],
@@ -904,7 +1046,10 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": true,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": true
     },
     "geometry": {
       "coordinates": [106.7033901, 10.7397122],
@@ -923,7 +1068,10 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": true,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": true
     },
     "geometry": {
       "coordinates": [106.7047595, 10.7488854],
@@ -942,7 +1090,10 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": true,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": false
     },
     "geometry": {
       "coordinates": [106.7051246, 10.7442729],
@@ -961,7 +1112,10 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": false,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": true
     },
     "geometry": {
       "coordinates": [106.709346, 10.7454277],
@@ -980,7 +1134,10 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": false,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": true
     },
     "geometry": {
       "coordinates": [106.7136264, 10.7400201],
@@ -999,7 +1156,10 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": true,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": true
     },
     "geometry": {
       "coordinates": [106.7094158, 10.7475359],
@@ -1018,7 +1178,10 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": true,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": true
     },
     "geometry": {
       "coordinates": [106.7284166, 10.7467806],
@@ -1037,7 +1200,10 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": false,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": true
     },
     "geometry": {
       "coordinates": [106.7159052, 10.7404065],
@@ -1056,7 +1222,10 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": false,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": true
     },
     "geometry": {
       "coordinates": [106.7157339, 10.7438585],
@@ -1075,7 +1244,10 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": true,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": false
     },
     "geometry": {
       "coordinates": [106.715655, 10.7490564],
@@ -1094,7 +1266,10 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": false,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": true
     },
     "geometry": {
       "coordinates": [106.7099539, 10.7467229],
@@ -1113,7 +1288,10 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": false,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": true
     },
     "geometry": {
       "coordinates": [106.6980859, 10.7499429],
@@ -1132,7 +1310,10 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": true,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": true
     },
     "geometry": {
       "coordinates": [106.7260742, 10.7547603],
@@ -1151,7 +1332,10 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": true,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": true
     },
     "geometry": {
       "coordinates": [106.7123981, 10.7386915],
@@ -1170,7 +1354,10 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": true,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": true
     },
     "geometry": {
       "coordinates": [106.721494, 10.7400197],
@@ -1189,7 +1376,10 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": false,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": true
     },
     "geometry": {
       "coordinates": [106.6263793, 10.7093731],
@@ -1208,7 +1398,10 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": false,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": true
     },
     "geometry": {
       "coordinates": [106.71522, 10.738097],
@@ -1227,7 +1420,10 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": false,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": true
     },
     "geometry": {
       "coordinates": [106.7002387, 10.739119],
@@ -1246,7 +1442,10 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": true,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": true
     },
     "geometry": {
       "coordinates": [106.7049986, 10.750315],
@@ -1265,7 +1464,10 @@
       "place_type": "Trường Học",
       "size": "2.5mx10m",
       "type": "Trụ cụm,pano",
-      "type_advertise": "Cổ động chính trị"
+      "type_advertise": "Cổ động chính trị",
+      "zoning": true,
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": true
     },
     "geometry": {
       "coordinates": [106.7040284, 10.7516677],
