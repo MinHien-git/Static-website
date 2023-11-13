@@ -28,17 +28,64 @@ function setInfoBoard() {
   if (current_feature) {
     infoboards.innerHTML = "";
     infoboards.innerHTML = `<div class="info_container">
-        <div class="info_container-image1"></div>
-        <div class="info_container-image2"></div>
+        <div class="info-close"><img src = "../assets/images/close.png"></div>
+        <div class="info_container-image1"><img class="ad-image" src = "${
+          current_feature.properties.image
+        }" alt = "image-1"></div>
+        <div class="info_container-image2"><img class="ad-image" src = "${
+          current_feature.properties.image
+        }" alt = "image-2"></div>
         <div class="info-container-info">
-        <h2>${current_feature.properties.type}</h2>
-        <p>${current_feature.properties.place}</p>
-        <p>Kích thước: <span class="bold">${current_feature.properties.size}</span></p>
-        <p>Số lượng: <span class="bold">${current_feature.properties.amount}</span></p>
-        <p>Hình thức: <span class="bold">${current_feature.properties.type_advertise}</span></p>
-        <p>Phân Loại: <span class="bold">${current_feature.properties.place_type}</span></p>
-      </div>
+          <h2>${current_feature.properties.type}</h2>
+          <p>${current_feature.properties.place}</p>
+          <p>Kích thước: <span class="bold">${
+            current_feature.properties.size
+          }</span></p>
+          <p>Số lượng: <span class="bold">${
+            current_feature.properties.amount
+          }</span></p>
+          <p>Hình thức: <span class="bold">${
+            current_feature.properties.type_advertise
+          }</span></p>
+          <p>Phân Loại: <span class="bold">${
+            current_feature.properties.place_type
+          }</span></p>
+        </div>
+        ${
+          is_offical
+            ? `<div class="info-container-info">
+            <h3>Thông tin công ty</h3>
+          <p>Thông tin công ty: <span class="bold">ABC Company</span></p>
+          <p>Liên lạc: <span class="bold">ABCCompany@email.com</span></p>
+          <p>Ngày bắt đầu: <span class="bold">dd/mm/yyyy</span></p>
+          <p>Ngày kết thúc đầu: <span class="bold">dd/mm/yyyy</span></p>
+          <p>Trạng thái: <span class="bold status ${
+            current_feature.properties.status ? "complete" : ""
+          }">${
+                current_feature.properties.status ? "Đã duyệt" : "Chưa duyệt"
+              }</span></p>
+          ${
+            !current_feature.properties.status
+              ? `<div class="flex button-container"><button class="request"><img src="../assets/images/information.png" alt="report">Cấp phép</button><button class="report"><img src="../assets/images/red-edit.png" alt="report">Huỷ yêu cầu</button></div>`
+              : ""
+          }
+          
+        </div>`
+            : ""
+        }
       </div>`;
+
+    $(".info-close").on("click", () => {
+      console.log("click");
+      infoboards.classList.remove("active");
+    });
+    let request_btn = $("#info .request");
+    if (request_btn) {
+      request_btn.on("click", () => {
+        console.log("click");
+        get_resquest(current_feature.properties.place);
+      });
+    }
   }
 }
 
@@ -129,10 +176,21 @@ window.onload = function () {
 
       attributionDiv.innerHTML = `<h3>${feature.properties.type}</h3>
           <p>${feature.properties.place}</p>
-          <p>Kích thước: <span class="bold">${feature.properties.size}</span></p>
-          <p>Số lượng: <span class="bold">${feature.properties.amount}</span></p>
-          <p>Hình thức: <span class="bold">${feature.properties.type_advertise}</span></p>
-          <p>Phân Loại: <span class="bold">${feature.properties.place_type}</span></p>
+          <p>Kích thước: <span class="bold">${
+            feature.properties.size
+          }</span></p>
+          <p>Số lượng: <span class="bold">${
+            feature.properties.amount
+          }</span></p>
+          <p>Hình thức: <span class="bold">${
+            feature.properties.type_advertise
+          }</span></p>
+          <p>Phân Loại: <span class="bold">${
+            feature.properties.place_type
+          }</span></p>
+          <p>Quy Hoạch: <span class="bold">${
+            feature.properties.zoning ? "Đã Quy Hoạch" : "Chưa Quy Hoạch"
+          }</span></p>
           `;
       info_button.innerHTML = `<img src="../assets/images/information.png" alt="information">Thông tin`;
       report_button.innerHTML = is_offical
@@ -161,17 +219,16 @@ window.onload = function () {
       );
     },
     style: function (feature) {
-      switch (feature.properties.place_type) {
-        case "Đất Công/Công viên/Hành lang":
-          return {
-            color: "#ff0000",
-            fillColor: "#ff0000",
-          };
-        case "Trường Học":
-          return {
-            color: "#0000ff",
-            fillColor: "#0000ff",
-          };
+      if (!feature.properties.zoning) {
+        return {
+          color: "#ff0000",
+          fillColor: "#ff0000",
+        };
+      } else {
+        return {
+          color: "#0000ff",
+          fillColor: "#0000ff",
+        };
       }
     },
   }).addTo(map);

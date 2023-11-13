@@ -1,4 +1,5 @@
-#report-popup {
+#report-popup,
+#request-popup {
   display: none;
   width: 100vw;
   height: 100vh;
@@ -9,18 +10,31 @@
   z-index: 101;
   background-color: hsl(0 0% 95%/ 80%);
 }
-.active#report-popup {
+.active#report-popup,
+.active#request-popup {
   display: flex;
 }
-#report-popup textarea {
+#report-popup textarea,
+#request-popup textarea {
   font-size: 0.75rem;
   resize: none;
   padding-inline: 0.5rem;
   height: auto;
   padding-block: 0.5rem 1rem;
 }
-#report-popup input[type="file"] {
+#report-popup input[type="file"],
+#request-popup input[type="file"] {
   display: none;
+}
+
+#request-popup .date-information {
+  justify-content: space-around;
+  width: 75%;
+  gap: 1rem;
+}
+
+#request-popup .date-information > * {
+  width: 50%;
 }
 #report-section-form-container {
   width: 80%;
@@ -153,13 +167,15 @@ hr {
   color: rgb(0, 132, 255);
 }
 
-#inscreen-report-close {
+#inscreen-report-close,
+#inscreen-request-close {
   width: 1.25rem;
   height: 1.25rem;
   display: flex;
   position: absolute;
   right: 1.5rem;
   top: 1.5rem;
+  cursor: pointer;
 }
 
 #inscreen-form-login > .form-section:last-child {
