@@ -34,14 +34,19 @@ body {
     display: grid;
     grid-template-columns: calc(100% - 16rem) 8rem 8rem;
     grid-template-rows: 2.5rem 2.5rem;
-    * {
-        margin: 0.25rem;
-    }
-    button {
-        color: white;
-        border: 0;
-        border-radius: 0.2rem;
-    }
+}
+
+#title-container > * {
+    margin: 0.25rem;
+}
+#title-container > button {
+    color: white;
+    border: 0;
+    border-radius: 0.2rem;
+}
+
+#primary-header {
+    position: fixed;
 }
 
 #search-bar{
