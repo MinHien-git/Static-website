@@ -48,12 +48,17 @@
   width: 1.25rem;
 }
 
+#primary-items-list li {
+  cursor: pointer;
+}
+
 #primary-items-list * {
   position: relative;
   opacity: 0;
   transform: translateY(2rem);
   transition: 250ms all ease-in-out;
 }
+
 .active #primary-items-list * {
   position: relative;
   transform: translateY(0);
