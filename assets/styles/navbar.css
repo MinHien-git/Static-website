@@ -1,6 +1,6 @@
 #primary-header {
 	display: flex;
-	position: fixed;
+	position: sticky;
 	left: 0;
 	box-shadow: none;
 	width: 100vw;
