@@ -7,6 +7,9 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	-moz-user-select: auto;
+	-webkit-text-select: auto;
+	-webkit-user-select: auto;
 }
 
 img {
@@ -25,7 +28,7 @@ textarea {
 :root {
 	/* FONTS*/
 	--FF: "Roboto Mono", "Courier New", Courier, monospace;
-	--FS: clamp(1rem, 2vh, 1.3rem);
+	--FS: clamp(1rem, 1.5vh, 1.2rem);
 
 	/* COLORS*/
 	--BGCOLOR-FADE: rgb(252, 220, 160);
@@ -68,6 +71,10 @@ textarea {
 	text-align: center;
 }
 
+.hidden {
+	display: none;
+}
+
 /* || GENERAL STYLES */
 * {
 	scroll-behavior: smooth;
@@ -75,51 +82,11 @@ textarea {
 	font-family: var(--FF);
 }
 
-.wrapper .search__form button {
-	margin-right: 0.5%;
+.wrapper {
+	display: flex;
+	align-content: stretch;
 }
 
-#page__title {
-	margin: 2rem 0 3rem 0;
-}
-
-#map__btn {
-	float: right;
-	margin: 0 0.4rem 1rem 0;
-	width: 13.4rem;
-}
-
-#search__btn {
-	margin-right: 2.5%;
-}
-
-.search__form {
-	clear: both;
-}
-
-table {
-	border-collapse: collapse;
-}
-
-.info__table {
-	margin-top: 2rem;
-	vertical-align: middle;
-}
-
-.tr__info__wrapper {
-	margin: 0 2.5rem;
-}
-
-.tr__info__image {
-	width: 100%;
-	height: auto;
-}
-
-.accordion {
-	--bs-accordion-color: #000;
-	--bs-accodion-btn-bg: #ffffff00;
-	--bs-accordion-btn-bg: #ffffff00;
-	--bs-accordion-active-bg: #ffffff00;
-	--bs-accordion-btn-focus-box-shadow: none;
-	--bs-accordion-btn-focus-box-shadow: none;
+html {
+	overflow-x: visible;
 }
