@@ -8,7 +8,8 @@ burger.on("click", (e) => {
 
 let navbar = document.querySelectorAll("#primary-items-list li");
 navbar.forEach((e) => {
-    e.addEventListener("mouseover", () => { 
+    e.addEventListener("mouseover", () => {
+        e.style.transition = "color 50ms ease-in-out";
         e.style.color = "hsl(219, 90%, 69%)";
     });
     e.addEventListener("mouseout", () => {

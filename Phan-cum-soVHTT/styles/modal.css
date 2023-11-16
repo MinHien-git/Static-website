@@ -1,0 +1,22 @@
+#modal-btn {
+    background-color: transparent;
+    border-radius: 50%;
+    font-size: 13px;
+    color:black;
+    position: absolute;
+    padding-left: 9%;
+    padding-right: 7%;
+}
+
+modal-body {
+    padding-right: 30;
+}
+
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
