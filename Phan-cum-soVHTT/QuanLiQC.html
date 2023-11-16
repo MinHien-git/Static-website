@@ -29,6 +29,8 @@
 		<link rel="stylesheet" href="../assets/styles/navbar.css" />
 		<link rel="stylesheet" href="styles/navbar.css" />
 		<link rel="stylesheet" href="styles/page_content.css" />
+
+		<script src="./scripts/billboard_list.js"></script>
 	</head>
 
 	<body>
@@ -44,7 +46,7 @@
 								id="nav__item__icon"></i>
 							<span>user name</span>
 						</li>
-						<li id="profile">
+						<li id="profile" class="current">
 							<i class="bi bi-clipboard2-check" id="nav__item__icon"></i>
 							<span>Quản lí điểm QC</span>
 						</li>
@@ -118,9 +120,10 @@
 									<li class="list__col3">Đã cấp phép</li>
 									<li class="list__col4">
 										<button
-											class="btn"
+											class="btn collapsed"
 											id="collapse__btn"
 											type="button"
+											onclick="toggleCollapseButton()"
 											data-bs-toggle="collapse"
 											data-bs-target="#full__info1"
 											aria-expanded="false"

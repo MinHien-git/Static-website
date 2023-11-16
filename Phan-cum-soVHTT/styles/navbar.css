@@ -13,10 +13,19 @@ header * {
 	width: 13.5rem;
 }
 
+#primary-items-list li {
+	width: 100%;
+}
+
 #nav__item__icon {
 	color: rgb(59, 123, 250);
 }
 
 #logout__icon {
 	color: red;
+}
+
+.current {
+	background-color: rgba(0, 89, 255, 0.2);
+	border-radius: 2;
 }
