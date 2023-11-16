@@ -1,6 +1,6 @@
 #primary-header {
 	display: flex;
-	position: sticky;
+	position: fixed;
 	left: 0;
 	box-shadow: none;
 	width: 100vw;
@@ -142,7 +142,7 @@
 		overflow: hidden;
 		text-overflow: ellipsis;
 		transform: scale(0);
-		transition: all 500ms ease-in;
+		transition: opacity 500ms ease-in, color 50ms ease-in-out;;
 	}
 
 	.active #primary-items-list span {

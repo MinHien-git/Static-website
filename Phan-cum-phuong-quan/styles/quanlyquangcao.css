@@ -128,15 +128,12 @@ main .table{
 }
 
 #content>#table>ul> li> ul> li:nth-child(2){
-    width: calc(100% - 18rem);
+    width: calc(100% - 14rem);
     text-overflow: clip;
 }
 
-#content>#table>ul> li>ul>li:nth-child(3){
-    width: 6rem;
-}
-
-#content>#table>ul> li>ul>label:nth-child(4){
+#content>#table>ul> li>ul>label:nth-child(3){
+    padding: auto;
     margin: 0 auto;
 }
 

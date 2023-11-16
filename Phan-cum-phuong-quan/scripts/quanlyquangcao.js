@@ -18,7 +18,6 @@ function createCard(advertisement) {
     <ul>
         <li>${advertisement.type_billboard}</li>
         <li>${advertisement.address}</li>
-        <li>${advertisement.license? "Đã duyệt": "Chưa duyệt"}</li>
         <label for=${advertisement.globalid}><img src="../assets/images/down-arrow.svg" alt="Chi tiết" id="info-image-1"></label>
     </ul>
     <input type="checkbox" class="card-checkbox" id=${advertisement.globalid}>
