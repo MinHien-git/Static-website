@@ -17,6 +17,11 @@
       crossorigin="anonymous"
     />
 
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
       integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
@@ -26,6 +31,9 @@
     <link rel="stylesheet" href="./styles/trangchu.css" />
     <link rel="stylesheet" href="../assets/styles/navbar.css" />
     <link rel="stylesheet" href="../assets/styles/global.css" />
+    <link rel="stylesheet" href="./styles/report.css" />
+    <link rel="stylesheet" href="../assets/styles/editor.css" />
+    <link rel="stylesheet" href="./styles/danhsach.css">
     <link rel="stylesheet" href="./styles/quanlyquangcao.css" />
     <link
       rel="stylesheet"
@@ -33,8 +41,6 @@
       integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
       crossorigin=""
     />
-    <link rel="stylesheet" href="./styles/report.css" />
-    <link rel="stylesheet" href="../assets/styles/editor.css" />
   </head>
   <body>
     <script src="../assets/scripts/navbar.js" defer></script>
@@ -43,33 +49,29 @@
       <nav id="primary-navigation-bar">
         <ul id="primary-items-list">
           <li id="profile">
-            <img src="../assets/images/profile.png" alt="profile" />
+            <i class="bi bi-person-circle vertical__center nav__item__icon"></i>
             <span>user name</span>
           </li>
           <li id="report-list">
-            <img src="../assets/images/list.png" alt="list" />
+            <i class="bi bi-clipboard2-check nav__item__icon"></i>
             <span>Danh sách báo cáo</span>
           </li>
           <li id="license-list">
-            <img src="../assets/images/check.png" alt="check" />
+            <i class="bi bi-check-circle nav__item__icon"></i>
             <span>Yêu cầu cấp phép</span>
           </li>
           <li id="edit-list">
-            <img src="../assets/images/edit.png" alt="edit" />
+            <i class="bi bi-pencil nav__item__icon"></i>
             <span>Yêu cầu chỉnh sửa</span>
           </li>
           <li id="billboard-list">
-            <img src="../assets/images/billboard.png" alt="billboard" />
+            <i class="bi bi-signpost-2 nav__item__icon"></i>
             <span>Danh sách quảng cáo</span>
           </li>
           <li>
             <form id="logout" method="post" action="/logout">
               <button type="submit">
-                <img
-                  id="logout"
-                  src="../assets/images/logout.png"
-                  alt="logout"
-                />
+                <i class="bi bi-box-arrow-left" id="logout"></i>
                 <span>Đăng xuất</span>
               </button>
             </form>
@@ -77,7 +79,28 @@
         </ul>
       </nav>
     </header>
-    <div id="content">
+
+    <div id="content" class="flex official">
+      <div id="title-container">
+        <h1 style="grid-area: 1/1">Quản lý điểm quảng cáo</h1>
+        <form style="grid-area: 2/1" id="search-bar-container">
+          <input
+            id="search-bar"
+            type="text"
+            placeholder="Enter an address here"
+          />
+        </form>
+        <button style="grid-area: 1/2/2/4;" class="btn blue-button" type="button" id="to-map-btn">
+          Xem trên bản đồ
+        </button>
+        <button style="grid-area: 2/2;" class="btn black-button" type="button" id="sort-btn">
+          Sắp xếp
+        </button>
+        <button style="grid-area: 2/3;" class="btn black-button" type="button" id="filter-btn">
+          Lọc...
+        </button>
+      </div>
+
       <div id="table">
         <ul>
           <li>
