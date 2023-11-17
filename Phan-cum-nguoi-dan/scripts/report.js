@@ -1,11 +1,11 @@
-let report_node 
+let report_node;
 
 function get_report(position) {
-    if(report_node){
-        body.removeChild(report_node)
-    }
-    let report = `
-          <div id="report-section-form-container">
+  if (report_node) {
+    body.removeChild(report_node);
+  }
+  let report = `
+          <div id="report-section-form-container" class ="popup">
           <div id="authentication-close-button" class="authentication-close-button">
             <img
               id="inscreen-report-close"
@@ -65,6 +65,7 @@ function get_report(position) {
                 />
               </div>
             </div>
+            
             <div class="form-section">
               <label for="tel">Thông tin báo cáo:</label>
               <div id="editor"></div>
@@ -74,20 +75,20 @@ function get_report(position) {
             </div>
           </form>
         </div>`;
-    report_node =document.createElement("section");
-    report_node.setAttribute("id","report-popup")
-    report_node.classList.add("active")
+  report_node = document.createElement("section");
+  report_node.setAttribute("id", "report-popup");
+  report_node.classList.add("active");
 
-    report_node.innerHTML += report
-    body.append(report_node);
+  report_node.innerHTML += report;
+  body.append(report_node);
 
-    var close = $("#inscreen-report-close")
-    close.on("click",()=>{
-        body.removeChild(report_node)
-        report_node = null
-    })
+  var close = $("#inscreen-report-close");
+  close.on("click", () => {
+    body.removeChild(report_node);
+    report_node = null;
+  });
 
-    var quill = new Quill('#editor', {
-        theme: 'snow'
-     });
+  var quill = new Quill("#editor", {
+    theme: "snow",
+  });
 }

@@ -69,6 +69,13 @@
   z-index: 999;
 }
 
+.leaflet-popup-content h3 {
+  font-size: 1.25rem;
+}
+.leaflet-popup-content h4 {
+  font-size: 0.825rem;
+}
+
 .leaflet-popup-content > *:not(.button_container) {
   margin-block: 0 !important;
   margin: 0;
@@ -88,11 +95,17 @@
   color: #ffdcdc;
   border: 0;
 }
-
+.request-edit {
+  background-color: #ff7b7b;
+  color: #329a43;
+  border: 3px solid #65bb72;
+  background-color: #cfffd7;
+}
 .info,
 .report,
 .edit,
-.request {
+.request,
+.request-edit {
   width: 48%;
   display: flex;
   align-items: center;
@@ -105,7 +118,8 @@
 .info img,
 .report img,
 .edit img,
-.request img {
+.request img,
+.request-edit img {
   height: 1rem;
   width: 1rem;
   margin-right: 10px;
@@ -225,4 +239,12 @@
 .info-close img {
   width: 100%;
   height: 100%;
+}
+
+.popup h5 {
+  font-size: 0.825rem;
+}
+
+.popup h2 {
+  font-size: 1rem;
 }

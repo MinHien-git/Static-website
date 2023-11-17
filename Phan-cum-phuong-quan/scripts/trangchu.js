@@ -1,1 +1,1 @@
-let is_offical = true;
+let is_offical = 1;
