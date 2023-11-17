@@ -29,6 +29,8 @@
 		<link rel="stylesheet" href="../assets/styles/navbar.css" />
 		<link rel="stylesheet" href="styles/navbar.css" />
 		<link rel="stylesheet" href="styles/page_content.css" />
+
+		<script src="./scripts/billboard_list.js"></script>
 	</head>
 
 	<body>
@@ -44,7 +46,7 @@
 								id="nav__item__icon"></i>
 							<span>user name</span>
 						</li>
-						<li id="profile">
+						<li id="profile" class="current">
 							<i class="bi bi-clipboard2-check" id="nav__item__icon"></i>
 							<span>Quản lí điểm QC</span>
 						</li>
@@ -118,9 +120,10 @@
 									<li class="list__col3">Đã cấp phép</li>
 									<li class="list__col4">
 										<button
-											class="btn"
+											class="btn collapsed"
 											id="collapse__btn"
 											type="button"
+											onclick="toggleCollapseButton()"
 											data-bs-toggle="collapse"
 											data-bs-target="#full__info1"
 											aria-expanded="false"
@@ -199,273 +202,6 @@
 								</div>
 							</div>
 						</div>
-						<!-- <div class="card shadow-sm">
-							<div class="card-header" id="brief__info2">
-								<ul class="list__flex">
-									<li class="list__col1">Cụm pano</li>
-									<li class="list__col2">123 Đường ABC, Quận XX</li>
-									<li class="list__col3">Đã cấp phép</li>
-									<li class="list__col4">
-										<button
-											class="btn"
-											id="collapse__btn"
-											type="button"
-											data-bs-toggle="collapse"
-											data-bs-target="#full__info2"
-											aria-expanded="false"
-											aria-controls="full__info2">
-											<i class="bi bi-chevron-down"></i>
-										</button>
-									</li>
-								</ul>
-							</div>
-							<div
-								id="full__info2"
-								class="collapse"
-								aria-labelledby="brief__info2"
-								data-bs-parent="#billboards__list">
-								<div class="card-body">
-									<ul id="full__info__list">
-										<li class="mock__image__container">
-											<div class="mock__image">&nbsp;</div>
-											<div class="mock__image">&nbsp;</div>
-										</li>
-										<li>
-											<p class="fw-bold">Thông tin bảng quảng cáo</p>
-											<ul>
-												<li>
-													Kích thước: <span class="fw-bold">**m x **m</span>
-												</li>
-												<li>
-													Số lượng:
-													<span class="fw-bold">1 trụ / 1 bảng</span>
-												</li>
-												<li>
-													Hình thức:
-													<span class="fw-bold"> Cổ động chính trị</span>
-												</li>
-												<li>
-													Phân loại: <span class="fw-bold">Trường học</span>
-												</li>
-											</ul>
-										</li>
-										<li>
-											<p class="fw-bold">Thông tin công ty</p>
-											<ul>
-												<li>
-													Tên công ty:
-													<span class="fw-bold">Công ty ABC</span>
-												</li>
-												<li>
-													Email liên hệ:
-													<span class="fw-bold">ctyABC@email.com</span>
-												</li>
-												<li>
-													Ngày bắt đầu:
-													<span class="fw-bold"> dd/MM/yyyy</span>
-												</li>
-												<li>
-													Ngày kết thúc:
-													<span class="fw-bold">dd/MM/yyyy</span>
-												</li>
-											</ul>
-										</li>
-										<li>
-											<ul class="buttons__container">
-												<li>
-													<button class="btn btn-outline-warning me-3">
-														<i class="bi bi-pencil"></i>Chỉnh sửa
-													</button>
-												</li>
-												<li>
-													<button class="btn btn-danger">
-														<i class="bi bi-trash"></i>Xoá
-													</button>
-												</li>
-											</ul>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<div class="card shadow-sm">
-							<div class="card-header" id="brief__info3">
-								<ul class="list__flex">
-									<li class="list__col1">Cụm pano</li>
-									<li class="list__col2">123 Đường ABC, Quận XX</li>
-									<li class="list__col3">Đã cấp phép</li>
-									<li class="list__col4">
-										<button
-											class="btn"
-											id="collapse__btn"
-											type="button"
-											data-bs-toggle="collapse"
-											data-bs-target="#full__info3"
-											aria-expanded="false"
-											aria-controls="full__info3">
-											<i class="bi bi-chevron-down"></i>
-										</button>
-									</li>
-								</ul>
-							</div>
-							<div
-								id="full__info3"
-								class="collapse"
-								aria-labelledby="brief__info3"
-								data-bs-parent="#billboards__list">
-								<div class="card-body">
-									<ul id="full__info__list">
-										<li class="mock__image__container">
-											<div class="mock__image">&nbsp;</div>
-											<div class="mock__image">&nbsp;</div>
-										</li>
-										<li>
-											<p class="fw-bold">Thông tin bảng quảng cáo</p>
-											<ul>
-												<li>
-													Kích thước: <span class="fw-bold">**m x **m</span>
-												</li>
-												<li>
-													Số lượng:
-													<span class="fw-bold">1 trụ / 1 bảng</span>
-												</li>
-												<li>
-													Hình thức:
-													<span class="fw-bold"> Cổ động chính trị</span>
-												</li>
-												<li>
-													Phân loại: <span class="fw-bold">Trường học</span>
-												</li>
-											</ul>
-										</li>
-										<li>
-											<p class="fw-bold">Thông tin công ty</p>
-											<ul>
-												<li>
-													Tên công ty:
-													<span class="fw-bold">Công ty ABC</span>
-												</li>
-												<li>
-													Email liên hệ:
-													<span class="fw-bold">ctyABC@email.com</span>
-												</li>
-												<li>
-													Ngày bắt đầu:
-													<span class="fw-bold"> dd/MM/yyyy</span>
-												</li>
-												<li>
-													Ngày kết thúc:
-													<span class="fw-bold">dd/MM/yyyy</span>
-												</li>
-											</ul>
-										</li>
-										<li>
-											<ul class="buttons__container">
-												<li>
-													<button class="btn btn-outline-warning me-3">
-														<i class="bi bi-pencil"></i>Chỉnh sửa
-													</button>
-												</li>
-												<li>
-													<button class="btn btn-danger">
-														<i class="bi bi-trash"></i>Xoá
-													</button>
-												</li>
-											</ul>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<div class="card shadow-sm">
-							<div class="card-header" id="brief__info4">
-								<ul class="list__flex">
-									<li class="list__col1">Cụm pano</li>
-									<li class="list__col2">123 Đường ABC, Quận XX</li>
-									<li class="list__col3">Đã cấp phép</li>
-									<li class="list__col4">
-										<button
-											class="btn"
-											id="collapse__btn"
-											type="button"
-											data-bs-toggle="collapse"
-											data-bs-target="#full__info4"
-											aria-expanded="false"
-											aria-controls="full__info4">
-											<i class="bi bi-chevron-down"></i>
-										</button>
-									</li>
-								</ul>
-							</div>
-							<div
-								id="full__info4"
-								class="collapse"
-								aria-labelledby="brief__info4"
-								data-bs-parent="#billboards__list">
-								<div class="card-body">
-									<ul id="full__info__list">
-										<li class="mock__image__container">
-											<div class="mock__image">&nbsp;</div>
-											<div class="mock__image">&nbsp;</div>
-										</li>
-										<li>
-											<p class="fw-bold">Thông tin bảng quảng cáo</p>
-											<ul>
-												<li>
-													Kích thước: <span class="fw-bold">**m x **m</span>
-												</li>
-												<li>
-													Số lượng:
-													<span class="fw-bold">1 trụ / 1 bảng</span>
-												</li>
-												<li>
-													Hình thức:
-													<span class="fw-bold"> Cổ động chính trị</span>
-												</li>
-												<li>
-													Phân loại: <span class="fw-bold">Trường học</span>
-												</li>
-											</ul>
-										</li>
-										<li>
-											<p class="fw-bold">Thông tin công ty</p>
-											<ul>
-												<li>
-													Tên công ty:
-													<span class="fw-bold">Công ty ABC</span>
-												</li>
-												<li>
-													Email liên hệ:
-													<span class="fw-bold">ctyABC@email.com</span>
-												</li>
-												<li>
-													Ngày bắt đầu:
-													<span class="fw-bold"> dd/MM/yyyy</span>
-												</li>
-												<li>
-													Ngày kết thúc:
-													<span class="fw-bold">dd/MM/yyyy</span>
-												</li>
-											</ul>
-										</li>
-										<li>
-											<ul class="buttons__container">
-												<li>
-													<button class="btn btn-outline-warning me-3">
-														<i class="bi bi-pencil"></i>Chỉnh sửa
-													</button>
-												</li>
-												<li>
-													<button class="btn btn-danger">
-														<i class="bi bi-trash"></i>Xoá
-													</button>
-												</li>
-											</ul>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div> -->
 					</div>
 				</div>
 			</main>
