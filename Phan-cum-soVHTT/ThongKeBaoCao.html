@@ -112,7 +112,7 @@
 						<div class="card shadow-sm">
 							<div class="card-header" id="brief__info1">
 								<ul class="list__flex">
-									<li class="list__col1">Cụm pano</li>
+									<li class="list__col1">Tố giác sai phạm</li>
 									<li class="list__col2">123 Đường ABC, Phường Y, Quận XX</li>
 									<li class="list__col3">16/3/2023</li>
 									<li class="list__col4" style="color: gold">Chờ xử lí</li>
@@ -159,11 +159,136 @@
                                         </div>
                                     </div>
                                 </div>
+
+
                                 
 									</li>
 								</ul>
 							</div>
 						</div>
+
+
+						<div class="card shadow-sm">
+							<div class="card-header" id="brief__info2">
+								<ul class="list__flex">
+									<li class="list__col1">Đóng góp ý kiến</li>
+									<li class="list__col2">123 Đường ABC, Phường Y, Quận XX</li>
+									<li class="list__col3">19/3/2023</li>
+									<li class="list__col4" style="color: green">Đã xử lí</li>
+									<li class="list__col5">
+										<!-- Modal trigger button -->
+										<button
+											class="btn btn-light"
+											id="modal-btn"
+											type="button"
+											data-bs-toggle="modal"
+											data-bs-target="#modal1">
+											...
+										</button>
+                                <!-- Modal Body -->
+                                <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
+                                <div class="modal fade" id="modal1" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitle1" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title fw-bold" id="modalTitle">&ensp;Chi tiết báo cáo</h4>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="m-btn"></button>
+                                            </div>
+                                            <div class="modal-body">
+										        <p><strong>Tên người gửi:</strong>Nguyễn Văn A</p>
+										        <p><strong>Email:</strong>anhA@gmail.com</p>
+										        <p><strong>Số điện thoại:</strong>0123456789</p>
+										        <p><strong>Địa điểm quảng cáo:</strong>Đường ABC...</p>
+                                                <p> </p>
+                                                <h5 class="fw-bold">&ensp; Nội dung báo cáo</h5>
+                                                <p><strong>Mô tả:</strong>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate deleniti dolores eius quis, praesentium ullam id eligendi repellendus corrupti dolorem!</p>
+                                                <p><strong>Hình ảnh</strong></p>
+                                                <img
+											        src="/assets/images/bien-quang-cao-1024x683.jpg"
+                                                    id="img1">
+                                                <p><strong>Cách thức xử lí</strong></p>
+                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At deserunt unde earum rem nobis doloribus ratione vitae ipsum animi. Illum tempora non exercitationem dicta ratione.</p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-success" id="m-btn" data-bs-toggle="modal" onclick="showAlert1();">Cấp phép</button>
+											
+                                                <button type="button" class="btn btn-primary" id="m-btn" data-bs-toggle="modal" data-bs-target="#modalInput" onclick="showInput()">Y/c đổi cách thức</button>
+                                                <button type="button" class="btn btn-danger" id="m-btn" data-bs-toggle="modal" data-bs-target="#modalConfirm" onclick="showConfirm()">Bác bỏ</button> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+								
+                                
+									</li>
+								</ul>
+							</div>
+						</div>
+
+
+
+						<div class="card shadow-sm">
+							<div class="card-header" id="brief__info3">
+								<ul class="list__flex">
+									<li class="list__col1">Giải đáp thắc mắc</li>
+									<li class="list__col2">123 Đường ABC, Phường Y, Quận XX</li>
+									<li class="list__col3">9/11/2023</li>
+									<li class="list__col4" style="color: red">Đã bác bỏ</li>
+									<li class="list__col5">
+										<!-- Modal trigger button -->
+										<button
+											class="btn btn-light"
+											id="modal-btn"
+											type="button"
+											data-bs-toggle="modal"
+											data-bs-target="#modal1">
+											...
+										</button>
+                                <!-- Modal Body -->
+                                <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
+                                <div class="modal fade" id="modal1" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitle1" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title fw-bold" id="modalTitle">&ensp;Chi tiết báo cáo</h4>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="m-btn"></button>
+                                            </div>
+                                            <div class="modal-body">
+										        <p><strong>Tên người gửi:</strong>Nguyễn Văn A</p>
+										        <p><strong>Email:</strong>anhA@gmail.com</p>
+										        <p><strong>Số điện thoại:</strong>0123456789</p>
+										        <p><strong>Địa điểm quảng cáo:</strong>Đường ABC...</p>
+                                                <p> </p>
+                                                <h5 class="fw-bold">&ensp; Nội dung báo cáo</h5>
+                                                <p><strong>Mô tả:</strong>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate deleniti dolores eius quis, praesentium ullam id eligendi repellendus corrupti dolorem!</p>
+                                                <p><strong>Hình ảnh</strong></p>
+                                                <img
+											        src="/assets/images/bien-quang-cao-1024x683.jpg"
+                                                    id="img1">
+                                                <p><strong>Cách thức xử lí</strong></p>
+                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At deserunt unde earum rem nobis doloribus ratione vitae ipsum animi. Illum tempora non exercitationem dicta ratione.</p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-success" id="m-btn" data-bs-toggle="modal" onclick="showAlert1();">Cấp phép</button>
+											
+                                                <button type="button" class="btn btn-primary" id="m-btn" data-bs-toggle="modal" data-bs-target="#modalInput" onclick="showInput()">Y/c đổi cách thức</button>
+                                                <button type="button" class="btn btn-danger" id="m-btn" data-bs-toggle="modal" data-bs-target="#modalConfirm" onclick="showConfirm()">Bác bỏ</button> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+								
+                                
+									</li>
+								</ul>
+							</div>
+						</div>
+
+
 					</div>
 				</div>
 			</main>
