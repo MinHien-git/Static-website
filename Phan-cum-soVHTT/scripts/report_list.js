@@ -61,7 +61,7 @@ function reportTypeColor(report_type) {
 			color = "#db3232"
 			break
 		}
-		case "Đăng kí nội dung": {
+		case "Đăng ký nội dung": {
 			color = "#3a65d6"
 			break
 		}
@@ -74,7 +74,7 @@ function reportTypeColor(report_type) {
 			break
 		}
 		default: {
-			color = "#db3232"
+			color = "#e7b400"
 			break
 		}
 	}
