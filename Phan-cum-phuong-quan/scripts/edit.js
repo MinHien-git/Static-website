@@ -5,7 +5,7 @@ function get_report(position) {
     body.removeChild(report_node);
   }
   let report = `
-    <section class="active" id="report-popup">
+    <section class="active popup" id="report-popup">
     <div id="report-section-form-container">
     <div id="inscreen-report-close" class="inscreen-report-close">
       <img
@@ -47,6 +47,7 @@ function get_report(position) {
           />
         </div>
       </div>
+      
       <div class="form-section">
         <label for="name">Thời điểm chỉnh sửa:</label>
         <input

@@ -51,22 +51,27 @@ function setInfoBoard() {
             current_feature.properties.place_type
           }</span></p>
         </div>
+        <div class="info-container-info">
+        <h3>Thông tin công ty</h3>
+        <p>Thông tin công ty: <span class="bold">ABC Company</span></p>
+        <p>Liên lạc: <span class="bold">ABCCompany@email.com</span></p>
+        <p>Ngày bắt đầu: <span class="bold">dd/mm/yyyy</span></p>
+        <p>Ngày kết thúc đầu: <span class="bold">dd/mm/yyyy</span></p>
         ${
-          is_offical
-            ? `<div class="info-container-info">
-            <h3>Thông tin công ty</h3>
-          <p>Thông tin công ty: <span class="bold">ABC Company</span></p>
-          <p>Liên lạc: <span class="bold">ABCCompany@email.com</span></p>
-          <p>Ngày bắt đầu: <span class="bold">dd/mm/yyyy</span></p>
-          <p>Ngày kết thúc đầu: <span class="bold">dd/mm/yyyy</span></p>
+          is_offical != 0
+            ? `
           <p>Trạng thái: <span class="bold status ${
             current_feature.properties.status ? "complete" : ""
           }">${
                 current_feature.properties.status ? "Đã duyệt" : "Chưa duyệt"
               }</span></p>
           ${
-            !current_feature.properties.status
-              ? `<div class="flex button-container"><button class="request"><img src="../assets/images/information.png" alt="report">Cấp phép</button><button class="report"><img src="../assets/images/red-edit.png" alt="report">Huỷ yêu cầu</button></div>`
+            is_offical == 1
+              ? !current_feature.properties.status
+                ? `<div class="flex button-container"><button class="request"><img src="../assets/images/information.png" alt="report">Cấp phép</button><button class="report"><img src="../assets/images/red-edit.png" alt="report">Huỷ yêu cầu</button></div>`
+                : ""
+              : is_offical == 2
+              ? `<div class="flex button-container"><button class="request"><img src="../assets/images/information.png" alt="report">Cấp phép</button><button class="request-edit"><img src="../assets/images/information.png" alt="report">Y/C chỉnh</button><button class="report"><img src="../assets/images/red-edit.png" alt="report">Từ chối</button></div>`
               : ""
           }
           
@@ -109,14 +114,14 @@ function onMapClick(e) {
           <p>Chưa có thông tin</p>
           </div>
           ${
-            is_offical
+            is_offical != 0
               ? '<button class="edit"><img src="../assets/images/edit-yellow.png" alt="report">Chỉnh sửa</button>'
               : '<button class="report"><img src="../assets/images/report-fill.png" alt="report">Báo cáo</button>'
           }`
         )
         .openOn(map);
 
-      let btn = !is_offical ? $(".report") : $(".edit");
+      let btn = is_offical == 0 ? $(".report") : $(".edit");
       btn.on("click", () => {
         current_feature = data.features[0];
         get_report(data.features[0].properties.address_line2);
@@ -171,7 +176,7 @@ window.onload = function () {
       button_container.classList.add("button_container");
       info_button.classList.add("info");
       info_button.setAttribute("id", "info-" + feature._id);
-      report_button.classList.add(is_offical ? "edit" : "report");
+      report_button.classList.add(is_offical != 0 ? "edit" : "report");
       report_button.setAttribute("id", "report-" + feature._id);
 
       attributionDiv.innerHTML = `<h3>${feature.properties.type}</h3>
@@ -193,9 +198,10 @@ window.onload = function () {
           }</span></p>
           `;
       info_button.innerHTML = `<img src="../assets/images/information.png" alt="information">Thông tin`;
-      report_button.innerHTML = is_offical
-        ? `<img src="../assets/images/edit-yellow.png" alt="edit">Chỉnh sửa`
-        : `<img src="../assets/images/report-fill.png" alt="report">Báo cáo`;
+      report_button.innerHTML =
+        is_offical != 0
+          ? `<img src="../assets/images/edit-yellow.png" alt="edit">Chỉnh sửa`
+          : `<img src="../assets/images/report-fill.png" alt="report">Báo cáo`;
 
       button_container.appendChild(info_button);
       button_container.appendChild(report_button);

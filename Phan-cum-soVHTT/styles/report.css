@@ -26,11 +26,26 @@
 #request-popup input[type="file"] {
   display: none;
 }
-
-#request-popup .date-information {
+#report-popup .size-information,
+#request-popup .size-information {
   justify-content: space-around;
   width: 75%;
   gap: 1rem;
+}
+#report-popup .size-information.inline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 72%;
+}
+#report-popup .size-information.inline .form-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 50%;
+}
+#report-popup .size-information.inline input {
+  width: 50%;
 }
 
 #request-popup .date-information > * {
@@ -84,7 +99,6 @@
 .form-container > h2 {
   margin-top: 1.25rem;
   margin-bottom: 1rem;
-  font-size: 1.5rem;
 }
 .form-section {
   display: grid;
@@ -108,12 +122,14 @@
 }
 
 .form-container .submit-button {
-  width: 100%;
   color: white;
   border-radius: 5px;
   border: 0;
   padding-block: 0.75rem;
   font-weight: bold;
+  width: max-content;
+  padding-inline: 2rem;
+  justify-self: center;
 }
 
 .submit {
@@ -186,7 +202,24 @@ hr {
 #inscreen-form-register > .form-section:last-child {
   margin-bottom: 1.5rem;
 }
-
+.btn-container > * {
+  width: 40%;
+}
+.btn-container .form-section > * {
+  width: 100%;
+}
+.delete {
+  border: 0;
+  background: transparent;
+  font-weight: bold;
+  text-decoration: underline;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ff7b7b;
+  margin-top: 1rem;
+  padding-block: 0.75rem;
+}
 @media only screen and (min-width: 600px) {
   #report-section-form-container {
     width: 30%;
@@ -195,7 +228,7 @@ hr {
     height: auto;
     background-color: white;
     border-radius: 10px;
-    padding: 2rem 1rem;
+    padding: 1rem 1rem;
     position: relative;
   }
 }

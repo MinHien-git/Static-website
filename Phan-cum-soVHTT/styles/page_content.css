@@ -22,6 +22,8 @@ main {
 #map__btn {
 	float: right;
 	margin: 0 0.4rem 1rem 0;
+	padding: 0.4rem;
+	width: 12.5rem;
 }
 
 #search__btn {
@@ -85,4 +87,38 @@ main {
 	display: flex;
 	align-items: end;
 	justify-content: end;
+}
+
+.buttons__container__column {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: end;
+	justify-content: start;
+}
+
+#main__list .card {
+	margin-bottom: 0.5rem;
+	height: fit-content;
+}
+
+.multi__input__field {
+	display: flex;
+}
+
+.multi__input__field p {
+	padding-top: 0.25rem;
+	text-align: center;
+}
+
+.small__input {
+	width: 45%;
+	height: fit-content;
+}
+
+#to__list__btn {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	margin: 1rem;
 }
