@@ -29,7 +29,7 @@
 		<link rel="stylesheet" href="../assets/styles/navbar.css" />
 		<link rel="stylesheet" href="styles/navbar.css" />
 		<link rel="stylesheet" href="styles/page_content.css" />
-        <link rel="stylesheet" href="styles/modal.css" />
+		<link rel="stylesheet" href="styles/modal.css" />
 	</head>
 
 	<body>
@@ -101,7 +101,7 @@
 								<ul class="list__flex fw-bold">
 									<li class="list__col1">Loại báo cáo</li>
 									<li class="list__col2">Địa điểm</li>
-                                    <li class="list__col3">Thời gian</li>
+									<li class="list__col3">Thời gian</li>
 									<li class="list__col4">Trạng thái</li>
 									<li class="list__col5">
 										<button class="btn btn-link ps-4" disabled></button>
@@ -114,10 +114,10 @@
 								<ul class="list__flex">
 									<li class="list__col1">Cụm pano</li>
 									<li class="list__col2">123 Đường ABC, Phường Y, Quận XX</li>
-                                    <li class="list__col3">16/3/2023</li>
-									<li class="list__col4" style="color:gold">Chờ xử lí</li>
+									<li class="list__col3">16/3/2023</li>
+									<li class="list__col4" style="color: gold">Chờ xử lí</li>
 									<li class="list__col5">
-                                         <!-- Modal trigger button -->
+										<!-- Modal trigger button -->
 										<button
 											class="btn btn-light"
 											id="modal-btn"
@@ -126,50 +126,95 @@
 											data-bs-target="#modal1">
 											...
 										</button>
-                                <!-- Modal Body -->
-                                <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
-                                <div class="modal fade" id="modal1" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitle1" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h4 class="modal-title fw-bold" id="modalTitle">&ensp;Chi tiết báo cáo</h4>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="m-btn"></button>
-                                            </div>
-                                            <div class="modal-body">
-										        <p><strong>Tên người gửi:</strong>Nguyễn Văn A</p>
-										        <p><strong>Email:</strong>anhA@gmail.com</p>
-										        <p><strong>Số điện thoại:</strong>0123456789</p>
-										        <p><strong>Địa điểm quảng cáo:</strong>Đường ABC...</p>
-                                                <p> </p>
-                                                <h5 class="fw-bold">&ensp; Nội dung báo cáo</h5>
-                                                <p><strong>Mô tả:</strong>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate deleniti dolores eius quis, praesentium ullam id eligendi repellendus corrupti dolorem!</p>
-                                                <p><strong>Hình ảnh</strong></p>
-                                                <img
-											        src="/assets/images/bien-quang-cao-1024x683.jpg"
-                                                    id="img1">
-                                                <p><strong>Cách thức xử lí</strong></p>
-                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At deserunt unde earum rem nobis doloribus ratione vitae ipsum animi. Illum tempora non exercitationem dicta ratione.</p>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-success" id="m-btn" onclick="showAlert1();">Cấp phép</button>
-                                                <button type="button" class="btn btn-primary" id="m-btn">Y/c đổi cách thức</button>
-                                                <button type="button" class="btn btn-danger" id="m-btn">Bác bỏ</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                
-                                <!-- Optional: Place to the bottom of scripts -->
-                                <script>
-                                    const myModal = new bootstrap.Modal(document.getElementById('modal1'), options)
-                                </script>
+										<!-- Modal Body -->
+										<!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
+										<div
+											class="modal fade"
+											id="modal1"
+											tabindex="-1"
+											data-bs-backdrop="static"
+											data-bs-keyboard="false"
+											role="dialog"
+											aria-labelledby="modalTitle1"
+											aria-hidden="true">
+											<div
+												class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg"
+												role="document">
+												<div class="modal-content">
+													<div class="modal-header">
+														<h4 class="modal-title fw-bold" id="modalTitle">
+															&ensp;Chi tiết báo cáo
+														</h4>
+														<button
+															type="button"
+															class="btn-close"
+															data-bs-dismiss="modal"
+															aria-label="Close"
+															id="m-btn"></button>
+													</div>
+													<div class="modal-body">
+														<p><strong>Tên người gửi:</strong>Nguyễn Văn A</p>
+														<p><strong>Email:</strong>anhA@gmail.com</p>
+														<p><strong>Số điện thoại:</strong>0123456789</p>
+														<p>
+															<strong>Địa điểm quảng cáo:</strong>Đường ABC...
+														</p>
+														<p></p>
+														<h5 class="fw-bold">&ensp; Nội dung báo cáo</h5>
+														<p>
+															<strong>Mô tả:</strong>Lorem ipsum dolor sit amet
+															consectetur, adipisicing elit. Voluptate deleniti
+															dolores eius quis, praesentium ullam id eligendi
+															repellendus corrupti dolorem!
+														</p>
+														<p><strong>Hình ảnh</strong></p>
+														<img
+															src="/assets/images/bien-quang-cao-1024x683.jpg"
+															id="img1" />
+														<p><strong>Cách thức xử lí</strong></p>
+														<p>
+															Lorem ipsum dolor sit amet consectetur adipisicing
+															elit. At deserunt unde earum rem nobis doloribus
+															ratione vitae ipsum animi. Illum tempora non
+															exercitationem dicta ratione.
+														</p>
+													</div>
+													<div class="modal-footer">
+														<button
+															type="button"
+															class="btn btn-success"
+															id="m-btn"
+															onclick="showAlert1();">
+															Cấp phép
+														</button>
+														<button
+															type="button"
+															class="btn btn-primary"
+															id="m-btn">
+															Y/c đổi cách thức
+														</button>
+														<button
+															type="button"
+															class="btn btn-danger"
+															id="m-btn">
+															Bác bỏ
+														</button>
+													</div>
+												</div>
+											</div>
+										</div>
 
+										<!-- Optional: Place to the bottom of scripts -->
+										<script>
+											const myModal = new bootstrap.Modal(
+												document.getElementById("modal1"),
+												options
+											)
+										</script>
 									</li>
 								</ul>
 							</div>
-							
-                        </div>
+						</div>
 					</div>
 				</div>
 			</main>
@@ -188,11 +233,10 @@
 			integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
 			crossorigin="anonymous"></script>
 
-
-        <script>
-            function showAlert1(){
-                alert("Thêm thành công!")
-            }
-        </script>
+		<script>
+			function showAlert1() {
+				alert("Thêm thành công!")
+			}
+		</script>
 	</body>
 </html>
