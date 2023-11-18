@@ -125,28 +125,12 @@ function createCard(advertisement) {
 										</li>
 										<li>
 											<ul class="buttons__container">
-                                            <li>
-													<button
-														class="btn btn-outline-warning me-3"
-														data-bs-toggle="modal"
-														data-bs-target="#Modify__modal">
-														<i class="bi bi-pencil"></i>Thông tin
-													</button>
-												</li>
-												<li>
-													<button
-														class="btn btn-outline-warning me-3"
-														data-bs-toggle="modal"
-														data-bs-target="#Modify__modal">
-														<i class="bi bi-pencil"></i>Chỉnh sửa
-													</button>
-												</li>
 												<li>
 													<button
 														class="btn btn-danger"
 														data-bs-toggle="modal"
 														data-bs-target="#delete__confirm__modal">
-														<i class="bi bi-trash"></i>Xoá
+														<i class="bi bi-trash"></i>Huỷ yêu cầu
 													</button>
 												</li>
 											</ul>

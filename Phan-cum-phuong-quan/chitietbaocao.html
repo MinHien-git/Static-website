@@ -52,7 +52,7 @@
     <header id="primary-header" class="flex official">
       <div id="burger"></div>
       <nav id="primary-navigation-bar">
-        <ul id="primary-items-list">
+        <ul id="primary-items-list" class="my-3">
           <li id="profile">
             <i class="bi bi-person-circle vertical__center nav__item__icon"></i>
             <span><a>user name</a></span>
@@ -153,15 +153,15 @@
     <script>
       document.getElementById("back-button").addEventListener("click", () => {
         window.location.href = "/Phan-cum-phuong-quan/danhsachbaocao.html";
-      })
+      });
       document.getElementById("submit-button").addEventListener("click", () => {
         window.location.href = "/Phan-cum-phuong-quan/danhsachbaocao.html";
-      })
+      });
       document.getElementById("cancel-button").addEventListener("click", () => {
         window.location.href = "/Phan-cum-phuong-quan/danhsachbaocao.html";
-      })
-      var quill = new Quill('#editor', {
-        theme: 'snow'
+      });
+      var quill = new Quill("#editor", {
+        theme: "snow",
       });
     </script>
 

@@ -101,14 +101,6 @@ main {
   width: 100%;
 }
 
-.buttons__container__column {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: end;
-  justify-content: start;
-}
-
 #main__list .card {
   margin-bottom: 0.5rem;
   height: fit-content;
@@ -133,4 +125,18 @@ main {
   bottom: 0;
   right: 0;
   margin: 1rem;
+}
+.list__flex * {
+  text-overflow: ellipsis;
+  overflow-x: hidden;
+  white-space: nowrap;
+}
+
+.list__flex .list__col2 {
+  width: 30%;
+}
+
+#main__list {
+  max-height: 80vh;
+  overflow-y: auto;
 }

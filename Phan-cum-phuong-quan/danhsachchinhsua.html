@@ -24,9 +24,11 @@
     <link rel="stylesheet" href="./styles/trangchu.css" />
     <link rel="stylesheet" href="../assets/styles/navbar.css" />
     <link rel="stylesheet" href="../assets/styles/global.css" />
-    <link rel="stylesheet" href="./styles/danhsach.css" />
     <link rel="stylesheet" href="./styles/report.css" />
     <link rel="stylesheet" href="../assets/styles/editor.css" />
+    <link rel="stylesheet" href="./styles/danhsach.css" />
+    <link rel="stylesheet" href="./styles/quanlyquangcao.css" />
+    <link rel="stylesheet" href="./styles/page_content.css" />
     <link
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
@@ -36,133 +38,94 @@
   </head>
   <body>
     <script src="../assets/scripts/navbar.js" defer></script>
-    <header id="primary-header" class="flex official">
-      <div id="burger"></div>
-      <nav id="primary-navigation-bar">
-        <ul id="primary-items-list">
-          <li id="profile">
-            <i class="bi bi-person-circle vertical__center nav__item__icon"></i>
-            <span>user name</span>
-          </li>
-          <li id="report-list">
-            <i class="bi bi-clipboard2-check nav__item__icon"></i>
-            <span>Danh sách báo cáo</span>
-          </li>
-          <li id="license-list">
-            <i class="bi bi-check-circle nav__item__icon"></i>
-            <span>Yêu cầu cấp phép</span>
-          </li>
-          <li id="edit-list">
-            <i class="bi bi-pencil nav__item__icon"></i>
-            <span>Yêu cầu chỉnh sửa</span>
-          </li>
-          <li id="billboard-list">
-            <i class="bi bi-signpost-2 nav__item__icon"></i>
-            <span>Danh sách quảng cáo</span>
-          </li>
-          <li>
-            <form id="logout" method="post" action="/logout">
-              <button type="submit">
-                <i class="bi bi-box-arrow-left" id="logout"></i>
-                <span>Đăng xuất</span>
-              </button>
-            </form>
-          </li>
-        </ul>
-      </nav>
-    </header>
-
-    <div class="flex official" id="content">
-      <div id="title-container">
-          <h1 style="grid-area: 1/1">Danh sách chỉnh sửa</h1>
-          <form style="grid-area: 2/1" id="search-bar-container">
-            <input
-              id="search-bar"
-              type="text"
-              placeholder="Enter an address here"
-            />
-          </form>
-          <button style="grid-area: 1/2/2/4;" class="btn blue-button" type="button" id="to-map-btn">
+    <div class="wrapper">
+      <header id="primary-header" class="flex official">
+        <div id="burger"></div>
+        <nav id="primary-navigation-bar">
+          <ul id="primary-items-list" class="my-3">
+            <li id="profile">
+              <i
+                class="bi bi-person-circle vertical__center nav__item__icon"
+              ></i>
+              <span>user name</span>
+            </li>
+            <li id="report-list">
+              <i class="bi bi-clipboard2-check nav__item__icon"></i>
+              <span>Danh sách chỉnh sửa</span>
+            </li>
+            <li id="license-list">
+              <i class="bi bi-check-circle nav__item__icon"></i>
+              <span>Yêu cầu cấp phép</span>
+            </li>
+            <li id="edit-list">
+              <i class="bi bi-pencil nav__item__icon"></i>
+              <span>Yêu cầu chỉnh sửa</span>
+            </li>
+            <li id="billboard-list">
+              <i class="bi bi-signpost-2 nav__item__icon"></i>
+              <span>Danh sách quảng cáo</span>
+            </li>
+            <li>
+              <form id="logout" method="post" action="/logout">
+                <button type="submit">
+                  <i class="bi bi-box-arrow-left" id="logout"></i>
+                  <span>Đăng xuất</span>
+                </button>
+              </form>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <div class="container" id="main__container">
+          <h1 class="fw-bold h2 mb-0" id="page__title">
+            Danh sách chỉnh sửa
+          </h1>
+          <button
+            type="submit"
+            class="btn btn-primary nowrap"
+            id="map__btn"
+            onclick="navigate(this.id)"
+          >
             Xem trên bản đồ
           </button>
-          <button style="grid-area: 2/2;" class="btn black-button" type="button" id="sort-btn">
-            Sắp xếp
-          </button>
-          <button style="grid-area: 2/3;" class="btn black-button" type="button" id="filter-btn">
-            Lọc...
-          </button>
-      </div>
+          <form action="" class="d-flex search__form">
+            <input
+              type="text"
+              class="form-control me-2"
+              placeholder="Nhập thông tin"
+            />
+            <button
+              type="submit"
+              class="btn btn-primary nowrap"
+              id="search__btn"
+            >
+              Tìm kiếm
+            </button>
+            <button type="submit" class="btn btn-dark nowrap">
+              <i class="bi bi-arrow-down-up"></i>
+              Sắp xếp
+            </button>
+            <button type="submit" class="btn btn-dark nowrap">
+              <i class="bi bi-funnel"></i> &nbsp;Lọc
+            </button>
+          </form>
 
-      <div id="table">
-        <ul>
-          <li>
-            <ul>
-              <li>Bảng quảng cáo</li>
-              <li>Địa điểm</li>
-              <li>Trạng thái</li>
-              <li>Chi tiết</li>
-            </ul>
-          </li>
-          <li class="card">
-            <ul>
-              <li>Cụm Panô</li>
-              <li>123 street...</li>
-              <li>Chưa duyệt</li>
-              <label for="card1"
-                ><img
-                  src="../assets/images/down-arrow.svg"
-                  alt="Chi tiết"
-                  id="info-image-1"
-              /></label>
-            </ul>
-            <input type="checkbox" class="card-checkbox" id="card1" />
-            <div class="billboard-information-container">
-              <div class="billboard-image">
-                <div></div>
-                <div></div>
-              </div>
-              <div class="billboard-information">
-                <ul class="billboard">
-                  <li>
-                    <p>Thông tin bảng quảng cáo:</p>
-                    <ul>
-                      <li>Kích thước: <span class="bold">2.5m x 10m</span></li>
-                      <li>Số lượng: <span class="bold">1 trụ/1 bảng</span></li>
-                      <li>
-                        Hình thức: <span class="bold">Cổ động chính trị</span>
-                      </li>
-                      <li>Phân loại: <span class="bold">Trường học</span></li>
-                    </ul>
+          <div id="main__list">
+            <div id="info__desc">
+              <div class="list__title__container mt-3">
+                <ul class="list__flex fw-bold">
+                  <li class="list__col1">Bảng quảng cáo</li>
+                  <li class="list__col2">Địa điểm</li>
+                  <li class="list__col3">Trạng thái</li>
+                  <li class="list__col4">
+                    <button class="btn btn-link ps-4" disabled></button>
                   </li>
-                  <li>
-                    <p>Thông tin công ty:</p>
-                    <ul>
-                      <li>
-                        Thông tin công ty: <span class="bold">ABC Company</span>
-                      </li>
-                      <li>
-                        Thông tin liên lạc:
-                        <span class="bold">ABCCompany@email.com</span>
-                      </li>
-                      <li>
-                        Ngày bắt đầu: <span class="bold">dd/mm/yyyy</span>
-                      </li>
-                      <li>
-                        Ngày kết thúc: <span class="bold">dd/mm/yyyy</span>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-                <ul class="button-container">
-                  <li><button class="button">Register</button></li>
-                  <li><button class="button">Register</button></li>
-                  <li><button class="button">Register</button></li>
                 </ul>
               </div>
             </div>
-          </li>
-        </ul>
-      </div>
+          </div>
+        </div>
 
       <!--
         <div class="table">

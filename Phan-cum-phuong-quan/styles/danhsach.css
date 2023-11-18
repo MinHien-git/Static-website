@@ -19,7 +19,7 @@ body {
 }
 
 #primary-header {
-  position: fixed;
+  position: sticky;
 }
 
 #primary-header + div#content {
@@ -83,17 +83,16 @@ body {
 }
 
 main {
-  padding-left: 5rem;
   min-height: 100vh;
-  width: calc(100vw - 5rem);
-  margin-top: 8rem;
 }
 
 main .table {
   width: 100%;
   max-width: 75rem;
 }
-
+.wrapper {
+  width: 100%;
+}
 #content > #table {
   width: 100%;
   max-width: 75rem;
@@ -141,10 +140,10 @@ main .table {
   width: 8rem;
 }
 
-#content>#table>ul> li> ul> li:nth-child(2){
-    width: calc(100% - 18rem);
-    margin-right: 1rem;
-    text-overflow: clip;
+#content > #table > ul > li > ul > li:nth-child(2) {
+  width: calc(100% - 18rem);
+  margin-right: 1rem;
+  text-overflow: clip;
 }
 
 #content > #table > ul > li > ul > li:nth-child(3) {
@@ -159,11 +158,11 @@ main .table {
   display: grid;
 }
 
-.billboard-information-container{
-    width: 100%;
-    height: 16.5rem;
-    padding: 1rem;
-    display:none;
+.billboard-information-container {
+  width: 100%;
+  height: 16.5rem;
+  padding: 1rem;
+  display: none;
 }
 
 .card-checkbox {
@@ -206,14 +205,14 @@ main .table {
 .billboard-information ul {
   width: 100%;
 }
-.button-container{
-    display: flex;
-    gap:10px;
+.button-container {
+  display: flex;
+  gap: 10px;
 }
 .button {
-    width: 8rem;
-    border-radius: 5px;
-    border: 0;
-    font-weight: bold;
-    margin-right: 1rem;
+  width: 8rem;
+  border-radius: 5px;
+  border: 0;
+  font-weight: bold;
+  margin-right: 1rem;
 }
