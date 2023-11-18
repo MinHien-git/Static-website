@@ -47,11 +47,11 @@ function createCard(advertisement) {
                     </ul>
                 </li>
             </ul>
-            <ul class="button-container">
-                <li> <button class="button">Register</button></li>
-                <li> <button class="button">Register</button></li>
-                <li> <button class="button">Register</button></li>
-            </ul>
+            ${
+            `<ul class="button-container">
+                <li> <button class="btn blue-button button">Chỉnh sửa</button></li>
+                <li> <button class="btn blue-button button">Cấp phép</button></li>
+            </ul>`}
         </div>
     </div>`
     console.log(new_card);
