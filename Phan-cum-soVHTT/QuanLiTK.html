@@ -30,7 +30,8 @@
 		<link rel="stylesheet" href="styles/navbar.css" />
 		<link rel="stylesheet" href="styles/page_content.css" />
 
-		<script src="./scripts/billboard_list.js"></script>
+		<script src="scripts/billboard_list.js"></script>
+		<script src="scripts/navigation.js"></script>
 	</head>
 
 	<body>
@@ -46,19 +47,22 @@
 								id="nav__item__icon"></i>
 							<span>user name</span>
 						</li>
-						<li id="profile">
+						<li id="manage__billboards" onclick="navigate(this.id)">
 							<i class="bi bi-clipboard2-check" id="nav__item__icon"></i>
 							<span>Quản lí điểm QC</span>
 						</li>
-						<li id="profile">
+						<li id="check__requests" onclick="navigate(this.id)">
 							<i class="bi bi-check-circle" id="nav__item__icon"></i>
 							<span>Duyệt YC cấp phép</span>
 						</li>
-						<li id="profile">
+						<li id="list__reports" onclick="navigate(this.id)">
 							<i class="bi bi-file-earmark-text" id="nav__item__icon"></i>
 							<span>Thống kê báo cáo</span>
 						</li>
-						<li id="profile" class="current">
+						<li
+							id="manage__accounts"
+							class="current"
+							onclick="navigate(this.id)">
 							<i class="bi bi-person-gear" id="nav__item__icon"></i>
 							<span>Quản lí tài khoản CB</span>
 						</li>
@@ -75,10 +79,8 @@
 			</header>
 			<main>
 				<div class="container" id="main__container">
-					<h1 class="fw-bold h2 mb-0" id="page__title">
-						Quản lí tài khoản
-					</h1>
-					<button type="submit" class="btn btn-primary nowrap" id="map__btn">
+					<h1 class="fw-bold h2 mb-0" id="page__title">Quản lí tài khoản</h1>
+					<button type="submit" class="btn btn-success nowrap" id="map__btn">
 						+&ensp;Tạo tài khoản
 					</button>
 					<form action="" class="d-flex search__form">
@@ -92,11 +94,11 @@
 							id="search__btn">
 							Tìm kiếm
 						</button>
-						<button type="submit" class="btn btn-secondary nowrap">
+						<button type="submit" class="btn btn-dark nowrap">
 							<i class="bi bi-arrow-down-up"></i>
 							Sắp xếp
 						</button>
-						<button type="submit" class="btn btn-secondary nowrap">
+						<button type="submit" class="btn btn-dark nowrap">
 							<i class="bi bi-funnel"></i> &nbsp;Lọc
 						</button>
 					</form>
@@ -144,7 +146,7 @@
 									<ul id="full__info__list">
 										<li>
 											<p><strong>Email:</strong> ***@***.***</p>
-                                            <p><strong>SĐT:</strong> ********</p>
+											<p><strong>SĐT:</strong> ********</p>
 										</li>
 										<li>
 											<ul class="buttons__container">
@@ -170,7 +172,6 @@
 								</div>
 							</div>
 						</div>
-						
 
 						<div class="card shadow-sm" id="list__item2">
 							<div class="card-header" id="brief__info2">
@@ -202,7 +203,7 @@
 									<ul id="full__info__list">
 										<li>
 											<p><strong>Email:</strong> ***@***.***</p>
-                                            <p><strong>SĐT:</strong> ********</p>
+											<p><strong>SĐT:</strong> ********</p>
 										</li>
 										<li>
 											<ul class="buttons__container">
@@ -259,7 +260,7 @@
 									<ul id="full__info__list">
 										<li>
 											<p><strong>Email:</strong> ***@***.***</p>
-                                            <p><strong>SĐT:</strong> ********</p>
+											<p><strong>SĐT:</strong> ********</p>
 										</li>
 										<li>
 											<ul class="buttons__container">
@@ -286,7 +287,6 @@
 							</div>
 						</div>
 
-
 						<div
 							class="modal fade"
 							id="Modify__modal"
@@ -307,15 +307,12 @@
 									</div>
 									<div class="modal-body">
 										<form action="">
-											<label for="Employee-Name" class="fw-bold"
-												>Họ tên:</label
-											>
+											<label for="Employee-Name" class="fw-bold">Họ tên:</label>
 											<input
 												type="text"
 												name="e-Name"
 												class="form-control mb-3"
-												id="Employee-name"/>
-
+												id="Employee-name" />
 
 											<label for="Employee-ID" class="fw-bold"
 												>Mã nhân viên</label
@@ -324,57 +321,51 @@
 												type="text"
 												name="e-Id"
 												class="form-control mb-3"
-												id="Employee-ID"/>
+												id="Employee-ID" />
 
-                                            <label for="Employee-Email" class="fw-bold"
-											>Email</label
-											>
+											<label for="Employee-Email" class="fw-bold">Email</label>
 											<input
 												type="email"
 												name="e-Email"
 												class="form-control mb-3"
-												id="Employee-Email"/>
+												id="Employee-Email" />
 
-                                            <label for="Employee-Number" class="fw-bold"
-                                            >Số điện thoại</label
-                                            >
-                                            <input
-                                                type="text"
-                                                name="e-Number"
-                                                class="form-control mb-3"
-                                                id="Employee-Number"/>
-        
+											<label for="Employee-Number" class="fw-bold"
+												>Số điện thoại</label
+											>
+											<input
+												type="text"
+												name="e-Number"
+												class="form-control mb-3"
+												id="Employee-Number" />
+
 											<label for="Area" class="fw-bold"
 												>Khu vực trực thuộc</label
 											>
-                                            <ul class = sub__list__flex>
-                                                <li class="list__col1">
-                                                    <select
-                                                        class="form-select mb-3"
-                                                        id="district__number"
-                                                        aria-label="district number selector">
-                                                        <option selected>Quận...</option>
-                                                        <option value="1">Quận 1</option>
-                                                        <option value="2">Quận 2</option>
-                                                        <option value="3">Quận 3</option>
-                                                    </select>
-                                                </li>
-                                                <li class="list__col2">
-                                                    <select
-                                                        class="form-select mb-3"
-                                                        id="ward__number"
-                                                        aria-label="ward number selector">
-                                                        <option selected>Phường...</option>
-                                                        <option value="1">Phường 1</option>
-                                                        <option value="2">Phường 2</option>
-                                                        <option value="3">Phường 3</option>
-                                                    </select>
-                                                </li>
-
-                                                
-
-                                            </ul>
-																			
+											<ul class="sub__list__flex">
+												<li class="list__col1">
+													<select
+														class="form-select mb-3"
+														id="district__number"
+														aria-label="district number selector">
+														<option selected>Quận...</option>
+														<option value="1">Quận 1</option>
+														<option value="2">Quận 2</option>
+														<option value="3">Quận 3</option>
+													</select>
+												</li>
+												<li class="list__col2">
+													<select
+														class="form-select mb-3"
+														id="ward__number"
+														aria-label="ward number selector">
+														<option selected>Phường...</option>
+														<option value="1">Phường 1</option>
+														<option value="2">Phường 2</option>
+														<option value="3">Phường 3</option>
+													</select>
+												</li>
+											</ul>
 										</form>
 									</div>
 									<div class="modal-footer">

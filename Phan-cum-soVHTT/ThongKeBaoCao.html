@@ -30,6 +30,8 @@
 		<link rel="stylesheet" href="styles/navbar.css" />
 		<link rel="stylesheet" href="styles/page_content.css" />
 		<link rel="stylesheet" href="styles/modal.css" />
+
+		<script src="scripts/navigation.js"></script>
 	</head>
 
 	<body>
@@ -45,19 +47,19 @@
 								id="nav__item__icon"></i>
 							<span>user name</span>
 						</li>
-						<li id="profile">
+						<li id="manage__billboards" onclick="navigate(this.id)">
 							<i class="bi bi-clipboard2-check" id="nav__item__icon"></i>
 							<span>Quản lí điểm QC</span>
 						</li>
-						<li id="profile">
+						<li id="check__requests" onclick="navigate(this.id)">
 							<i class="bi bi-check-circle" id="nav__item__icon"></i>
 							<span>Duyệt YC cấp phép</span>
 						</li>
-						<li id="profile" class="current">
+						<li id="list__reports" class="current" onclick="navigate(this.id)">
 							<i class="bi bi-file-earmark-text" id="nav__item__icon"></i>
 							<span>Thống kê báo cáo</span>
 						</li>
-						<li id="profile">
+						<li id="manage__accounts" onclick="navigate(this.id)">
 							<i class="bi bi-person-gear" id="nav__item__icon"></i>
 							<span>Quản lí tài khoản CB</span>
 						</li>
@@ -126,47 +128,95 @@
 											data-bs-target="#modal1">
 											...
 										</button>
-                                <!-- Modal Body -->
-                                <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
-                                <div class="modal fade" id="modal1" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitle1" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h4 class="modal-title fw-bold" id="modalTitle">&ensp;Chi tiết báo cáo</h4>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="m-btn"></button>
-                                            </div>
-                                            <div class="modal-body">
-										        <p><strong>Tên người gửi:</strong>Nguyễn Văn A</p>
-										        <p><strong>Email:</strong>anhA@gmail.com</p>
-										        <p><strong>Số điện thoại:</strong>0123456789</p>
-										        <p><strong>Địa điểm quảng cáo:</strong>Đường ABC...</p>
-                                                <p> </p>
-                                                <h5 class="fw-bold">&ensp; Nội dung báo cáo</h5>
-                                                <p><strong>Mô tả:</strong>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate deleniti dolores eius quis, praesentium ullam id eligendi repellendus corrupti dolorem!</p>
-                                                <p><strong>Hình ảnh</strong></p>
-                                                <img
-											        src="/assets/images/bien-quang-cao-1024x683.jpg"
-                                                    id="img1">
-                                                <p><strong>Cách thức xử lí</strong></p>
-                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At deserunt unde earum rem nobis doloribus ratione vitae ipsum animi. Illum tempora non exercitationem dicta ratione.</p>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-success" id="m-btn" data-bs-toggle="modal" onclick="showAlert1();">Cấp phép</button>
-											
-                                                <button type="button" class="btn btn-primary" id="m-btn" data-bs-toggle="modal" data-bs-target="#modalInput" onclick="showInput()">Y/c đổi cách thức</button>
-                                                <button type="button" class="btn btn-danger" id="m-btn" data-bs-toggle="modal" data-bs-target="#modalConfirm" onclick="showConfirm()">Bác bỏ</button> 
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+										<!-- Modal Body -->
+										<!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
+										<div
+											class="modal fade"
+											id="modal1"
+											tabindex="-1"
+											data-bs-backdrop="static"
+											data-bs-keyboard="false"
+											role="dialog"
+											aria-labelledby="modalTitle1"
+											aria-hidden="true">
+											<div
+												class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg"
+												role="document">
+												<div class="modal-content">
+													<div class="modal-header">
+														<h4 class="modal-title fw-bold" id="modalTitle">
+															&ensp;Chi tiết báo cáo
+														</h4>
+														<button
+															type="button"
+															class="btn-close"
+															data-bs-dismiss="modal"
+															aria-label="Close"
+															id="m-btn"></button>
+													</div>
+													<div class="modal-body">
+														<p><strong>Tên người gửi:</strong>Nguyễn Văn A</p>
+														<p><strong>Email:</strong>anhA@gmail.com</p>
+														<p><strong>Số điện thoại:</strong>0123456789</p>
+														<p>
+															<strong>Địa điểm quảng cáo:</strong>Đường ABC...
+														</p>
+														<p></p>
+														<h5 class="fw-bold">&ensp; Nội dung báo cáo</h5>
+														<p>
+															<strong>Mô tả:</strong>Lorem ipsum dolor sit amet
+															consectetur, adipisicing elit. Voluptate deleniti
+															dolores eius quis, praesentium ullam id eligendi
+															repellendus corrupti dolorem!
+														</p>
+														<p><strong>Hình ảnh</strong></p>
+														<img
+															src="/assets/images/bien-quang-cao-1024x683.jpg"
+															id="img1" />
+														<p><strong>Cách thức xử lí</strong></p>
+														<p>
+															Lorem ipsum dolor sit amet consectetur adipisicing
+															elit. At deserunt unde earum rem nobis doloribus
+															ratione vitae ipsum animi. Illum tempora non
+															exercitationem dicta ratione.
+														</p>
+													</div>
+													<div class="modal-footer">
+														<button
+															type="button"
+															class="btn btn-success"
+															id="m-btn"
+															data-bs-toggle="modal"
+															onclick="showAlert1();">
+															Cấp phép
+														</button>
 
-
-                                
+														<button
+															type="button"
+															class="btn btn-primary"
+															id="m-btn"
+															data-bs-toggle="modal"
+															data-bs-target="#modalInput"
+															onclick="showInput()">
+															Y/c đổi cách thức
+														</button>
+														<button
+															type="button"
+															class="btn btn-danger"
+															id="m-btn"
+															data-bs-toggle="modal"
+															data-bs-target="#modalConfirm"
+															onclick="showConfirm()">
+															Bác bỏ
+														</button>
+													</div>
+												</div>
+											</div>
+										</div>
 									</li>
 								</ul>
 							</div>
 						</div>
-
 
 						<div class="card shadow-sm">
 							<div class="card-header" id="brief__info2">
@@ -185,50 +235,95 @@
 											data-bs-target="#modal2">
 											...
 										</button>
-                                <!-- Modal Body -->
-                                <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
-                                <div class="modal fade" id="modal2" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitle2" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h4 class="modal-title fw-bold" id="modalTitle2">&ensp;Chi tiết báo cáo</h4>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="m-btn"></button>
-                                            </div>
-                                            <div class="modal-body">
-										        <p><strong>Tên người gửi:</strong>Nguyễn Văn B</p>
-										        <p><strong>Email:</strong>anhB@gmail.com</p>
-										        <p><strong>Số điện thoại:</strong>0123456789</p>
-										        <p><strong>Địa điểm quảng cáo:</strong>Đường ABC...</p>
-                                                <p> </p>
-                                                <h5 class="fw-bold">&ensp; Nội dung báo cáo</h5>
-                                                <p><strong>Mô tả:</strong>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate deleniti dolores eius quis, praesentium ullam id eligendi repellendus corrupti dolorem!</p>
-                                                <p><strong>Hình ảnh</strong></p>
-                                                <img
-											        src="/assets/images/bien-quang-cao-1024x683.jpg"
-                                                    id="img1">
-                                                <p><strong>Cách thức xử lí</strong></p>
-                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At deserunt unde earum rem nobis doloribus ratione vitae ipsum animi. Illum tempora non exercitationem dicta ratione.</p>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-success" id="m-btn" data-bs-toggle="modal" onclick="showAlert1();">Cấp phép</button>
-											
-                                                <button type="button" class="btn btn-primary" id="m-btn" data-bs-toggle="modal" data-bs-target="#modalInput" onclick="showInput()">Y/c đổi cách thức</button>
-                                                <button type="button" class="btn btn-danger" id="m-btn" data-bs-toggle="modal" data-bs-target="#modalConfirm" onclick="showConfirm()">Bác bỏ</button> 
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+										<!-- Modal Body -->
+										<!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
+										<div
+											class="modal fade"
+											id="modal2"
+											tabindex="-1"
+											data-bs-backdrop="static"
+											data-bs-keyboard="false"
+											role="dialog"
+											aria-labelledby="modalTitle2"
+											aria-hidden="true">
+											<div
+												class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg"
+												role="document">
+												<div class="modal-content">
+													<div class="modal-header">
+														<h4 class="modal-title fw-bold" id="modalTitle2">
+															&ensp;Chi tiết báo cáo
+														</h4>
+														<button
+															type="button"
+															class="btn-close"
+															data-bs-dismiss="modal"
+															aria-label="Close"
+															id="m-btn"></button>
+													</div>
+													<div class="modal-body">
+														<p><strong>Tên người gửi:</strong>Nguyễn Văn B</p>
+														<p><strong>Email:</strong>anhB@gmail.com</p>
+														<p><strong>Số điện thoại:</strong>0123456789</p>
+														<p>
+															<strong>Địa điểm quảng cáo:</strong>Đường ABC...
+														</p>
+														<p></p>
+														<h5 class="fw-bold">&ensp; Nội dung báo cáo</h5>
+														<p>
+															<strong>Mô tả:</strong>Lorem ipsum dolor sit amet
+															consectetur, adipisicing elit. Voluptate deleniti
+															dolores eius quis, praesentium ullam id eligendi
+															repellendus corrupti dolorem!
+														</p>
+														<p><strong>Hình ảnh</strong></p>
+														<img
+															src="/assets/images/bien-quang-cao-1024x683.jpg"
+															id="img1" />
+														<p><strong>Cách thức xử lí</strong></p>
+														<p>
+															Lorem ipsum dolor sit amet consectetur adipisicing
+															elit. At deserunt unde earum rem nobis doloribus
+															ratione vitae ipsum animi. Illum tempora non
+															exercitationem dicta ratione.
+														</p>
+													</div>
+													<div class="modal-footer">
+														<button
+															type="button"
+															class="btn btn-success"
+															id="m-btn"
+															data-bs-toggle="modal"
+															onclick="showAlert1();">
+															Cấp phép
+														</button>
 
-
-
-								
-                                
+														<button
+															type="button"
+															class="btn btn-primary"
+															id="m-btn"
+															data-bs-toggle="modal"
+															data-bs-target="#modalInput"
+															onclick="showInput()">
+															Y/c đổi cách thức
+														</button>
+														<button
+															type="button"
+															class="btn btn-danger"
+															id="m-btn"
+															data-bs-toggle="modal"
+															data-bs-target="#modalConfirm"
+															onclick="showConfirm()">
+															Bác bỏ
+														</button>
+													</div>
+												</div>
+											</div>
+										</div>
 									</li>
 								</ul>
 							</div>
 						</div>
-
-
 
 						<div class="card shadow-sm">
 							<div class="card-header" id="brief__info3">
@@ -247,48 +342,95 @@
 											data-bs-target="#modal3">
 											...
 										</button>
-                                <!-- Modal Body -->
-                                <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
-                                <div class="modal fade" id="modal3" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitle3" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h4 class="modal-title fw-bold" id="modalTitle3">&ensp;Chi tiết báo cáo</h4>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="m-btn"></button>
-                                            </div>
-                                            <div class="modal-body">
-										        <p><strong>Tên người gửi:</strong>Nguyễn Văn C</p>
-										        <p><strong>Email:</strong>anhC@gmail.com</p>
-										        <p><strong>Số điện thoại:</strong>0123456789</p>
-										        <p><strong>Địa điểm quảng cáo:</strong>Đường ABC...</p>
-                                                <p> </p>
-                                                <h5 class="fw-bold">&ensp; Nội dung báo cáo</h5>
-                                                <p><strong>Mô tả:</strong>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate deleniti dolores eius quis, praesentium ullam id eligendi repellendus corrupti dolorem!</p>
-                                                <p><strong>Hình ảnh</strong></p>
-                                                <img
-											        src="/assets/images/bien-quang-cao-1024x683.jpg"
-                                                    id="img1">
-                                                <p><strong>Cách thức xử lí</strong></p>
-                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At deserunt unde earum rem nobis doloribus ratione vitae ipsum animi. Illum tempora non exercitationem dicta ratione.</p>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-success" id="m-btn" data-bs-toggle="modal" onclick="showAlert1();">Cấp phép</button>
-											
-                                                <button type="button" class="btn btn-primary" id="m-btn" data-bs-toggle="modal" data-bs-target="#modalInput" onclick="showInput()">Y/c đổi cách thức</button>
-                                                <button type="button" class="btn btn-danger" id="m-btn" data-bs-toggle="modal" data-bs-target="#modalConfirm" onclick="showConfirm()">Bác bỏ</button> 
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+										<!-- Modal Body -->
+										<!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
+										<div
+											class="modal fade"
+											id="modal3"
+											tabindex="-1"
+											data-bs-backdrop="static"
+											data-bs-keyboard="false"
+											role="dialog"
+											aria-labelledby="modalTitle3"
+											aria-hidden="true">
+											<div
+												class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg"
+												role="document">
+												<div class="modal-content">
+													<div class="modal-header">
+														<h4 class="modal-title fw-bold" id="modalTitle3">
+															&ensp;Chi tiết báo cáo
+														</h4>
+														<button
+															type="button"
+															class="btn-close"
+															data-bs-dismiss="modal"
+															aria-label="Close"
+															id="m-btn"></button>
+													</div>
+													<div class="modal-body">
+														<p><strong>Tên người gửi:</strong>Nguyễn Văn C</p>
+														<p><strong>Email:</strong>anhC@gmail.com</p>
+														<p><strong>Số điện thoại:</strong>0123456789</p>
+														<p>
+															<strong>Địa điểm quảng cáo:</strong>Đường ABC...
+														</p>
+														<p></p>
+														<h5 class="fw-bold">&ensp; Nội dung báo cáo</h5>
+														<p>
+															<strong>Mô tả:</strong>Lorem ipsum dolor sit amet
+															consectetur, adipisicing elit. Voluptate deleniti
+															dolores eius quis, praesentium ullam id eligendi
+															repellendus corrupti dolorem!
+														</p>
+														<p><strong>Hình ảnh</strong></p>
+														<img
+															src="/assets/images/bien-quang-cao-1024x683.jpg"
+															id="img1" />
+														<p><strong>Cách thức xử lí</strong></p>
+														<p>
+															Lorem ipsum dolor sit amet consectetur adipisicing
+															elit. At deserunt unde earum rem nobis doloribus
+															ratione vitae ipsum animi. Illum tempora non
+															exercitationem dicta ratione.
+														</p>
+													</div>
+													<div class="modal-footer">
+														<button
+															type="button"
+															class="btn btn-success"
+															id="m-btn"
+															data-bs-toggle="modal"
+															onclick="showAlert1();">
+															Cấp phép
+														</button>
 
-								
-                                
+														<button
+															type="button"
+															class="btn btn-primary"
+															id="m-btn"
+															data-bs-toggle="modal"
+															data-bs-target="#modalInput"
+															onclick="showInput()">
+															Y/c đổi cách thức
+														</button>
+														<button
+															type="button"
+															class="btn btn-danger"
+															id="m-btn"
+															data-bs-toggle="modal"
+															data-bs-target="#modalConfirm"
+															onclick="showConfirm()">
+															Bác bỏ
+														</button>
+													</div>
+												</div>
+											</div>
+										</div>
 									</li>
 								</ul>
 							</div>
 						</div>
-
-
 					</div>
 				</div>
 			</main>
@@ -307,85 +449,135 @@
 			integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
 			crossorigin="anonymous"></script>
 
+		<script>
+			function showAlert1() {
+				document.getElementById("alert-container").classList.add("show")
+			}
 
-			
-        <script>
-            function showAlert1(){
-				document.getElementById('alert-container').classList.add('show'); 
-            }
+			function showInput() {
+				document.getElementById("modalInput").classList.add("show")
+			}
 
-			function showInput(){
-				document.getElementById('modalInput').classList.add('show'); 
-            }
-
-			function showConfirm(){
-				document.getElementById('modalConfirm').classList.add('show'); 
-            }
-        </script>
-
+			function showConfirm() {
+				document.getElementById("modalConfirm").classList.add("show")
+			}
+		</script>
 
 		<!-- Yêu cầu đổi cách thức box -->
 		<div>
 			<!-- Modal Body -->
 			<!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
-			<div class="modal fade" id="modalInput" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleInput" aria-hidden="true">
-				<div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-md" role="document">
+			<div
+				class="modal fade"
+				id="modalInput"
+				tabindex="-1"
+				data-bs-backdrop="static"
+				data-bs-keyboard="false"
+				role="dialog"
+				aria-labelledby="modalTitleInput"
+				aria-hidden="true">
+				<div
+					class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-md"
+					role="document">
 					<div class="modal-content">
 						<div class="modal-header">
-							<h5 class="modal-title fw-bold" id="modalTitleInput">Thay đổi cách thức xử lí</h5>
-								<button type="button" class="btn-close" aria-label="Close" data-bs-dismiss="modal" id="m-btn"></button>
+							<h5 class="modal-title fw-bold" id="modalTitleInput">
+								Thay đổi cách thức xử lí
+							</h5>
+							<button
+								type="button"
+								class="btn-close"
+								aria-label="Close"
+								data-bs-dismiss="modal"
+								id="m-btn"></button>
 						</div>
 						<div class="modal-body">
 							<label for="comment">Nội dung:</label>
-							<textarea class="form-control" rows="5" id="comment" name="text"></textarea>
+							<textarea
+								class="form-control"
+								rows="5"
+								id="comment"
+								name="text"></textarea>
 						</div>
 						<div class="modal-footer">
-							<button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="showAlert1();">Yêu cầu</button>
+							<button
+								type="button"
+								class="btn btn-primary"
+								data-bs-dismiss="modal"
+								onclick="showAlert1();">
+								Yêu cầu
+							</button>
 						</div>
 					</div>
 				</div>
 			</div>
-			
-			
 		</div>
-
-
 
 		<!-- Xác nhận bác bỏ box -->
 		<div>
 			<!-- Modal Body -->
 			<!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
-			<div class="modal fade" id="modalConfirm" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleConfirm" aria-hidden="true">
-				<div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm" role="document">
+			<div
+				class="modal fade"
+				id="modalConfirm"
+				tabindex="-1"
+				data-bs-backdrop="static"
+				data-bs-keyboard="false"
+				role="dialog"
+				aria-labelledby="modalTitleConfirm"
+				aria-hidden="true">
+				<div
+					class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm"
+					role="document">
 					<div class="modal-content">
 						<div class="modal-header">
-							<h5 class="modal-title fw-bold" id="modalTitleConfirm">Xác nhận</h5>
-								<button type="button" class="btn-close" aria-label="Close" data-bs-dismiss="modal" id="m-btn"></button>
+							<h5 class="modal-title fw-bold" id="modalTitleConfirm">
+								Xác nhận
+							</h5>
+							<button
+								type="button"
+								class="btn-close"
+								aria-label="Close"
+								data-bs-dismiss="modal"
+								id="m-btn"></button>
 						</div>
 						<div class="modal-body">
 							<p>Bạn có chắc chắn muốn bác bỏ yêu cầu không?</p>
 						</div>
 						<div class="modal-footer">
-							<button type="button" class="btn btn-light" data-bs-dismiss="modal">Hủy</button>
-							<button type="button" class="btn btn-danger" data-bs-dismiss="modal" onclick="showAlert1();">Xác nhận</button>
+							<button
+								type="button"
+								class="btn btn-light"
+								data-bs-dismiss="modal">
+								Hủy
+							</button>
+							<button
+								type="button"
+								class="btn btn-danger"
+								data-bs-dismiss="modal"
+								onclick="showAlert1();">
+								Xác nhận
+							</button>
 						</div>
 					</div>
 				</div>
 			</div>
-			
 		</div>
-
-
-
-
 
 		<!-- Ô thông báo thành công -->
-		<div class="toast" role="alert" aria-live="assertive" aria-atomic="true" id="alert-container">
-			<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close" id="toast-btn"></button>
-			<div class="toast-body">
-			  Thực hiện thành công!
-			</div>
+		<div
+			class="toast"
+			role="alert"
+			aria-live="assertive"
+			aria-atomic="true"
+			id="alert-container">
+			<button
+				type="button"
+				class="btn-close"
+				data-bs-dismiss="toast"
+				aria-label="Close"
+				id="toast-btn"></button>
+			<div class="toast-body">Thực hiện thành công!</div>
 		</div>
-
 	</body>
 </html>
