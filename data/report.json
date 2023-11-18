@@ -1,0 +1,172 @@
+[
+  {
+    "_id": {
+      "$oid": "65307f9eda6ef7bbc2fb6d96"
+    },
+    "type": "Tố giác sai phạm",
+    "properties": {
+      "globalid": "1",
+      "sender_name": "Nguyễn Văn A",
+      "sender_email": "abc@xyz.com",
+      "sender_number": "0123456789",
+      "send_day": "22/12/2022",
+      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel dictum mi. Praesent ut accumsan turpis. Fusce eget pretium tellus, nec dapibus arcu. Curabitur tempus quam vitae ex cursus condimentum. Fusce id porttitor erat. Maecenas lacus mauris, efficitur lobortis congue in, finibus ac est. Morbi laoreet, mi nec mattis malesuada, eros urna euismod diam, ut lacinia lectus neque vel ante. Sed feugiat justo sit amet vehicula tincidunt. Aenean viverra feugiat velit, a posuere lectus pharetra vitae. Nunc non vestibulum nibh, in congue ligula. Proin vel diam nec lacus lobortis sodales.",
+      "place": "23 Nguyễn Bỉnh Khiêm, Đa Kao, Quận 1, Thành phố Hồ Chí Minh, Vietnam",
+      "images": [
+        "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg"
+      ],
+      "status": false
+    },
+    "geometry": {
+      "coordinates": [106.6878303, 10.8161819],
+      "type": "Point"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65307f9eda6ef7bbc2fb6d97"
+    },
+    "type": "Đăng ký nội dung",
+    "properties": {
+      "globalid": "2",
+      "sender_name": "Nguyễn Văn A",
+      "sender_email": "abc@xyz.com",
+      "sender_number": "0123456789",
+      "send_day": "22/12/2022",
+      "place": "102 Đ. Nguyễn Hữu Cảnh, Phường 22, Bình Thạnh, Thành phố Hồ Chí Minh, Vietnam",
+      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel dictum mi. Praesent ut accumsan turpis. Fusce eget pretium tellus, nec dapibus arcu. Curabitur tempus quam vitae ex cursus condimentum. Fusce id porttitor erat. Maecenas lacus mauris, efficitur lobortis congue in, finibus ac est. Morbi laoreet, mi nec mattis malesuada, eros urna euismod diam, ut lacinia lectus neque vel ante. Sed feugiat justo sit amet vehicula tincidunt. Aenean viverra feugiat velit, a posuere lectus pharetra vitae. Nunc non vestibulum nibh, in congue ligula. Proin vel diam nec lacus lobortis sodales.",
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": false
+    },
+    "geometry": {
+      "coordinates": [106.7143836, 10.7893791],
+      "type": "Point"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65307f9eda6ef7bbc2fb6d98"
+    },
+    "type": "Đóng góp ý kiến",
+    "properties": {
+      "globalid": "3",
+      "sender_name": "Nguyễn Văn A",
+      "sender_email": "abc@xyz.com",
+      "sender_number": "0123456789",
+      "send_day": "22/12/2022",
+      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel dictum mi. Praesent ut accumsan turpis. Fusce eget pretium tellus, nec dapibus arcu. Curabitur tempus quam vitae ex cursus condimentum. Fusce id porttitor erat. Maecenas lacus mauris, efficitur lobortis congue in, finibus ac est. Morbi laoreet, mi nec mattis malesuada, eros urna euismod diam, ut lacinia lectus neque vel ante. Sed feugiat justo sit amet vehicula tincidunt. Aenean viverra feugiat velit, a posuere lectus pharetra vitae. Nunc non vestibulum nibh, in congue ligula. Proin vel diam nec lacus lobortis sodales.",
+      "place": "20 Đ. Lê Thánh Tôn, Bến Nghé, Quận 1, Thành phố Hồ Chí Minh, Vietnam",
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": false
+    },
+    "geometry": {
+      "coordinates": [106.7048256, 10.7811155],
+      "type": "Point"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65307f9eda6ef7bbc2fb6d99"
+    },
+    "type": "Giải đáp thắc mắc",
+    "properties": {
+      "globalid": "4",
+      "sender_name": "Nguyễn Văn A",
+      "sender_email": "abc@xyz.com",
+      "sender_number": "0123456789",
+      "send_day": "22/12/2022",
+      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel dictum mi. Praesent ut accumsan turpis. Fusce eget pretium tellus, nec dapibus arcu. Curabitur tempus quam vitae ex cursus condimentum. Fusce id porttitor erat. Maecenas lacus mauris, efficitur lobortis congue in, finibus ac est. Morbi laoreet, mi nec mattis malesuada, eros urna euismod diam, ut lacinia lectus neque vel ante. Sed feugiat justo sit amet vehicula tincidunt. Aenean viverra feugiat velit, a posuere lectus pharetra vitae. Nunc non vestibulum nibh, in congue ligula. Proin vel diam nec lacus lobortis sodales.",
+      "place": "56 Hàm Nghi, Bến Nghé, Quận 1, Thành phố Hồ Chí Minh, Vietnam",
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": true
+    },
+    "geometry": {
+      "coordinates": [106.7038702, 10.7711941],
+      "type": "Point"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65307f9eda6ef7bbc2fb6d9a"
+    },
+    "type": "Tố giác sai phạm",
+    "properties": {
+      "globalid": "5",
+      "sender_name": "Nguyễn Văn A",
+      "sender_email": "abc@xyz.com",
+      "sender_number": "0123456789",
+      "send_day": "22/12/2022",
+      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel dictum mi. Praesent ut accumsan turpis. Fusce eget pretium tellus, nec dapibus arcu. Curabitur tempus quam vitae ex cursus condimentum. Fusce id porttitor erat. Maecenas lacus mauris, efficitur lobortis congue in, finibus ac est. Morbi laoreet, mi nec mattis malesuada, eros urna euismod diam, ut lacinia lectus neque vel ante. Sed feugiat justo sit amet vehicula tincidunt. Aenean viverra feugiat velit, a posuere lectus pharetra vitae. Nunc non vestibulum nibh, in congue ligula. Proin vel diam nec lacus lobortis sodales.",
+      "place": "Đ. Trần Hưng Đạo, Nguyễn Cư Trinh, Quận 1, Thành phố Hồ Chí Minh, Vietnam",
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": true
+    },
+    "geometry": {
+      "coordinates": [106.6883101, 10.7600606],
+      "type": "Point"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65307f9eda6ef7bbc2fb6d9b"
+    },
+    "type": "Tố giác sai phạm",
+    "properties": {
+      "globalid": "6",
+      "sender_name": "Nguyễn Văn A",
+      "sender_email": "abc@xyz.com",
+      "sender_number": "0123456789",
+      "send_day": "22/12/2022",
+      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel dictum mi. Praesent ut accumsan turpis. Fusce eget pretium tellus, nec dapibus arcu. Curabitur tempus quam vitae ex cursus condimentum. Fusce id porttitor erat. Maecenas lacus mauris, efficitur lobortis congue in, finibus ac est. Morbi laoreet, mi nec mattis malesuada, eros urna euismod diam, ut lacinia lectus neque vel ante. Sed feugiat justo sit amet vehicula tincidunt. Aenean viverra feugiat velit, a posuere lectus pharetra vitae. Nunc non vestibulum nibh, in congue ligula. Proin vel diam nec lacus lobortis sodales.",
+      "place": "30 Ông Ích Khiêm, Phường 14, Quận 11, Thành phố Hồ Chí Minh, Vietnam",
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": true
+    },
+    "geometry": {
+      "coordinates": [106.6461238, 10.7657244],
+      "type": "Point"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65307f9eda6ef7bbc2fb6db1"
+    },
+    "type": "Tố giác sai phạm",
+    "properties": {
+      "globalid": "29",
+      "sender_name": "Nguyễn Văn A",
+      "sender_email": "abc@xyz.com",
+      "sender_number": "0123456789",
+      "send_day": "22/12/2022",
+      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel dictum mi. Praesent ut accumsan turpis. Fusce eget pretium tellus, nec dapibus arcu. Curabitur tempus quam vitae ex cursus condimentum. Fusce id porttitor erat. Maecenas lacus mauris, efficitur lobortis congue in, finibus ac est. Morbi laoreet, mi nec mattis malesuada, eros urna euismod diam, ut lacinia lectus neque vel ante. Sed feugiat justo sit amet vehicula tincidunt. Aenean viverra feugiat velit, a posuere lectus pharetra vitae. Nunc non vestibulum nibh, in congue ligula. Proin vel diam nec lacus lobortis sodales.",
+      "place": "203 Đ. Sư Vạn Hạnh, Phường 9, Quận 10, Thành phố Hồ Chí Minh, Vietnam",
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": true
+    },
+    "geometry": {
+      "coordinates": [106.6731971, 10.7598181],
+      "type": "Point"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65307f9eda6ef7bbc2fb6db2"
+    },
+    "type": "Tố giác sai phạm",
+    "properties": {
+      "globalid": "30",
+      "sender_name": "Nguyễn Văn A",
+      "sender_email": "abc@xyz.com",
+      "sender_number": "0123456789",
+      "send_day": "22/12/2022",
+      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel dictum mi. Praesent ut accumsan turpis. Fusce eget pretium tellus, nec dapibus arcu. Curabitur tempus quam vitae ex cursus condimentum. Fusce id porttitor erat. Maecenas lacus mauris, efficitur lobortis congue in, finibus ac est. Morbi laoreet, mi nec mattis malesuada, eros urna euismod diam, ut lacinia lectus neque vel ante. Sed feugiat justo sit amet vehicula tincidunt. Aenean viverra feugiat velit, a posuere lectus pharetra vitae. Nunc non vestibulum nibh, in congue ligula. Proin vel diam nec lacus lobortis sodales.",
+      "place": "390 Đ. Cao Thắng, Phường 12, Quận 10, Thành phố Hồ Chí Minh, Vietnam",
+      "image": "https://2.imimg.com/data2/IS/TN/MY-2561564/advertisement-designing-services-500x500.jpg",
+      "status": true
+    },
+    "geometry": {
+      "coordinates": [106.6732298, 10.7750868],
+      "type": "Point"
+    }
+  }
+]
