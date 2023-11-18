@@ -1,11 +1,11 @@
 #modal-btn {
     background-color: transparent;
     border-radius: 50%;
-    font-size: 13px;
+    font-size: 10px;
     color:black;
     position: absolute;
-    padding-left: 9%;
-    padding-right: 7%;
+    top: 50%;
+    transform: translate(80%, -50%);
 }
 
 modal-body {
