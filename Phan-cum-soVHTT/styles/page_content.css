@@ -51,12 +51,12 @@ main {
 
 .list__flex .list__col2 {
 	flex-grow: 3;
-	flex-basis: 30%;
+	flex-basis: 40%;
 }
 
-.list__flex :not(.list__col2, .list__col4, #m-btn, #modal-btn) {
+.list__flex :not(.list__col2, .list__col4) {
 	flex-grow: 1;
-	flex-basis: 15%;
+	flex-basis: 10%;
 }
 
 /*\\LIST CARDS*/
