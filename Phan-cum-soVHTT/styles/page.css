@@ -7,6 +7,7 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	user-select: auto;
 	-moz-user-select: auto;
 	-webkit-text-select: auto;
 	-webkit-user-select: auto;
@@ -89,4 +90,8 @@ textarea {
 
 html {
 	overflow-x: visible;
+}
+
+.btn {
+	padding-block: 0.25rem;
 }
