@@ -30,6 +30,17 @@
 		<link rel="stylesheet" href="styles/navbar.css" />
 		<link rel="stylesheet" href="styles/page_content.css" />
         <link rel="stylesheet" href="styles/modal.css" />
+
+
+		<!-- <style>
+			#alert-container {
+				position: fixed;
+				bottom: 20px; /* Adjust the distance from the bottom */
+				right: 20px; /* Adjust the distance from the right */
+				z-index: 1050; /* Adjust the z-index as needed */
+			}
+		</style> -->
+
 	</head>
 
 	<body>
@@ -151,20 +162,15 @@
                                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At deserunt unde earum rem nobis doloribus ratione vitae ipsum animi. Illum tempora non exercitationem dicta ratione.</p>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-success" id="m-btn" onclick="showAlert1();">Cấp phép</button>
-                                                <button type="button" class="btn btn-primary" id="m-btn">Y/c đổi cách thức</button>
-                                                <button type="button" class="btn btn-danger" id="m-btn">Bác bỏ</button>
+                                                <button type="button" class="btn btn-success" id="m-btn" data-bs-toggle="modal" onclick="showAlert1();">Cấp phép</button>
+											
+                                                <button type="button" class="btn btn-primary" id="m-btn" data-bs-toggle="modal" data-bs-target="#modalInput" onclick="showInput()">Y/c đổi cách thức</button>
+                                                <button type="button" class="btn btn-danger" id="m-btn" data-bs-toggle="modal" data-bs-target="#modalConfirm" onclick="showConfirm()">Bác bỏ</button> 
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 
-                                
-                                <!-- Optional: Place to the bottom of scripts -->
-                                <script>
-                                    const myModal = new bootstrap.Modal(document.getElementById('modal1'), options)
-                                </script>
-
 									</li>
 								</ul>
 							</div>
@@ -189,10 +195,84 @@
 			crossorigin="anonymous"></script>
 
 
+			
         <script>
             function showAlert1(){
-                alert("Thêm thành công!")
+				document.getElementById('alert-container').classList.add('show'); 
+            }
+
+			function showInput(){
+				document.getElementById('modalInput').classList.add('show'); 
+            }
+
+			function showConfirm(){
+				document.getElementById('modalConfirm').classList.add('show'); 
             }
         </script>
+
+
+		<!-- Yêu cầu đổi cách thức box -->
+		<div>
+			<!-- Modal Body -->
+			<!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
+			<div class="modal fade" id="modalInput" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleInput" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-md" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title fw-bold" id="modalTitleInput">Thay đổi cách thức xử lí</h5>
+								<button type="button" class="btn-close" aria-label="Close" data-bs-dismiss="modal" id="m-btn"></button>
+						</div>
+						<div class="modal-body">
+							<label for="comment">Nội dung:</label>
+							<textarea class="form-control" rows="5" id="comment" name="text"></textarea>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="showAlert1();">Yêu cầu</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			
+		</div>
+
+
+
+		<!-- Xác nhận bác bỏ box -->
+		<div>
+			<!-- Modal Body -->
+			<!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
+			<div class="modal fade" id="modalConfirm" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleConfirm" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title fw-bold" id="modalTitleConfirm">Xác nhận</h5>
+								<button type="button" class="btn-close" aria-label="Close" data-bs-dismiss="modal" id="m-btn"></button>
+						</div>
+						<div class="modal-body">
+							<p>Bạn có chắc chắn muốn bác bỏ yêu cầu không?</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-light" data-bs-dismiss="modal">Hủy</button>
+							<button type="button" class="btn btn-danger" data-bs-dismiss="modal" onclick="showAlert1();">Xác nhận</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+
+
+
+
+
+		<!-- Ô thông báo thành công -->
+		<div class="toast" role="alert" aria-live="assertive" aria-atomic="true" id="alert-container">
+			<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close" id="toast-btn"></button>
+			<div class="toast-body">
+			  Thực hiện thành công!
+			</div>
+		</div>
+
 	</body>
 </html>
