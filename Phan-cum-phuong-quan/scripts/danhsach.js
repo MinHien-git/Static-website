@@ -12,8 +12,17 @@ class Billboard {
 
 
 function createCard(advertisement) {
-    let new_card = document.createElement("li")
-    new_card.className = "card"
+    let button_container;
+    if (advertisement.license) {
+        button_container = `<ul class="button-container"></ul>`
+    }
+    else {
+        button_container = `<ul class="button-container">
+            <button type="button" class="btn red-button" id="back-button">Hủy yêu cầu</button>
+        </ul>`
+    }
+    let new_card = document.createElement("li");
+    new_card.className = "card";
     new_card.innerHTML = `
     <ul>
         <li>${advertisement.type_billboard}</li>
@@ -48,11 +57,7 @@ function createCard(advertisement) {
                     </ul>
                 </li>
             </ul>
-            <ul class="button-container">
-                <li> <button class="button">Register</button></li>
-                <li> <button class="button">Register</button></li>
-                <li> <button class="button">Register</button></li>
-            </ul>
+            ${button_container}
         </div>
     </div>`
     console.log(new_card);
@@ -61,6 +66,11 @@ function createCard(advertisement) {
 
 const table = document.querySelector("#table ul");
 let advertisements = [];
+
+document.getElementById("to-map-btn").addEventListener("onclick", () => {
+    window.location.href = "/Phan-cum-phuong-quan/trangchu.html";
+})
+
 $.getJSON("../data/billboard.json", function(data) {
     advertisements = data;
  }).done(function() {
@@ -79,6 +89,16 @@ $.getJSON("../data/billboard.json", function(data) {
         });
         table.appendChild(createCard(billboard))
     });
+    
+    const status_billboards = document.querySelectorAll("#table ul li:not(:first-child) ul li:nth-child(3)");
+    status_billboards.forEach((e)=>{
+       if (e.innerHTML == "Đã duyệt") {
+           e.style.color = "#00a41a";
+       }
+       if (e.innerHTML == "Chưa duyệt") {
+           e.style.color = "#ffc701";
+       }
+    })
  })
  .fail(function() {
    console.log( "error" );

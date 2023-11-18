@@ -22,7 +22,7 @@ function createCard(report) {
         <li>${report.type}</li>
         <li>${report.address}</li>
         <li>${report.send_day}</li>
-        <li>${report.status? "Đã duyệt": "Chưa duyệt"}</li>
+        <li>${report.status? "Đã xử lý": "Đang xử lý"}</li>
     </ul>`
     return new_card;
 }
@@ -37,8 +37,8 @@ $.getJSON("../data/report.json", function(data) {
         table.appendChild(createCard(report))
     });
 
-    const items = document.querySelectorAll("#table ul li:not(:first-child) ul li:first-child");
-    items.forEach((e)=>{
+    const type_billboards = document.querySelectorAll("#table ul li:not(:first-child) ul li:first-child");
+    type_billboards.forEach((e)=>{
        if (e.innerHTML == "Tố giác sai phạm") {
            e.style.color = "#ff7b7b";
        }
@@ -51,7 +51,24 @@ $.getJSON("../data/report.json", function(data) {
        if (e.innerHTML == "Giải đáp thắc mắc") {
            e.style.color = "#ffc701";
        }
-       console.log(e.innerHTML);
+    })
+
+    const status_billboards = document.querySelectorAll("#table ul li:not(:first-child) ul li:nth-child(4)");
+    status_billboards.forEach((e)=>{
+       if (e.innerHTML == "Đã xử lý") {
+           e.style.color = "#00a41a";
+       }
+       if (e.innerHTML == "Đang xử lý") {
+           e.style.color = "#ffc701";
+       }
+    })
+
+    const report_redirect = document.querySelectorAll("#table ul li.card");
+    report_redirect.forEach((e)=>{
+        e.addEventListener("click", () => {
+            window.location.href = "/Phan-cum-phuong-quan/chitietbaocao.html";
+        })
+        e.style.cursor = "pointer";
     })
  })
  .fail(function() {
