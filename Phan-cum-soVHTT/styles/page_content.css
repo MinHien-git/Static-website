@@ -26,6 +26,13 @@ main {
 	width: 12.5rem;
 }
 
+#create__account__btn {
+	float: right;
+	margin: 0 0.4rem 1rem 0;
+	padding: 0.4rem;
+	width: 12.5rem;
+}
+
 #search__btn {
 	margin-right: 2%;
 }

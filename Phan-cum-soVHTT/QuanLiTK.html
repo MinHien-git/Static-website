@@ -80,7 +80,12 @@
 			<main>
 				<div class="container" id="main__container">
 					<h1 class="fw-bold h2 mb-0" id="page__title">Quản lí tài khoản</h1>
-					<button type="submit" class="btn btn-success nowrap" id="map__btn">
+					<button
+						type="submit"
+						class="btn btn-success nowrap"
+						id="create__account__btn"
+						data-bs-toggle="modal"
+						data-bs-target="#Create__account__modal">
 						+&ensp;Tạo tài khoản
 					</button>
 					<form action="" class="d-flex search__form">
@@ -90,7 +95,7 @@
 							placeholder="Nhập thông tin" />
 						<button
 							type="submit"
-							class="btn btn-success nowrap"
+							class="btn btn-primary nowrap"
 							id="search__btn">
 							Tìm kiếm
 						</button>
@@ -390,6 +395,109 @@
 
 						<div
 							class="modal fade"
+							id="Create__account__modal"
+							tabindex="-1"
+							aria-labelledby="Create__account__label"
+							aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h3
+											class="modal-title fw-bold fs-5"
+											id="Create__account__label">
+											Tạo tài khoản mới
+										</h3>
+										<button
+											class="btn-close"
+											type="button"
+											data-bs-dismiss="modal"
+											aria-label="Close"></button>
+									</div>
+									<div class="modal-body">
+										<form action="">
+											<label for="Employee-Name" class="fw-bold">Họ tên:</label>
+											<input
+												type="text"
+												name="e-Name"
+												class="form-control mb-3"
+												id="Employee-name" />
+
+											<label for="Employee-ID" class="fw-bold"
+												>Mã nhân viên</label
+											>
+											<input
+												type="text"
+												name="e-Id"
+												class="form-control mb-3"
+												id="Employee-ID" />
+
+											<label for="Employee-Email" class="fw-bold">Email</label>
+											<input
+												type="email"
+												name="e-Email"
+												class="form-control mb-3"
+												id="Employee-Email" />
+
+											<label for="Employee-Number" class="fw-bold"
+												>Số điện thoại</label
+											>
+											<input
+												type="text"
+												name="e-Number"
+												class="form-control mb-3"
+												id="Employee-Number" />
+
+											<label for="Area" class="fw-bold"
+												>Khu vực trực thuộc</label
+											>
+											<ul class="sub__list__flex">
+												<li class="list__col1">
+													<select
+														class="form-select mb-3"
+														id="district__number"
+														aria-label="district number selector">
+														<option selected>Quận...</option>
+														<option value="1">Quận 1</option>
+														<option value="2">Quận 2</option>
+														<option value="3">Quận 3</option>
+													</select>
+												</li>
+												<li class="list__col2">
+													<select
+														class="form-select mb-3"
+														id="ward__number"
+														aria-label="ward number selector">
+														<option selected>Phường...</option>
+														<option value="1">Phường 1</option>
+														<option value="2">Phường 2</option>
+														<option value="3">Phường 3</option>
+													</select>
+												</li>
+											</ul>
+										</form>
+									</div>
+									<div class="modal-footer">
+										<button
+											type="button"
+											class="btn btn-secondary"
+											data-bs-dismiss="modal">
+											Huỷ
+										</button>
+										<button
+											type="button"
+											class="btn btn-success"
+											data-bs-dismiss="modal"
+											onclick="showToast('create__success__toast')"
+											id="save__changes__btn">
+											Tạo tài khoản
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div
+							class="modal fade"
 							id="delete__confirm__modal"
 							tabindex="-1"
 							aria-labelledby="delete__modal__label"
@@ -432,6 +540,24 @@
 						</div>
 
 						<div class="toast-container position-fixed bottom-0 end-0 p-3">
+							<div
+								class="toast align-items-center text-bg-success border-0"
+								id="create__success__toast"
+								role="alert"
+								aria-live="assertive"
+								aria-atomic="true">
+								<div class="d-flex">
+									<div class="toast-body">
+										<i class="bi bi-check-lg"></i>
+										Đã tạo tài khoản!
+									</div>
+									<button
+										type="button"
+										class="btn-close btn-close-white me-2 m-auto"
+										data-bs-dismiss="toast"
+										aria-label="Close"></button>
+								</div>
+							</div>
 							<div
 								class="toast align-items-center text-bg-success border-0"
 								id="save__success__toast"
