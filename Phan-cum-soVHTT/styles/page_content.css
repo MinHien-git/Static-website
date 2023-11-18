@@ -22,8 +22,6 @@ main {
 #map__btn {
 	float: right;
 	margin: 0 0.4rem 1rem 0;
-	padding: 0.4rem;
-	width: 12.5rem;
 }
 
 #search__btn {
@@ -99,7 +97,6 @@ main {
 
 #main__list .card {
 	margin-bottom: 0.5rem;
-	height: fit-content;
 }
 
 .multi__input__field {
@@ -114,11 +111,4 @@ main {
 .small__input {
 	width: 45%;
 	height: fit-content;
-}
-
-#to__list {
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	margin: 1rem;
 }
