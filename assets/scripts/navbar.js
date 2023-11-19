@@ -1,10 +1,16 @@
 let primary_header = $("#primary-header");
 let burger = $("#burger");
+let logout = $("#logout button")
 let primary_navigation_bar = $("#primary-navigation-bar");
 
 burger.on("click", (e) => {
   primary_header.toggleClass("active");
 });
+
+logout.on("click", (e) => {
+    e.preventDefault();
+    window.location.href = "/Phan-cum-nguoi-dan/trangchu.html"
+})
 
 let navbar = document.querySelectorAll("#primary-items-list li");
 navbar.forEach((e) => {
