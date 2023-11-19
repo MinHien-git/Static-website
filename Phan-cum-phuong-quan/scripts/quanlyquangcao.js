@@ -74,7 +74,7 @@ function assignButton(item_id, advertisement) {
 		<li>
 			<button
 				class="btn btn-danger"
-				onclick="create_authorize_request('${advertisement.address}')">
+				onclick="">
 				<i class="bi bi-trash"></i> Hủy yêu cầu
 			</button>
 		</li>
@@ -100,9 +100,9 @@ function assignButton(item_id, advertisement) {
 		</li>
 		<li>
 			<button
-				class="btn btn-outline-warning me-3"
+				class="btn btn-success me-3"
 				onclick="create_authorize_request('${advertisement.address}')">
-				<i class="bi bi-trash"></i> Tạo yêu cầu
+				<i class="bi bi-clipboard2-check"></i> Tạo yêu cầu
 			</button>
 		</li>
 		</ul>`;
