@@ -130,6 +130,7 @@ main {
   text-overflow: ellipsis;
   overflow-x: hidden;
   white-space: nowrap;
+  font-size: 0.825rem !important;
 }
 
 .list__flex .list__col2 {
@@ -139,4 +140,12 @@ main {
 #main__list {
   max-height: 80vh;
   overflow-y: auto;
+}
+
+.card-body li {
+  font-size: 0.75rem !important;
+}
+
+.card-body span {
+  font-size: 0.825rem !important;
 }

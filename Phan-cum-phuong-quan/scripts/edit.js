@@ -33,7 +33,7 @@ function get_report(position) {
           name="name"
           id="name"
           value=""
-          placeholder="Họ và tên người báo cáo"
+          placeholder="dd/mm/yyyy"
         />
       </div>
       <div class="form-section file-section">

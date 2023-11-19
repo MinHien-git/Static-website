@@ -129,24 +129,29 @@ function createCard(advertisement) {
 													<button
 														class="btn btn-outline-warning me-3"
 														data-bs-toggle="modal"
-														data-bs-target="#Modify__modal">
+														data-bs-target="#Modify__modal" onclick="">
 														<i class="bi bi-pencil"></i>Thông tin
 													</button>
 												</li>
 												<li>
 													<button
 														class="btn btn-outline-warning me-3"
-														data-bs-toggle="modal"
-														data-bs-target="#Modify__modal">
+														onclick="create_edit_request('${advertisement.address}')">
 														<i class="bi bi-pencil"></i>Chỉnh sửa
 													</button>
 												</li>
 												<li>
 													<button
 														class="btn btn-danger"
-														data-bs-toggle="modal"
-														data-bs-target="#delete__confirm__modal">
-														<i class="bi bi-trash"></i>Xoá
+														onclick="create_authorize_request('${advertisement.address}')">
+														<i class="bi bi-trash"></i>Tạo yêu cầu
+													</button>
+												</li>
+												<li>
+													<button
+														class="btn btn-danger"
+														onclick="create_authorize_request('${advertisement.address}')">
+														<i class="bi bi-trash"></i>Xoá yêu cầu
 													</button>
 												</li>
 											</ul>
@@ -196,3 +201,313 @@ $.getJSON("../data/billboard.json", function (data) {
   .always(function () {
     console.log("complete");
   });
+
+function create_authorize_request(position = "") {
+  if (request_node) {
+    body.removeChild(request_node);
+  }
+  let report = `
+		  <section class="active" id="request-popup">
+		  <div id="report-section-form-container">
+		  <div id="inscreen-request-close" class="inscreen-request-close">
+			<img
+			  id="inscreen-authen-close"
+			  src="../assets/images/close.png"
+			  alt="close button"
+			/>
+		  </div>
+		  <form
+			id="inscreen-form-login"
+			class="form-container active"
+			method="post"
+			action="/login"
+		  >
+			<h2>Cấp phép Quảng cáo</h2>
+			<div class="form-section">
+			  <label for="street">Địa chỉ yêu cầu:</label>
+			  <textarea id="street">${position}</textarea>
+			</div>
+			<div class="form-section">
+			  <label for="type-billboard">Bảng quảng cáo:</label>
+			  <input
+				type="text"
+				name="type-billboard"
+				id="type-billboard"
+				value=""
+				placeholder="Chọn..."
+			  />
+			</div>
+			
+			<div class="form-section">
+			  <label for="name">Thông tin công ty:</label>
+			  <input
+				type="text"
+				name="name"
+				id="name"
+				value=""
+				placeholder="Tên công ty"
+			  />
+			</div>
+			<div class="form-section">
+			<label for="company-infomation">Thông tin liên lạc:</label>
+			<input
+			  type="text"
+			  name="company-infomation"
+			  id="company-infomation"
+			  value=""
+			  placeholder="Email công ty"
+			/>
+		  </div>
+		  <div class="flex size-information">
+		  <div class="form-section">
+			<label for="start-date">Ngày bắt đầu:</label>
+			<input
+			  type="date"
+			  name="start-date"
+			  id="start-date"
+			  value=""
+			  placeholder="Email công ty"
+			/>
+		  </div>
+		  <div class="form-section">
+			<label for="end-date">Ngày kết thúc:</label>
+			<input
+			  type="date"
+			  name="end-date"
+			  id="end-date"
+			  value=""
+			  placeholder="Email công ty"
+			/>
+		  </div>
+		  </div>
+		  <div class="form-section file-section">
+			  <p>Thông tin đính kèm:</p>
+			  <div class="file-button">
+				<label for="attached_files">Chọn</label>
+				<input
+				  type="file"
+				  name="attached_files"
+				  id="attached_files"
+				/>
+			  </div>
+			</div>
+			<div class="form-section">
+			  <label for="tel">Thông tin chỉnh sửa:</label>
+			  <div id="editor"></div>
+			</div>
+			<div class="form-section">
+			  <button class="submit-button submit">Gửi</button>
+			</div>
+		  </form>
+		</div>
+		</section> `;
+  request_node = document.createElement("section");
+  request_node.setAttribute("id", "request-popup");
+  request_node.classList.add("active");
+
+  request_node.innerHTML += report;
+  body.append(request_node);
+
+  var close = $("#inscreen-request-close");
+  close.on("click", () => {
+    body.removeChild(request_node);
+    request_node = null;
+  });
+
+  var quill = new Quill("#editor", {
+    theme: "snow",
+  });
+}
+
+function create_edit_request(position = "") {
+  if (edit_node) {
+    body.removeChild(edit_node);
+  }
+  let report = `
+		<section class="active popup" id="report-popup">
+		<div id="report-section-form-container">
+		<div id="inscreen-report-close" class="inscreen-report-close">
+		  <img
+			id="inscreen-authen-close"
+			src="../assets/images/close.png"
+			alt="close button"
+		  />
+		</div>
+		<form
+		  id="inscreen-form-login"
+		  class="form-container active"
+		  method="post"
+		  action="/login"
+		>
+		  <h2>Chỉnh sửa Bảng QC</h2>
+		  <div class="form-section">
+			<label for="type">Loại quảng cáo:</label>
+			<input
+			  type="text"
+			  name="type"
+			  id="type"
+			  value=""
+			  placeholder="Chọn..."
+			/>
+		  </div>
+		  <div class="form-section">
+			<label for="street">Địa điểm:</label>
+			<textarea id="street">${position}</textarea>
+		  </div>
+		  <div class="form-section">
+		  <label for="form">Hình thức:</label>
+		  <input
+			type="text"
+			name="form"
+			id="form"
+			value=""
+			placeholder="Chọn..."
+		  />
+		</div>
+		<div class="form-section">
+		  <label for="form">Phân loại:</label>
+		  <input
+			type="text"
+			name="catetorize"
+			id="catetorize"
+			value=""
+			placeholder="Chọn..."
+		  />
+		</div>
+		<div class="flex size-information inline">
+		<div class="form-section">
+		  <label for="width">Dài:</label>
+		  <input
+			type="number"
+			name="width"
+			id="width"
+			value=""
+			placeholder="XY"
+		  />
+		</div>
+		<div class="form-section">
+		<label for="height">Rộng</label>
+		<input
+		  type="number"
+		  name="height"
+		  id="height"
+		  value=""
+		  placeholder="XY"
+		/>
+	  </div>
+		</div>
+		<div class="flex size-information inline">
+		<div class="form-section">
+		  <label for="stand">trụ:</label>
+		  <input
+			type="number"
+			name="stand"
+			id="stand"
+			value=""
+			placeholder="XY"
+		  />
+		</div>
+		<div class="form-section">
+		<label for="panel">bảng:</label>
+		<input
+		  type="number"
+		  name="panel"
+		  id="panel"
+		  value=""
+		  placeholder="XY"
+		/>
+	  </div>
+		</div>
+		<div class="form-section">
+			<label for="state">Trạng thái:</label>
+			<input
+			  type="text"
+			  name="state"
+			  id="state"
+			  value=""
+			  placeholder="Chọn..."
+			/>
+		  </div>
+		  <div class="form-section">
+			<label for="name">Thông tin công ty:</label>
+			<input
+			  type="text"
+			  name="name"
+			  id="name"
+			  value=""
+			  placeholder="tên công ty"
+			/>
+		  </div>
+		  <div class="form-section">
+			<label for="contact">Thông tin liên lạc:</label>
+			<input
+			  type="text"
+			  name="contact"
+			  id="contact"
+			  value=""
+			  placeholder="Email công ty"
+			/>
+		  </div>
+		  <div class="flex size-information inline">
+		<div class="form-section">
+		  <label for="start">Ngày bđ:</label>
+		  <input
+			type="date"
+			name="start"
+			id="start"
+			value=""
+			placeholder="XY"
+		  />
+		</div>
+		<div class="form-section">
+		<label for="end">Ngày kt:</label>
+		<input
+		  type="date"
+		  name="end"
+		  id="end"
+		  value=""
+		  placeholder="XY"
+		/>
+	  </div>
+		</div>
+		<div class="form-section file-section">
+			<p>Thông tin đính kèm:</p>
+			<div class="file-button">
+			  <label for="attached_files">Chọn</label>
+			  <input
+				type="file"
+				name="attached_files"
+				id="attached_files"
+			  />
+			</div>
+		  </div>
+		  <div class ="px-4 d-flex justify-content-evenly w-100 btn-container">
+		  <div class="form-section">
+			<button class="delete">Xoá</button>
+		  </div>
+		  <div class="form-section">
+			<button class="submit-button submit">Chỉnh sửa</button>
+		  </div>
+		  </div>
+		</form>
+	  </div>
+	  </section> `;
+  edit_node = document.createElement("section");
+  edit_node.setAttribute("id", "report-popup");
+  edit_node.classList.add("active");
+
+  edit_node.innerHTML += report;
+  body.append(edit_node);
+
+  var close = $("#inscreen-report-close");
+  close.on("click", () => {
+    body.removeChild(edit_node);
+    edit_node = null;
+  });
+
+  var quill = new Quill("#editor", {
+    theme: "snow",
+  });
+}
+let request_node;
+let edit_node;

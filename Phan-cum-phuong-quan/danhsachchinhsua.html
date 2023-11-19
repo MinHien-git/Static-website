@@ -16,7 +16,11 @@
       integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
       crossorigin="anonymous"
     />
-
+    <link
+    href="https://cdn.quilljs.com/1.3.7/quill.snow.css"
+    rel="stylesheet"
+  />
+  <script src="https://cdn.quilljs.com/1.3.7/quill.js"></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
@@ -35,6 +39,7 @@
       integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
       crossorigin=""
     />
+    
   </head>
   <body>
     <script src="../assets/scripts/navbar.js" defer></script>
@@ -125,6 +130,7 @@
               </div>
             </div>
           </div>
+          
         </div>
 
       <!--
@@ -158,7 +164,13 @@
             </div>
         </div>
       -->
-    </div>
+      <div id="to__list__btn" class="d-grid gap-2">
+        <button class="btn btn-primary" onclick="create_edit_request()">
+          <i class="bi bi-card-list"></i>
+          Tạo Y/C chỉnh sửa
+        </button>
+      </div>
+  </main>
     <script src="../assets/scripts/popup.js"></script>
     <script src="./scripts/trangchu.js"></script>
     <script src="./scripts/edit.js"></script>
