@@ -15,8 +15,14 @@ document.getElementById("billboard-list").addEventListener("click", () => {
 })
 
 function navigate(item_id) {
-	let link = "/Phan-cum-phuong-quan/trangchu.html"
-	window.location.href = link
+	if (item_id == "to__list__btn") {
+        let link = "/Phan-cum-phuong-quan/quanlyquangcao.html";
+	    window.location.href = link;
+    }
+    if (item_id == "map__btn") {
+        let link = "/Phan-cum-phuong-quan/trangchu.html";
+	    window.location.href = link;
+    }
 }
 
 
