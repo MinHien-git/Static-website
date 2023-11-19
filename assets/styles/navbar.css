@@ -117,23 +117,30 @@
   .official #primary-navigation-bar {
     margin-top: 2rem;
     height: 90%;
-    align-items: self-start;
+    align-items: center;
+    width: 100%;
   }
   .official #primary-items-list {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    width: 100%;
     height: 100%;
     align-content: start;
   }
   .official.active #primary-items-list {
-    margin-left: 1.8rem;
+    /* margin-left: 1.8rem; */
   }
   .official #primary-items-list > * {
     display: flex;
     align-items: center;
-    justify-content: left;
+    justify-content: center;
     gap: 1rem;
+  }
+
+  .official.active #primary-items-list > * {
+    justify-content: left;
+    padding-left: 1.8rem;
   }
   #primary-items-list li {
     width: 100%;
@@ -171,4 +178,9 @@
     align-items: center;
     gap: 1rem;
   }
+}
+
+.current {
+  background-color: rgba(0, 89, 255, 0.2);
+  border-radius: 2;
 }
