@@ -18,15 +18,11 @@ function assignStatus(item_id) {
   let status = new String("	");
   switch (+status_num) {
     case 1: {
-      status = `<li class="list__col3 fw-semibold" style="color: #329a44">
-                                            Đã duyệt
-                                        </li>`;
+      status = `<li class="list__col3 fw-semibold" style="color: #329a44">Đã duyệt</li>`;
       break;
     }
     default: {
-      status = `<li class="list__col3 fw-semibold" style="color: #e7b400">
-          Chưa duyệt
-      </li>`;
+      status = `<li class="list__col3 fw-semibold" style="color: #e7b400">Chưa duyệt</li>`;
       break;
     }
   }
@@ -44,9 +40,7 @@ function createCard(report) {
             <li class="list__col1">${report.type}</li>
             <li class="list__col2">${report.address}</li>
             <li class="list__col3">${report.send_day}</li>
-            <li class="list__col4">${
-              report.status ? "Đã xử lý" : "Đang xử lý"
-            }</li>  
+            <li class="list__col4">${report.status ? "Đã xử lý" : "Đang xử lý"}</li>  
         </ul>
     </div>
                             
@@ -95,7 +89,7 @@ $.getJSON("../data/report.json", function (data) {
       }
     });
 
-    const report_redirect = document.querySelectorAll("#table ul li.card");
+    const report_redirect = document.querySelectorAll("#main__list div.card div.card-header");
     report_redirect.forEach((e) => {
       e.addEventListener("click", () => {
         window.location.href = "/Phan-cum-phuong-quan/chitietbaocao.html";

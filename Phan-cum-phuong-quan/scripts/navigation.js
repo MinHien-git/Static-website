@@ -14,3 +14,22 @@ document.getElementById("billboard-list").addEventListener("click", () => {
     window.location.href = "/Phan-cum-phuong-quan/quanlyquangcao.html";
 })
 
+function navigate(item_id) {
+	let link = "/Phan-cum-phuong-quan/trangchu.html"
+	window.location.href = link
+}
+
+
+//toggle collapse button
+function toggleCollapseButton(btn_id) {
+    const btn = document.getElementById(btn_id)
+    const icon = btn.querySelector("i")
+    if (btn.classList.contains("collapsed")) {
+        icon.classList.remove("bi-chevron-up")
+        icon.classList.add("bi-chevron-down")
+    } else {
+        icon.classList.add("bi-chevron-up")
+        icon.classList.remove("bi-chevron-down")
+    }
+}
+

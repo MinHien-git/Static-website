@@ -43,7 +43,7 @@ main {
 
 /* ||LIST */
 .list__title__container {
-  padding: 1rem;
+  padding: 0rem 1rem 1rem;
 }
 
 .list__flex {
@@ -138,7 +138,8 @@ main {
 }
 
 #main__list {
-  max-height: 80vh;
+  margin-top: 2vh;
+  max-height: 70vh;
   overflow-y: auto;
 }
 
