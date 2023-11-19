@@ -14,37 +14,102 @@ function assignStatus(item_id) {
   let status = new String("	");
   switch (+status_num) {
     case 1: {
-      status = `<li class="list__col3 fw-semibold" style="color: #329a44">
-										Đã cấp phép
-									</li>`;
+      status = `<li class="list__col3 fw-semibold" style="color: #329a44">Đã cấp phép</li>`;
       break;
     }
     case 2: {
-      status = `<li class="list__col3 fw-semibold" style="color: #e7b400">
-										Chờ cấp phép
-									</li>`;
+      status = `<li class="list__col3 fw-semibold" style="color: #e7b400">Chờ cấp phép</li>`;
       break;
     }
     case 3: {
-      status = `<li class="list__col3 fw-semibold" style="color: #3a65d6">
-										Đã quy hoạch
-									</li>`;
+      status = `<li class="list__col3 fw-semibold" style="color: #3a65d6">Đã quy hoạch</li>`;
       break;
     }
     case 0: {
-      status = `<li class="list__col3 fw-semibold" style="color: #db3232">
-										Chưa quy hoạch
-									</li>`;
+      status = `<li class="list__col3 fw-semibold" style="color: #db3232">Chưa quy hoạch</li>`;
       break;
     }
     default: {
-      status = `<li class="list__col3 fw-semibold" style="color: #db3232">
-										Chưa quy hoạch
-									</li>`;
+      status = `<li class="list__col3 fw-semibold" style="color: #db3232">Chưa quy hoạch</li>`;
       break;
     }
   }
   return status;
+}
+
+function assignButton(item_id, advertisement) {
+  const status_num = item_id % 4;
+  let button_container = new String("	");
+  switch (+status_num) {
+    case 1: {
+      button_container = `<ul class="buttons__container">
+	  <li>
+	  <button
+		  class="btn btn-primary me-3"
+		  data-bs-toggle="modal"
+		  data-bs-target="#Modify__modal" onclick="">
+		  <i class="bi bi-info-circle"></i> Thông tin
+	  </button>
+	</li>
+	<li>
+		<button
+			class="btn btn-warning me-3"
+			onclick="create_edit_request('${advertisement.address}')">
+			<i class="bi bi-pencil"></i> Chỉnh sửa
+		</button>
+	</li>
+	</ul>`;
+      break;
+    }
+    case 2: {
+      button_container = `<ul class="buttons__container">
+		<li>
+			<button
+				class="btn btn-primary me-3"
+				data-bs-toggle="modal"
+				data-bs-target="#Modify__modal" onclick="">
+				<i class="bi bi-info-circle"></i> Thông tin
+			</button>
+		</li>
+		<li>
+			<button
+				class="btn btn-danger"
+				onclick="create_authorize_request('${advertisement.address}')">
+				<i class="bi bi-trash"></i> Hủy yêu cầu
+			</button>
+		</li>
+		</ul>`;
+      break;
+    }
+    default: {
+      button_container = `<ul class="buttons__container">
+		<li>
+			<button
+				class="btn btn-primary me-3"
+				data-bs-toggle="modal"
+				data-bs-target="#Modify__modal" onclick="">
+				<i class="bi bi-info-circle"></i> Thông tin
+			</button>
+		</li>
+		<li>
+			<button
+				class="btn btn-warning me-3"
+				onclick="create_edit_request('${advertisement.address}')">
+				<i class="bi bi-pencil"></i> Chỉnh sửa
+			</button>
+		</li>
+		<li>
+			<button
+				class="btn btn-outline-warning me-3"
+				onclick="create_authorize_request('${advertisement.address}')">
+				<i class="bi bi-trash"></i> Tạo yêu cầu
+			</button>
+		</li>
+		</ul>`;
+      break;
+    }
+  }
+  return button_container;
 }
 
 function createCard(advertisement) {
@@ -124,37 +189,7 @@ function createCard(advertisement) {
 											</ul>
 										</li>
 										<li>
-											<ul class="buttons__container">
-                                            <li>
-													<button
-														class="btn btn-outline-warning me-3"
-														data-bs-toggle="modal"
-														data-bs-target="#Modify__modal" onclick="">
-														<i class="bi bi-pencil"></i>Thông tin
-													</button>
-												</li>
-												<li>
-													<button
-														class="btn btn-outline-warning me-3"
-														onclick="create_edit_request('${advertisement.address}')">
-														<i class="bi bi-pencil"></i>Chỉnh sửa
-													</button>
-												</li>
-												<li>
-													<button
-														class="btn btn-danger"
-														onclick="create_authorize_request('${advertisement.address}')">
-														<i class="bi bi-trash"></i>Tạo yêu cầu
-													</button>
-												</li>
-												<li>
-													<button
-														class="btn btn-danger"
-														onclick="create_authorize_request('${advertisement.address}')">
-														<i class="bi bi-trash"></i>Xoá yêu cầu
-													</button>
-												</li>
-											</ul>
+											${assignButton(id, advertisement)}
 										</li>
 									</ul>
 								</div>
