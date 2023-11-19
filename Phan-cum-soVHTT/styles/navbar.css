@@ -1,31 +1,26 @@
 @import "/assets/styles/navbar.css";
 
 header * {
-	font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 #primary-header {
-	position: sticky;
-	top: 0;
+  position: sticky;
+  top: 0;
 }
 
 .official.active#primary-header {
-	width: 13.5rem;
+  width: 13.5rem;
 }
 
 #primary-items-list li {
-	width: 100%;
+  width: 100%;
 }
 
 #nav__item__icon {
-	color: rgb(59, 123, 250);
+  color: rgb(59, 123, 250);
 }
 
 #logout__icon {
-	color: red;
-}
-
-.current {
-	background-color: rgba(0, 89, 255, 0.2);
-	border-radius: 2;
+  color: red;
 }

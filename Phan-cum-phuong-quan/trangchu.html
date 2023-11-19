@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Trang chu- Phan Cum Nguoi Dan</title>
+    <title>Bản đồ</title>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
       integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
@@ -59,10 +59,10 @@
   </head>
   <body>
     <script src="../assets/scripts/navbar.js" defer></script>
-    <header id="primary-header" class="flex official">
+    <header id="primary-header" class="flex official" style="position: fixed">
       <div id="burger"></div>
       <nav id="primary-navigation-bar">
-        <ul id="primary-items-list">
+        <ul id="primary-items-list" class="my-3">
           <li id="profile">
             <i class="bi bi-person-circle vertical__center nav__item__icon"></i>
             <span>user name</span>
@@ -97,7 +97,16 @@
     <main id="map-container">
       <div id="map"></div>
       <div id="info"></div>
+      <button
+        class="btn btn-primary"
+        id="to__list__btn"
+        onclick="navigate(this.id)"
+      >
+        <i class="bi bi-card-list"></i>
+        Danh sách
+      </button>
     </main>
+
     <script src="../assets/scripts/popup.js"></script>
     <script src="./scripts/trangchu.js"></script>
     <script src="./scripts/edit.js"></script>

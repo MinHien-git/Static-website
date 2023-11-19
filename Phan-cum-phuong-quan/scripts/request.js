@@ -56,7 +56,7 @@ function get_resquest(position) {
         placeholder="Email công ty"
       />
     </div>
-    <div class="flex date-information">
+    <div class="flex size-information">
     <div class="form-section">
       <label for="start-date">Ngày bắt đầu:</label>
       <input
