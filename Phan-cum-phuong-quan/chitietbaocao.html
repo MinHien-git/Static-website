@@ -55,100 +55,106 @@
   </head>
   <body>
     <script src="../assets/scripts/navbar.js" defer></script>
-    <header id="primary-header" class="flex official">
-      <div id="burger"></div>
-      <nav id="primary-navigation-bar">
-        <ul id="primary-items-list" class="my-3">
-          <li id="profile">
-            <i class="bi bi-person-circle vertical__center nav__item__icon"></i>
-            <span><a>user name</a></span>
-          </li>
-          <li id="report-list">
-            <i class="bi bi-clipboard2-check nav__item__icon"></i>
-            <span><a>Danh sách báo cáo</a></span>
-          </li>
-          <li id="license-list">
-            <i class="bi bi-check-circle nav__item__icon"></i>
-            <span><a>Yêu cầu cấp phép</a></span>
-          </li>
-          <li id="edit-list">
-            <i class="bi bi-pencil nav__item__icon"></i>
-            <span><a>Yêu cầu chỉnh sửa</a></span>
-          </li>
-          <li id="billboard-list">
-            <i class="bi bi-signpost-2 nav__item__icon"></i>
-            <span><a>Danh sách quảng cáo</a></span>
-          </li>
-          <li>
-            <form id="logout" method="post" action="/logout">
-              <button type="submit">
-                <i class="bi bi-box-arrow-left" id="logout"></i>
-                <span>Đăng xuất</span>
-              </button>
-            </form>
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <div class="wrapper">
+      <header id="primary-header" class="flex official">
+        <div id="burger"></div>
+        <nav id="primary-navigation-bar">
+          <ul id="primary-items-list" class="my-3">
+            <li id="profile">
+              <i
+                class="bi bi-person-circle vertical__center nav__item__icon"
+              ></i>
+              <span><a>user name</a></span>
+            </li>
+            <li id="report-list">
+              <i class="bi bi-clipboard2-check nav__item__icon"></i>
+              <span><a>Danh sách báo cáo</a></span>
+            </li>
+            <li id="license-list">
+              <i class="bi bi-check-circle nav__item__icon"></i>
+              <span><a>Yêu cầu cấp phép</a></span>
+            </li>
+            <li id="edit-list">
+              <i class="bi bi-pencil nav__item__icon"></i>
+              <span><a>Yêu cầu chỉnh sửa</a></span>
+            </li>
+            <li id="billboard-list">
+              <i class="bi bi-signpost-2 nav__item__icon"></i>
+              <span><a>Danh sách quảng cáo</a></span>
+            </li>
+            <li>
+              <form id="logout" method="post" action="/logout">
+                <button type="submit">
+                  <i class="bi bi-box-arrow-left" id="logout"></i>
+                  <span>Đăng xuất</span>
+                </button>
+              </form>
+            </li>
+          </ul>
+        </nav>
+      </header>
 
-    <div class="flex official" id="content">
-      <h3 class="bold">Chi tiết báo cáo</h3>
-      <div class="billboard-info">
-        <p>
-          Tên người gửi: Nguyễn Văn A <br />
-          Email: abc@xyz.com <br />
-          Số điện thoại: 0123456789 <br />
-          Nơi quảng cáo: 102 Đ. Nguyễn Hữu Cảnh, Phường 22, Bình Thạnh, Thành
-          phố Hồ Chí Minh, Vietnam.
-        </p>
-      </div>
-      <div class="report-info">
-        <h6 class="bold">Nội dung báo cáo</h6>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
-          vel dictum mi. Praesent ut accumsan turpis. Fusce eget pretium tellus,
-          nec dapibus arcu. Curabitur tempus quam vitae ex cursus condimentum.
-          Fusce id porttitor erat. Maecenas lacus mauris, efficitur lobortis
-          congue in, finibus ac est. Morbi laoreet, mi nec mattis malesuada,
-          eros urna euismod diam, ut lacinia lectus neque vel ante. Sed feugiat
-          justo sit amet vehicula tincidunt. Aenean viverra feugiat velit, a
-          posuere lectus pharetra vitae. Nunc non vestibulum nibh, in congue
-          ligula. Proin vel diam nec lacus lobortis sodales.
-        </p>
-      </div>
-      <h6 class="bold">Hình ảnh đi kèm:</h6>
-      <div class="image-container d-flex">
-        <div class="image-placeholder"></div>
-        <div class="image-placeholder"></div>
-      </div>
+      <div class="flex official" id="content">
+        <main>
+          <h3 class="bold">Chi tiết báo cáo</h3>
+          <div class="billboard-info">
+            <p>
+              Tên người gửi: Nguyễn Văn A <br />
+              Email: abc@xyz.com <br />
+              Số điện thoại: 0123456789 <br />
+              Nơi quảng cáo: 102 Đ. Nguyễn Hữu Cảnh, Phường 22, Bình Thạnh,
+              Thành phố Hồ Chí Minh, Vietnam.
+            </p>
+          </div>
+          <div class="report-info">
+            <h6 class="bold">Nội dung báo cáo</h6>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Pellentesque vel dictum mi. Praesent ut accumsan turpis. Fusce
+              eget pretium tellus, nec dapibus arcu. Curabitur tempus quam vitae
+              ex cursus condimentum. Fusce id porttitor erat. Maecenas lacus
+              mauris, efficitur lobortis congue in, finibus ac est. Morbi
+              laoreet, mi nec mattis malesuada, eros urna euismod diam, ut
+              lacinia lectus neque vel ante. Sed feugiat justo sit amet vehicula
+              tincidunt. Aenean viverra feugiat velit, a posuere lectus pharetra
+              vitae. Nunc non vestibulum nibh, in congue ligula. Proin vel diam
+              nec lacus lobortis sodales.
+            </p>
+          </div>
+          <h6 class="bold">Hình ảnh đi kèm:</h6>
+          <div class="image-container d-flex">
+            <div class="image-placeholder"></div>
+            <div class="image-placeholder"></div>
+          </div>
 
-      <div id="editor"></div>
-
-      <div class="button-container d-flex">
-        <button
-          type="button"
-          class="btn btn-primary white-button"
-          id="back-button"
-        >
-          Quay về
-        </button>
-        <button
-          type="button"
-          class="btn btn-primary blue-button"
-          id="submit-button"
-        >
-          Xử lí
-        </button>
-        <button
-          type="button"
-          class="btn btn-primary red-button"
-          id="cancel-button"
-        >
-          Từ chối
-        </button>
+          <div id="editor"></div>
+          <div class="button-container d-flex">
+            <button
+              type="button"
+              class="btn btn-primary white-button"
+              id="back-button"
+            >
+              Quay về
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary blue-button"
+              id="submit-button"
+            >
+              Xử lí
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary red-button"
+              id="cancel-button"
+            >
+              Từ chối
+            </button>
+        </main>
+        
+        </div>
       </div>
     </div>
-
     <script src="../assets/scripts/popup.js"></script>
     <script src="./scripts/navigation.js"></script>
     <script

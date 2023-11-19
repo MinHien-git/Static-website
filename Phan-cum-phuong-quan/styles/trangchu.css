@@ -5,3 +5,8 @@
   margin: 1rem;
   z-index: 100;
 }
+
+#content {
+  height: 90vh;
+  overflow-y: auto;
+}
