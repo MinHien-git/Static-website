@@ -90,6 +90,12 @@ profile.on("click", (e) => {
     let login_form = $("#inscreen-form-login");
     let signin_form = $("#inscreen-form-register");
 
+    let login_phuong = $("#inscreen-form-login div button.submit-button.facebook-submit")
+    let login_so = $("#inscreen-form-login div button.submit-button.google-submit")
+
+    console.log(login_form)
+    console.log(login_so)
+
     let current_selection = 0;
 
     switch_login.on("click", (e) => {
@@ -113,6 +119,16 @@ profile.on("click", (e) => {
         current_selection = 1;
       }
     });
+
+    login_phuong.on("click", (e) => {
+        e.preventDefault();
+	    window.location.href = "/Phan-cum-phuong-quan/trangchu.html"
+    })
+
+    login_so.on("click", (e) => {
+        e.preventDefault();
+	    window.location.href = "/Phan-cum-soVHTT/map.html"
+    })
 
     close.on("click", () => {
       body.removeChild(_popup);
