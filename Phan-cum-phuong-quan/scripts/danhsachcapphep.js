@@ -35,7 +35,7 @@ function assignButton(item_id, advertisement) {
   let button_container = new String("	");
   switch (+status_num) {
     case 1: {
-      button_container = ``
+      button_container = ``;
       break;
     }
     case 2: {
@@ -49,7 +49,7 @@ function assignButton(item_id, advertisement) {
             <i class="bi bi-trash"></i> Huỷ yêu cầu
           </button>
         </li>
-      </ul>`
+      </ul>`;
       break;
     }
     default: {
@@ -62,7 +62,7 @@ function assignButton(item_id, advertisement) {
             <i class="bi bi-check-circle"></i> Tạo yêu cầu
           </button>
         </li>
-      </ul>`
+      </ul>`;
       break;
     }
   }
@@ -157,16 +157,13 @@ function createCard(advertisement) {
 
 const table = document.querySelector("#main__list");
 let advertisements = [];
-$.getJSON("../data/billboard.json", function (data) {
-  advertisements = data;
-})
-  .done(function () {
-    console.log(advertisements);
-    console.log("second success");
-
+fetch("https://static-website-server.vercel.app/manage/billboard")
+  .then((res) => res.json())
+  .then((data) => {
+    advertisements = data.data;
     start_day = new Date(2023, 10, 23);
     end_day = new Date(2025, 10, 23);
-
+    console.log(advertisements);
     advertisements.forEach((ad) => {
       let billboard = new Billboard(ad.geometry, ad.properties, false, {
         name: "ABC Company",
@@ -186,12 +183,6 @@ $.getJSON("../data/billboard.json", function (data) {
       });
       table.appendChild(createCard(billboard));
     });
-  })
-  .fail(function () {
-    console.log("error");
-  })
-  .always(function () {
-    console.log("complete");
   });
 
 function create_authorize_request(position = "") {

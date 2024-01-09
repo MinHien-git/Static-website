@@ -40,7 +40,9 @@ function createCard(report) {
             <li class="list__col1">${report.type}</li>
             <li class="list__col2">${report.address}</li>
             <li class="list__col3">${report.send_day}</li>
-            <li class="list__col4">${report.status ? "Đã xử lý" : "Đang xử lý"}</li>  
+            <li class="list__col4">${
+              report.status ? "Đã xử lý" : "Đang xử lý"
+            }</li>  
         </ul>
     </div>
                             
@@ -50,10 +52,66 @@ function createCard(report) {
 
 const table = document.querySelector("#main__list");
 let reports = [];
-$.getJSON("../data/report.json", function (data) {
-  reports = data;
-})
-  .done(function () {
+// $.getJSON("../data/report.json", function (data) {
+//   reports = data;
+// })
+//   .done(function () {
+//     reports.forEach((rp) => {
+//       let report = new Report(rp.geometry, rp.type, rp.properties);
+//       table.appendChild(createCard(report));
+//     });
+
+//     const type_billboards = document.querySelectorAll(".list__col1");
+//     type_billboards.forEach((e) => {
+//       e.style.fontSize = "0.825rem";
+//       e.style.fontWeight = "bold";
+//       if (e.innerHTML == "Tố giác sai phạm") {
+//         e.style.color = "#ff7b7b";
+//       }
+//       if (e.innerHTML == "Đăng ký nội dung") {
+//         e.style.color = "#699bf7";
+//       }
+//       if (e.innerHTML == "Đóng góp ý kiến") {
+//         e.style.color = "#00a41a";
+//       }
+//       if (e.innerHTML == "Giải đáp thắc mắc") {
+//         e.style.color = "#ffc701";
+//       }
+//     });
+
+//     const status_billboards = document.querySelectorAll(".list__col4");
+//     status_billboards.forEach((e) => {
+//       e.style.fontWeight = "bold";
+//       e.style.fontSize = "0.825rem";
+//       if (e.innerHTML == "Đã xử lý") {
+//         e.style.color = "#00a41a";
+//       }
+//       if (e.innerHTML == "Đang xử lý") {
+//         e.style.color = "#ffc701";
+//       }
+//     });
+
+//     const report_redirect = document.querySelectorAll(
+//       "#main__list div.card div.card-header"
+//     );
+//     report_redirect.forEach((e) => {
+//       e.addEventListener("click", () => {
+//         window.location.href = "/Phan-cum-phuong-quan/chitietbaocao.html";
+//       });
+//       e.style.cursor = "pointer";
+//     });
+//   })
+//   .fail(function () {
+//     console.log("error");
+//   })
+//   .always(function () {
+//     console.log("complete");
+//   });
+
+fetch("https://static-website-server.vercel.app/manage/report")
+  .then((res) => res.json())
+  .then((data) => {
+    reports = data.data;
     reports.forEach((rp) => {
       let report = new Report(rp.geometry, rp.type, rp.properties);
       table.appendChild(createCard(report));
@@ -89,17 +147,13 @@ $.getJSON("../data/report.json", function (data) {
       }
     });
 
-    const report_redirect = document.querySelectorAll("#main__list div.card div.card-header");
+    const report_redirect = document.querySelectorAll(
+      "#main__list div.card div.card-header"
+    );
     report_redirect.forEach((e) => {
       e.addEventListener("click", () => {
         window.location.href = "/Phan-cum-phuong-quan/chitietbaocao.html";
       });
       e.style.cursor = "pointer";
     });
-  })
-  .fail(function () {
-    console.log("error");
-  })
-  .always(function () {
-    console.log("complete");
   });

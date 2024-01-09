@@ -31,7 +31,7 @@ function assignButton(item_id) {
   let button_container = new String("	");
   switch (+status_num) {
     case 1: {
-      button_container = ``
+      button_container = ``;
       break;
     }
     default: {
@@ -45,7 +45,7 @@ function assignButton(item_id) {
               <i class="bi bi-trash"></i> Huỷ yêu cầu
           </button>
         </li>
-      </ul>`
+      </ul>`;
       break;
     }
   }
@@ -60,12 +60,8 @@ function createCard(advertisement) {
   new_item.innerHTML = `
   <div class="card-header" id="brief__info${id}">
   <ul class="list__flex">
-      <li class="list__col1">${
-        advertisement.type_billboard
-      }</li>
-      <li class="list__col2">${
-        advertisement.address
-      }</li>
+      <li class="list__col1">${advertisement.type_billboard}</li>
+      <li class="list__col2">${advertisement.address}</li>
       ${assignStatus(id)}
       <li class="list__col4">
           <button
@@ -97,28 +93,24 @@ function createCard(advertisement) {
               <ul>
                   <li>
                       Kích thước: <span class="fw-bold">${
-                        advertisement.properties
-                          .size
+                        advertisement.properties.size
                       }</span>
                   </li>
                   <li>
                       Số lượng:
                       <span class="fw-bold">${
-                        advertisement.properties
-                          .amount
+                        advertisement.properties.amount
                       }</span>
                   </li>
                   <li>
                       Hình thức:
                       <span class="fw-bold">${
-                        advertisement.properties
-                          .type_advertise
+                        advertisement.properties.type_advertise
                       }</span>
                   </li>
                   <li>
                       Phân loại: <span class="fw-bold">${
-                        advertisement.properties
-                          .place_type
+                        advertisement.properties.place_type
                       }</span>
                   </li>
               </ul>
@@ -129,30 +121,25 @@ function createCard(advertisement) {
                   <li>
                       Tên công ty:
                       <span class="fw-bold">${
-                        advertisement
-                          .company_info.name
+                        advertisement.company_info.name
                       }</span>
                   </li>
                   <li>
                       Email liên hệ:
                       <span class="fw-bold">${
-                        advertisement
-                          .company_info.contact
+                        advertisement.company_info.contact
                       }</span>
                   </li>
                   <li>
                       Ngày bắt đầu:
                       <span class="fw-bold">${
-                        advertisement
-                          .company_info
-                          .start_date
+                        advertisement.company_info.start_date
                       }</span>
                   </li>
                   <li>
                       Ngày kết thúc:
                       <span class="fw-bold">${
-                        advertisement
-                          .company_info.end_date
+                        advertisement.company_info.end_date
                       }</span>
                   </li>
               </ul>
@@ -174,16 +161,13 @@ document.getElementById("map__btn").addEventListener("onclick", () => {
   window.location.href = "/Phan-cum-phuong-quan/trangchu.html";
 });
 
-$.getJSON("../data/billboard.json", function (data) {
-  advertisements = data;
-})
-  .done(function () {
-    console.log(advertisements);
-    console.log("second success");
-
+fetch("https://static-website-server.vercel.app/manage/billboard")
+  .then((res) => res.json())
+  .then((data) => {
+    advertisements = data.data;
     start_day = new Date(2023, 10, 23);
     end_day = new Date(2025, 10, 23);
-
+    console.log(advertisements);
     advertisements.forEach((ad) => {
       let billboard = new Billboard(ad.geometry, ad.properties, false, {
         name: "ABC Company",
@@ -203,12 +187,6 @@ $.getJSON("../data/billboard.json", function (data) {
       });
       table.appendChild(createCard(billboard));
     });
-  })
-  .fail(function () {
-    console.log("error");
-  })
-  .always(function () {
-    console.log("complete");
   });
 
 function create_edit_request() {
@@ -320,48 +298,8 @@ function create_edit_request() {
           placeholder="Chọn..."
         />
         </div>
-        <div class="form-section">
-        <label for="name">Thông tin công ty:</label>
-        <input
-          type="text"
-          name="name"
-          id="name"
-          value=""
-          placeholder="tên công ty"
-        />
-        </div>
-        <div class="form-section">
-        <label for="contact">Thông tin liên lạc:</label>
-        <input
-          type="text"
-          name="contact"
-          id="contact"
-          value=""
-          placeholder="Email công ty"
-        />
-        </div>
-        <div class="flex size-information inline">
-      <div class="form-section">
-        <label for="start">Ngày bđ:</label>
-        <input
-        type="date"
-        name="start"
-        id="start"
-        value=""
-        placeholder="XY"
-        />
-      </div>
-      <div class="form-section">
-      <label for="end">Ngày kt:</label>
-      <input
-        type="date"
-        name="end"
-        id="end"
-        value=""
-        placeholder="XY"
-      />
-      </div>
-      </div>
+        
+
       <div class="form-section file-section">
         <p>Thông tin đính kèm:</p>
         <div class="file-button">

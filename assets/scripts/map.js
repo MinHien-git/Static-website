@@ -4,10 +4,13 @@ let zoomLevel = 13;
 const api_key = "3dbf2ce56c45401b855931d7f3828a85";
 let popup = L.popup();
 let billboards = [];
-
-$.getJSON("../../data/billboard.json", function (json) {
-  billboards = json; // this will show the info it in firebug console
-});
+let reports = [];
+fetch("https://static-website-server.vercel.app/billboard")
+  .then((res) => res.json())
+  .then((data) => {
+    billboards = data.data.billboard;
+    reports = data.data.reports;
+  });
 console.log(billboards);
 let infoboards = document.getElementById("info");
 let current_feature = null;
@@ -16,14 +19,20 @@ let current_marker = null;
 let requestOptions = {
   method: "GET",
 };
-
+let showBillBoard = true;
+let showBillReport = true;
 var geojsonMarkerOptions = {
   radius: 8,
   weight: 1,
   opacity: 1,
   fillOpacity: 0.8,
 };
-
+var geojsonReportMarkerOptions = {
+  radius: 8,
+  weight: 0.5,
+  opacity: 0.6,
+  fillOpacity: 0.8,
+};
 function setInfoBoard() {
   if (current_feature) {
     infoboards.innerHTML = "";
@@ -124,7 +133,7 @@ function onMapClick(e) {
       let btn = is_offical == 0 ? $(".report") : $(".edit");
       btn.on("click", () => {
         current_feature = data.features[0];
-        get_report(data.features[0].properties.address_line2);
+        get_report(data.features[0]);
       });
     })
     .catch((error) => console.log("error", error));
@@ -134,7 +143,7 @@ window.onload = function () {
   // init map
   map = L.map("map", {
     attributionControl: false,
-  }).setView(defaultCoord, 20);
+  }).setView(defaultCoord, 15);
 
   L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", {
     attribution:
@@ -208,7 +217,7 @@ window.onload = function () {
 
       report_button.addEventListener("click", (e) => {
         current_feature = feature;
-        get_report(feature.properties.place);
+        get_report(feature);
       });
 
       info_button.addEventListener("click", (e) => {
@@ -238,4 +247,102 @@ window.onload = function () {
       }
     },
   }).addTo(map);
+
+  navigator.geolocation.getCurrentPosition((position) => {
+    const {
+      coords: { latitude, longitude },
+    } = position;
+    var marker = new L.marker([latitude, longitude], {
+      draggable: true,
+      autoPan: true,
+    }).addTo(map);
+    map.setView([latitude, longitude], 15);
+    console.log(marker);
+  });
+
+  let reportLayer = L.geoJSON(reports, {
+    pointToLayer: function (feature, latlng) {
+      const attributionDiv = document.createElement("div");
+
+      attributionDiv.setAttribute("id", "content" + feature.id);
+      attributionDiv.innerHTML = `<p>${feature.properties.street}</p>
+  <p><span class="bold">Trạng thái:</span>${"Chưa xử lí"} </p>
+  <p><span class="bold">Nội dung báo cáo:</span></p> 
+  ${feature.properties.detail}`;
+      return L.circleMarker(latlng, geojsonReportMarkerOptions).bindPopup(
+        attributionDiv
+      );
+    },
+    style: function (feature) {
+      if (feature.properties.state === 0) {
+        return {
+          color: "#0FFF50",
+          fillColor: "#0FFF50",
+        };
+      } else {
+        return {
+          color: "#FFC300",
+          fillColor: "#FFC300",
+        };
+      }
+    },
+  }).addTo(map);
+
+  var markers = L.markerClusterGroup();
+  markers.addLayer(geojsonLayer);
+
+  map.addLayer(markers);
+  L.Control.Button = L.Control.extend({
+    options: {
+      position: "topright",
+    },
+    onAdd: function (map) {
+      var container = L.DomUtil.create("div", "leaflet-bar leaflet-control");
+      var button = L.DomUtil.create("a", "leaflet-control-button", container);
+      L.DomEvent.disableClickPropagation(button);
+      L.DomEvent.on(button, "click", function () {
+        showBillBoard = !showBillBoard;
+        if (showBillBoard) {
+          map.addLayer(geojsonLayer);
+          map.addLayer(markers);
+        } else {
+          map.removeLayer(geojsonLayer);
+          map.removeLayer(markers);
+        }
+      });
+
+      container.title = "Title";
+
+      return container;
+    },
+    onRemove: function (map) {},
+  });
+  var control = new L.Control.Button();
+  control.addTo(map);
+
+  L.Control.Button = L.Control.extend({
+    options: {
+      position: "topright",
+    },
+    onAdd: function (map) {
+      var container = L.DomUtil.create("div", "leaflet-bar leaflet-control");
+      var button = L.DomUtil.create("a", "leaflet-control-button", container);
+      L.DomEvent.disableClickPropagation(button);
+      L.DomEvent.on(button, "click", function () {
+        showBillReport = !showBillReport;
+        if (showBillReport) {
+          map.addLayer(reportLayer);
+        } else {
+          map.removeLayer(reportLayer);
+        }
+      });
+
+      container.title = "Title";
+
+      return container;
+    },
+    onRemove: function (map) {},
+  });
+  var billboard = new L.Control.Button();
+  billboard.addTo(map);
 };

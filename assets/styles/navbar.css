@@ -1,6 +1,6 @@
 #primary-header {
   display: flex;
-  position: sticky;
+  position: fixed;
   left: 0;
   box-shadow: none;
   width: 100vw;
@@ -13,6 +13,10 @@
   background-color: transparent;
   transition: 200ms all ease-in-out;
 }
+.wrapper #primary-header {
+  position: sticky;
+}
+
 #primary-header.active {
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
@@ -20,6 +24,8 @@
 }
 #primary-header.active > #primary-navigation-bar {
   display: flex;
+}
+#primary-header.active.official > #primary-navigation-bar {
   margin-left: auto;
 }
 #primary-header.active.official > #primary-navigation-bar {
@@ -43,7 +49,9 @@
   top: 2rem;
   left: 1.5rem;
 }
-
+#primary-items-list {
+  width: 100%;
+}
 #primary-items-list > * img {
   width: 1.25rem;
 }
@@ -52,10 +60,12 @@
   cursor: pointer;
   transition: all 250ms ease-in-out;
 }
+
 #primary-items-list li:hover {
   background-color: rgba(0, 89, 255, 0.2);
   border-radius: 2;
 }
+
 .nav__item__icon {
   color: rgb(59, 123, 250);
   font-size: 1.5rem;
@@ -77,7 +87,7 @@
 #logout button {
   background-color: transparent;
   border: 0;
-  color: #ff7b7b;
+  color: #ff2525;
   font-size: 1.5rem;
 }
 /* for tablet */
@@ -114,16 +124,20 @@
     opacity: 1;
   }
   #primary-navigation-bar {
-    margin-left: auto;
-    margin-right: auto;
+    justify-content: center;
     margin-top: auto;
     margin-bottom: 2.5rem;
+    width: 100%;
   }
   .official #primary-navigation-bar {
     margin-top: 2rem;
     height: 90%;
     align-items: center;
     width: 100%;
+  }
+  #primary-items-list {
+    display: flex;
+    text-align: center;
   }
   .official #primary-items-list {
     display: flex;
@@ -136,11 +150,14 @@
   .official.active #primary-items-list {
     /* margin-left: 1.8rem; */
   }
+  #primary-items-list > * {
+    padding-block: 0.5rem;
+  }
+
   .official #primary-items-list > * {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-block: 0.5rem;
     gap: 1rem;
   }
 
@@ -176,9 +193,12 @@
   }
 
   .official #primary-items-list li:last-child span {
-    color: #ff7b7b;
+    color: #ff2525;
   }
-
+  #logout {
+    justify-content: center;
+  }
+  #logout,
   #logout button {
     display: flex;
     align-items: center;
@@ -187,6 +207,7 @@
 }
 
 .current {
-  background-color: rgba(0, 89, 255, 0.2);
+  background-color: rgba(0, 89, 255, 0.768);
   border-radius: 2;
+  color: white;
 }

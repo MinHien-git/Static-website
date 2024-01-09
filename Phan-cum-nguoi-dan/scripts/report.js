@@ -1,6 +1,6 @@
 let report_node;
 
-function get_report(position) {
+function get_report(feature) {
   if (report_node) {
     body.removeChild(report_node);
   }
@@ -14,15 +14,27 @@ function get_report(position) {
             />
           </div>
           <form
-            id="inscreen-form-login"
+            id="inscreen-form-report"
             class="form-container active"
             method="post"
-            action="/login"
+            action="https://static-website-server.vercel.app/report"
           >
             <h2>Báo Cáo</h2>
             <div class="form-section">
               <label for="street">Địa chỉ báo cáo:</label>
-              <textarea id="street" disabled>${position}</textarea>
+              <input id="geometry" name="geometry" type = "hidden" value=${JSON.stringify(
+                feature.geometry
+              )}>
+              <input id="street" name="street" value="${
+                feature.properties.place
+                  ? feature.properties.place
+                  : feature.properties.address_line2
+              }" type = "hidden">
+              <p style="font-size:.825rem">${
+                feature.properties.place
+                  ? feature.properties.place
+                  : feature.properties.address_line2
+              }"</p>
             </div>
             <div class="form-section">
               <label for="name">Họ Tên:</label>
@@ -90,5 +102,45 @@ function get_report(position) {
 
   var quill = new Quill("#editor", {
     theme: "snow",
+  });
+
+  $("#inscreen-form-report").on("submit", function (e) {
+    e.preventDefault();
+    hvalue = $(".ql-editor").html();
+    $(this).append(
+      "<textarea name='details' style='display:none'>" + hvalue + "</textarea>"
+    );
+    let geometry = $("#geometry").val();
+    let street = $("#street").val();
+    let name = $("#name").val();
+    let email = $("#Lemail").val();
+    let tel = $("#tel").val();
+    let data = {
+      geometry: geometry,
+      type: "Feature",
+      properties: {
+        street: street,
+        sender_name: name,
+        sender_email: email,
+        sender_number: tel,
+        detail: hvalue,
+      },
+      id: Math.floor(Math.random() * 1000),
+    };
+    console.log(data);
+    fetch("https://static-website-server.vercel.app/report", {
+      method: "POST",
+
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success) {
+          alert(data.message);
+        }
+      });
   });
 }

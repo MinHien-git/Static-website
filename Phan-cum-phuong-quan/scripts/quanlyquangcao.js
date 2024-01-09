@@ -200,16 +200,13 @@ function createCard(advertisement) {
 
 const table = document.querySelector("#main__list");
 let advertisements = [];
-$.getJSON("../data/billboard.json", function (data) {
-  advertisements = data;
-})
-  .done(function () {
-    console.log(advertisements);
-    console.log("second success");
-
+fetch("https://static-website-server.vercel.app/manage/billboard")
+  .then((res) => res.json())
+  .then((data) => {
+    advertisements = data.data;
     start_day = new Date(2023, 10, 23);
     end_day = new Date(2025, 10, 23);
-
+    console.log(advertisements);
     advertisements.forEach((ad) => {
       let billboard = new Billboard(ad.geometry, ad.properties, false, {
         name: "ABC Company",
@@ -229,12 +226,6 @@ $.getJSON("../data/billboard.json", function (data) {
       });
       table.appendChild(createCard(billboard));
     });
-  })
-  .fail(function () {
-    console.log("error");
-  })
-  .always(function () {
-    console.log("complete");
   });
 
 function create_authorize_request(position = "") {

@@ -1,6 +1,6 @@
 let report_node;
 
-function get_report(position) {
+function get_report(feature) {
   if (report_node) {
     body.removeChild(report_node);
   }
@@ -23,39 +23,21 @@ function get_report(position) {
       <h2>Yêu cầu Chỉnh sửa</h2>
       <div class="form-section">
         <label for="street">Địa chỉ yêu cầu:</label>
-        <textarea id="street">${position}</textarea>
+        <p id="street" style="font-size:.825rem">${
+          feature.properties.place
+            ? feature.properties.place
+            : feature.properties.address_line2
+        }</p>
       </div>
-      <h5>Thông tin mới:</h5>
-      <div class="form-section">
-        <label for="name">Điểm đặt quảng cáo:</label>
-        <input
-          type="text"
-          name="name"
-          id="name"
-          value=""
-          placeholder="dd/mm/yyyy"
-        />
-      </div>
-      <div class="form-section file-section">
-        <p>Thông tin đính kèm:</p>
-        <div class="file-button">
-          <label for="attached_files">Chọn</label>
-          <input
-            type="file"
-            name="attached_files"
-            id="attached_files"
-          />
-        </div>
-      </div>
-      
+
       <div class="form-section">
         <label for="name">Thời điểm chỉnh sửa:</label>
         <input
-          type="text"
-          name="name"
-          id="name"
+          type="date"
+          name="date"
+          id="date"
           value=""
-          placeholder="Họ và tên người báo cáo"
+          placeholder="dd/mm/yyyy"
         />
       </div>
       <div class="form-section">

@@ -7,7 +7,7 @@ let authent_popup = `
             <button id= "inscreen-switch-login" class="active">Login</button>
             <button id= "inscreen-switch-register">Register</button>
         </div>
-        <form id="inscreen-form-login" class="form-container active" method="post" action="/login">
+        <form id="inscreen-form-login" class="form-container active" method="post" action="https://static-website-server.vercel.app/login">
             <h2>Login</h2>
             <div class="form-section">
                 <label for="Lemail">Email:</label>
@@ -35,7 +35,7 @@ let authent_popup = `
                 <button class="submit-button second-choice">Register</button>
             </div>
         </form>
-        <form id="inscreen-form-register" class="form-container"  method="post" action="/register">
+        <form id="inscreen-form-register" class="form-container"  method="post" action="https://static-website-server.vercel.app/register">
             <h2>Register</h2>
             <div class="form-section">
                 <label for="name">Name:</label>
@@ -90,11 +90,15 @@ profile.on("click", (e) => {
     let login_form = $("#inscreen-form-login");
     let signin_form = $("#inscreen-form-register");
 
-    let login_phuong = $("#inscreen-form-login div button.submit-button.facebook-submit")
-    let login_so = $("#inscreen-form-login div button.submit-button.google-submit")
+    let login_phuong = $(
+      "#inscreen-form-login div button.submit-button.facebook-submit"
+    );
+    let login_so = $(
+      "#inscreen-form-login div button.submit-button.google-submit"
+    );
 
-    console.log(login_form)
-    console.log(login_so)
+    console.log(login_form);
+    console.log(login_so);
 
     let current_selection = 0;
 
@@ -121,14 +125,69 @@ profile.on("click", (e) => {
     });
 
     login_phuong.on("click", (e) => {
-        e.preventDefault();
-	    window.location.href = "/Phan-cum-phuong-quan/trangchu.html"
-    })
+      e.preventDefault();
+      window.location.href = "/Phan-cum-phuong-quan/trangchu.html";
+    });
 
     login_so.on("click", (e) => {
-        e.preventDefault();
-	    window.location.href = "/Phan-cum-soVHTT/map.html"
-    })
+      e.preventDefault();
+      window.location.href = "/Phan-cum-soVHTT/map.html";
+    });
+
+    $("#inscreen-form-register").on("submit", function (e) {
+      e.preventDefault();
+      let email = $("#email").val();
+      let name = $("#name").val();
+      let phone = $("#phone").val();
+      let password = $("#password").val();
+
+      let data = {
+        password: password,
+        name: name,
+        phone: phone,
+        email: email,
+      };
+      console.log(data);
+      fetch("https://static-website-server.vercel.app/register", {
+        method: "POST",
+
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data) {
+            alert(data.message);
+          }
+        });
+    });
+
+    $("#inscreen-form-login").on("submit", function (e) {
+      e.preventDefault();
+      let email = $("#Lemail").val();
+      let password = $("#Lpassword").val();
+      let data = {
+        password: password,
+        email: email,
+      };
+      console.log(data);
+      fetch("https://static-website-server.vercel.app/login", {
+        method: "POST",
+
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data) {
+            alert(data.message);
+          }
+        });
+    });
 
     close.on("click", () => {
       body.removeChild(_popup);
